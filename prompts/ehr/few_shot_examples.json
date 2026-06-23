@@ -1,0 +1,47 @@
+[
+  {
+    "case": "medication side-effect context",
+    "input": {
+      "question": "What explains an elevated blood pressure alert?",
+      "chunks": [
+        {"source_id": "ehr:PX01:med:1", "text": "Lisinopril active"},
+        {"source_id": "ehr:PX01:note:1", "text": "Prior blood pressure controlled"}
+      ]
+    },
+    "expected": {
+      "active_medications": ["Lisinopril"],
+      "citations": ["ehr:PX01:med:1", "ehr:PX01:note:1"],
+      "warning": "Active status does not prove adherence."
+    }
+  },
+  {
+    "case": "trend retrieval",
+    "input": {
+      "question": "Contextualize gradual weight gain.",
+      "chunks": [
+        {"source_id": "ehr:PX02:problem:1", "text": "Heart failure"},
+        {"source_id": "ehr:PX02:note:1", "text": "Dry weight 72 kg"}
+      ]
+    },
+    "expected": {
+      "active_conditions": ["Heart failure"],
+      "relevant_notes": ["Dry weight 72 kg"],
+      "citations": ["ehr:PX02:problem:1", "ehr:PX02:note:1"]
+    }
+  },
+  {
+    "case": "edge case sparse record",
+    "input": {
+      "question": "What medications might contextualize this alert?",
+      "chunks": [
+        {"source_id": "ehr:PX03:note:1", "text": "External records requested but unavailable."}
+      ]
+    },
+    "expected": {
+      "active_medications": [],
+      "missing_data": ["External medication list unavailable"],
+      "retrieval_confidence": "low-to-moderate"
+    }
+  }
+]
+

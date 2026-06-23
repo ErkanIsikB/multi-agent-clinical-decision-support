@@ -1,0 +1,49 @@
+[
+  {
+    "case": "critical hypoxemia",
+    "input": {
+      "patient_id": "PX01",
+      "measurements": {"spo2": 85},
+      "thresholds": {"spo2_critical": 88},
+      "device_metadata": {"repeat_reading": 85, "signal_quality": "good"}
+    },
+    "expected": {
+      "urgency": "Critical",
+      "immediate_escalation": true,
+      "decision_factors": ["Repeated high-quality SpO2 is below the supplied critical threshold."]
+    }
+  },
+  {
+    "case": "urgent trend",
+    "input": {
+      "patient_id": "PX02",
+      "alert_category": "weight_gain_trend",
+      "measurements": {"weight": 75.1},
+      "baseline": {"weight": 72.2},
+      "trend": [{"days_ago": 14, "weight": 72.2}]
+    },
+    "expected": {
+      "urgency": "Urgent",
+      "immediate_escalation": false,
+      "decision_factors": ["Weight increased by 2.9 kg over fourteen days."]
+    }
+  },
+  {
+    "case": "edge case with possible artifact",
+    "input": {
+      "patient_id": "PX03",
+      "measurements": {"heart_rate": 142},
+      "trend": [{"minutes": 10, "heart_rate": 78}],
+      "device_metadata": {"motion": "high", "skin_contact": "poor"}
+    },
+    "expected": {
+      "urgency": "Urgent",
+      "immediate_escalation": false,
+      "decision_factors": [
+        "The high reading warrants review.",
+        "Motion and poor contact make artifact possible but do not erase the alert."
+      ]
+    }
+  }
+]
+

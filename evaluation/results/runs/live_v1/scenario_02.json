@@ -1,0 +1,416 @@
+{
+  "alert": {
+    "alert_id": "A002",
+    "patient_id": "P002",
+    "timestamp": "2026-05-13T19:30:00Z",
+    "device_type": "Continuous glucose monitor",
+    "alert_category": "high_glucose",
+    "measurements": {
+      "glucose": 238.0
+    },
+    "units": {
+      "glucose": "mg/dL"
+    },
+    "baseline": {
+      "glucose": 142.0
+    },
+    "thresholds": {
+      "glucose_high": 220.0
+    },
+    "trend": [
+      {
+        "minutes": -60,
+        "glucose": 176
+      },
+      {
+        "minutes": -30,
+        "glucose": 214
+      }
+    ],
+    "device_metadata": {
+      "sensor_age_days": 5,
+      "signal_quality": "good"
+    },
+    "source_id": "rpm:P002:alert:A002"
+  },
+  "triage": {
+    "patient_id": "P002",
+    "urgency": "Urgent",
+    "clinical_question": "Is this patient having clinically significant hyperglycemia requiring prompt review of diabetes management, medication use, recent intake/illness, or CGM accuracy?",
+    "decision_factors": [
+      "Current CGM glucose is 238 mg/dL, above the supplied high threshold of 220 mg/dL.",
+      "Glucose is rising over the past hour (176 -> 214 -> 238 mg/dL), suggesting an upward trend rather than a single isolated value.",
+      "Device signal quality is good and sensor age is recent, making a false reading less likely."
+    ],
+    "retrieval_query": {
+      "patient_id": "P002",
+      "clinical_question": "Is this patient having clinically significant hyperglycemia requiring prompt review of diabetes management, medication use, recent intake/illness, or CGM accuracy?",
+      "ehr_topics": [
+        "diabetes mellitus",
+        "hyperglycemia",
+        "glucose monitoring",
+        "insulin or antihyperglycemic medications",
+        "recent illness or infection",
+        "dietary intake",
+        "CGM/device issues"
+      ],
+      "anamnesis_topics": [
+        "symptoms of hyperglycemia",
+        "missed diabetes medications or insulin",
+        "recent meals or carbohydrate intake",
+        "intercurrent illness",
+        "hydration status",
+        "home glucose checks and CGM confirmation"
+      ],
+      "lookback_days": 7
+    },
+    "immediate_escalation": false,
+    "confidence": 0.93
+  },
+  "ehr_context": {
+    "patient_id": "P002",
+    "demographics": {},
+    "active_conditions": [
+      {
+        "source_id": "ehr:P002:problem:1",
+        "name": "Type 2 diabetes mellitus",
+        "icd10": "E11.9",
+        "status": "active"
+      },
+      {
+        "source_id": "ehr:P002:problem:2",
+        "name": "Obesity",
+        "icd10": "E66.9",
+        "status": "active"
+      }
+    ],
+    "active_medications": [
+      {
+        "source_id": "ehr:P002:med:1",
+        "name": "Metformin XR",
+        "dose": "1000 mg twice daily",
+        "started": "2024-09-11",
+        "status": "active"
+      },
+      {
+        "source_id": "ehr:P002:note:1",
+        "name": "Semaglutide initiated",
+        "dose": null,
+        "started": "2026-05-05",
+        "status": "active"
+      }
+    ],
+    "relevant_labs": [
+      {
+        "source_id": "ehr:P002:lab:1",
+        "test": "HbA1c",
+        "value": 7.8,
+        "unit": "%",
+        "date": "2026-04-28",
+        "reference_range": "4.0-5.6",
+        "flag": "high"
+      },
+      {
+        "source_id": "ehr:P002:lab:2",
+        "test": "Fasting glucose",
+        "value": 151,
+        "unit": "mg/dL",
+        "date": "2026-04-28",
+        "reference_range": "70-99",
+        "flag": "high"
+      }
+    ],
+    "relevant_notes": [
+      {
+        "source_id": "ehr:P002:note:1",
+        "title": "Diabetes medication adjustment",
+        "date": "2026-05-05",
+        "text": "Semaglutide initiated. Short-term glucose variability discussed during titration."
+      }
+    ],
+    "allergies": [],
+    "contradictions": [],
+    "missing_data": [
+      "No CGM data or glucose trend log provided.",
+      "No symptoms or acute illness/recent intake information provided.",
+      "No medication adherence, dosing errors, or side effect details provided.",
+      "No current home glucose values beyond one fasting glucose result."
+    ],
+    "citations": [
+      {
+        "source_id": "ehr:P002:note:1",
+        "source_type": "visit_notes",
+        "timestamp": "2026-05-05",
+        "label": "Diabetes medication adjustment"
+      },
+      {
+        "source_id": "ehr:P002:problem:1",
+        "source_type": "problems",
+        "timestamp": null,
+        "label": "Type 2 diabetes mellitus"
+      },
+      {
+        "source_id": "ehr:P002:lab:2",
+        "source_type": "labs",
+        "timestamp": "2026-04-28",
+        "label": "Fasting glucose"
+      },
+      {
+        "source_id": "ehr:P002:lab:1",
+        "source_type": "labs",
+        "timestamp": "2026-04-28",
+        "label": "HbA1c"
+      },
+      {
+        "source_id": "ehr:P002:problem:2",
+        "source_type": "problems",
+        "timestamp": null,
+        "label": "Obesity"
+      },
+      {
+        "source_id": "ehr:P002:med:1",
+        "source_type": "medications",
+        "timestamp": null,
+        "label": "Metformin XR"
+      }
+    ],
+    "retrieval_confidence": 0.93
+  },
+  "anamnesis_summary": {
+    "patient_id": "P002",
+    "symptoms_and_timeline": [
+      "2026-05-12: Feels well and reports no polyuria, vomiting, or confusion."
+    ],
+    "medication_adherence": [
+      "2026-05-12: Reports taking metformin and the new weekly injection as directed."
+    ],
+    "lifestyle_factors": [
+      "2026-05-12: Planned dietary change for a family celebration included a carbohydrate-heavy meal before the reading."
+    ],
+    "family_history": [],
+    "patient_concerns": [
+      "2026-05-12: Wants to know whether one high reading is dangerous."
+    ],
+    "sensitive_disclosures": [],
+    "missing_data": [
+      "No actual glucose value or CGM reading is provided in the record.",
+      "No information on recent illness, dehydration, missed doses, or CGM/device accuracy checks is provided."
+    ],
+    "citations": [
+      {
+        "source_id": "anam:P002:symptoms:1",
+        "source_type": "symptoms",
+        "timestamp": "2026-05-12",
+        "label": "symptoms"
+      },
+      {
+        "source_id": "anam:P002:adherence:1",
+        "source_type": "adherence",
+        "timestamp": "2026-05-12",
+        "label": "adherence"
+      },
+      {
+        "source_id": "anam:P002:lifestyle:1",
+        "source_type": "lifestyle",
+        "timestamp": "2026-05-12",
+        "label": "lifestyle"
+      },
+      {
+        "source_id": "anam:P002:concern:1",
+        "source_type": "concern",
+        "timestamp": "2026-05-12",
+        "label": "concern"
+      }
+    ],
+    "confidence": 0.86
+  },
+  "brief": {
+    "brief_id": "brief-P002-A002",
+    "patient_id": "P002",
+    "generated_at": "2026-06-20T00:00:00Z",
+    "urgency": "Urgent",
+    "alert_summary": "Continuous glucose monitor alert shows glucose 238 mg/dL, above the configured high threshold of 220 mg/dL, with an upward trend over the past hour (176 -> 214 -> 238 mg/dL).",
+    "patient_snapshot": "Patient has active type 2 diabetes mellitus and obesity. Current diabetes therapy includes metformin XR 1000 mg twice daily and recently initiated semaglutide. Last documented HbA1c was 7.8% and fasting glucose was 151 mg/dL. Patient reported taking medications as directed, felt well, and noted a carbohydrate-heavy meal before the reading.",
+    "contextual_analysis": [
+      {
+        "text": "The current CGM value is elevated relative to the device threshold and is increasing over serial readings, which supports prompt review rather than an isolated value.",
+        "source_ids": [
+          "rpm:P002:alert:A002"
+        ],
+        "confidence": 0.98
+      },
+      {
+        "text": "Known type 2 diabetes with suboptimal recent glycemic control (HbA1c 7.8% and fasting glucose 151 mg/dL) increases the likelihood that the reading reflects true hyperglycemia.",
+        "source_ids": [
+          "ehr:P002:problem:1",
+          "ehr:P002:lab:1",
+          "ehr:P002:lab:2"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "text": "Recent initiation of semaglutide may be associated with short-term glucose variability during titration, which may help explain changing readings and supports medication review.",
+        "source_ids": [
+          "ehr:P002:note:1",
+          "ehr:P002:med:1"
+        ],
+        "confidence": 0.87
+      },
+      {
+        "text": "Patient-reported absence of polyuria, vomiting, or confusion lowers immediate concern for acute symptomatic decompensation.",
+        "source_ids": [
+          "anam:P002:symptoms:1"
+        ],
+        "confidence": 0.9
+      },
+      {
+        "text": "Patient reports adherence to metformin and the weekly injection, and also reports a carbohydrate-heavy meal before the reading, both of which are relevant contributors to this elevated CGM result.",
+        "source_ids": [
+          "anam:P002:adherence:1",
+          "anam:P002:lifestyle:1"
+        ],
+        "confidence": 0.94
+      }
+    ],
+    "risk_assessment": [
+      {
+        "text": "Persistent or worsening hyperglycemia may require prompt review of diabetes regimen, recent diet, and timing/effect of the newly started semaglutide.",
+        "source_ids": [
+          "rpm:P002:alert:A002",
+          "ehr:P002:note:1",
+          "ehr:P002:med:1"
+        ],
+        "confidence": 0.92
+      },
+      {
+        "text": "Because the patient is currently asymptomatic by report, this appears less consistent with an immediate emergency, but continued upward glucose trend warrants timely follow-up.",
+        "source_ids": [
+          "rpm:P002:alert:A002",
+          "anam:P002:symptoms:1"
+        ],
+        "confidence": 0.89
+      },
+      {
+        "text": "A carbohydrate-heavy meal could account for a postprandial rise, but the magnitude and direction of the trend still justify review of glucose pattern and medication timing.",
+        "source_ids": [
+          "anam:P002:lifestyle:1",
+          "rpm:P002:alert:A002"
+        ],
+        "confidence": 0.84
+      }
+    ],
+    "recommended_actions": [
+      {
+        "action": "Review the CGM trend and compare with a confirmatory fingerstick glucose if there is any concern about measurement accuracy or if values continue to rise.",
+        "rationale": "The reading is above threshold and rising, so confirmation helps distinguish transient post-meal elevation from persistent hyperglycemia.",
+        "priority": "High",
+        "confidence": 0.93,
+        "source_ids": [
+          "rpm:P002:alert:A002",
+          "ehr:P002:note:1"
+        ]
+      },
+      {
+        "action": "Assess recent dietary intake, medication timing, and adherence for the metformin XR and semaglutide regimen.",
+        "rationale": "The patient reported a carbohydrate-heavy meal and medication adherence, both of which are key contextual factors for this elevated glucose.",
+        "priority": "High",
+        "confidence": 0.92,
+        "source_ids": [
+          "anam:P002:lifestyle:1",
+          "anam:P002:adherence:1",
+          "ehr:P002:med:1"
+        ]
+      },
+      {
+        "action": "Review whether the recent semaglutide initiation is on the expected titration course and whether any dose-related issues or GI intolerance are affecting intake or glycemia.",
+        "rationale": "Recent therapy change can be associated with short-term glucose variability and may need regimen adjustment.",
+        "priority": "High",
+        "confidence": 0.84,
+        "source_ids": [
+          "ehr:P002:note:1",
+          "ehr:P002:med:1"
+        ]
+      },
+      {
+        "action": "Ask about hyperglycemia symptoms and intercurrent illness if glucose remains elevated or increases further.",
+        "rationale": "Symptoms or illness would raise concern for more clinically significant hyperglycemia and need for escalation.",
+        "priority": "Standard",
+        "confidence": 0.82,
+        "source_ids": [
+          "anam:P002:symptoms:1"
+        ]
+      }
+    ],
+    "uncertainties_and_gaps": [
+      "No confirmatory capillary glucose is provided.",
+      "No detailed CGM trend beyond the last hour is available.",
+      "No information is available on recent illness, dehydration, or vomiting beyond the patient’s report of feeling well.",
+      "No medication dose-change details for semaglutide are provided beyond initiation.",
+      "No device troubleshooting or calibration data are provided."
+    ],
+    "confidence": 0.93,
+    "citations": [
+      {
+        "source_id": "anam:P002:adherence:1",
+        "source_type": "adherence",
+        "timestamp": "2026-05-12",
+        "label": "adherence"
+      },
+      {
+        "source_id": "anam:P002:lifestyle:1",
+        "source_type": "lifestyle",
+        "timestamp": "2026-05-12",
+        "label": "lifestyle"
+      },
+      {
+        "source_id": "anam:P002:symptoms:1",
+        "source_type": "symptoms",
+        "timestamp": "2026-05-12",
+        "label": "symptoms"
+      },
+      {
+        "source_id": "ehr:P002:lab:1",
+        "source_type": "labs",
+        "timestamp": "2026-04-28",
+        "label": "HbA1c"
+      },
+      {
+        "source_id": "ehr:P002:lab:2",
+        "source_type": "labs",
+        "timestamp": "2026-04-28",
+        "label": "Fasting glucose"
+      },
+      {
+        "source_id": "ehr:P002:med:1",
+        "source_type": "medications",
+        "timestamp": null,
+        "label": "Metformin XR"
+      },
+      {
+        "source_id": "ehr:P002:note:1",
+        "source_type": "visit_notes",
+        "timestamp": "2026-05-05",
+        "label": "Diabetes medication adjustment"
+      },
+      {
+        "source_id": "ehr:P002:problem:1",
+        "source_type": "problems",
+        "timestamp": null,
+        "label": "Type 2 diabetes mellitus"
+      },
+      {
+        "source_id": "rpm:P002:alert:A002",
+        "source_type": "rpm_alert",
+        "timestamp": "2026-05-13T19:30:00+00:00",
+        "label": "high glucose"
+      }
+    ],
+    "immediate_escalation": false,
+    "human_review_required": true,
+    "disclaimer": "Educational prototype using simulated data. This output is not a diagnosis or medical advice and must be reviewed by a qualified clinician."
+  },
+  "session_id": "session-e64bcaecfec3",
+  "elapsed_seconds": 16.50157183400006,
+  "mode": "live",
+  "warnings": []
+}

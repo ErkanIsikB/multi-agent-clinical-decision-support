@@ -1,0 +1,418 @@
+{
+  "alert": {
+    "alert_id": "A001",
+    "patient_id": "P001",
+    "timestamp": "2026-05-13T08:10:00Z",
+    "device_type": "Bluetooth blood pressure cuff",
+    "alert_category": "blood_pressure",
+    "measurements": {
+      "systolic_bp": 172.0,
+      "diastolic_bp": 106.0,
+      "heart_rate": 82.0
+    },
+    "units": {
+      "systolic_bp": "mmHg",
+      "diastolic_bp": "mmHg",
+      "heart_rate": "bpm"
+    },
+    "baseline": {
+      "systolic_bp": 134.0,
+      "diastolic_bp": 82.0
+    },
+    "thresholds": {
+      "systolic_bp_high": 160.0,
+      "diastolic_bp_high": 100.0
+    },
+    "trend": [],
+    "device_metadata": {
+      "validated_cuff": true,
+      "repeat_reading": "170/104"
+    },
+    "source_id": "rpm:P001:alert:A001"
+  },
+  "triage": {
+    "patient_id": "P001",
+    "urgency": "Urgent",
+    "clinical_question": "Does this patient have sustained severe hypertension or symptoms/measurement issues that require prompt clinician review?",
+    "decision_factors": [
+      "Blood pressure is above the supplied patient thresholds (172/106 mmHg vs 160/100 mmHg).",
+      "Repeat reading remains elevated (170/104 mmHg), supporting that this is not a single isolated measurement.",
+      "Validated cuff is documented, which improves measurement reliability.",
+      "Baseline blood pressure was lower (134/82 mmHg), indicating a significant increase from prior level.",
+      "No critical threshold or severe current symptoms were supplied, so this does not meet critical criteria from the alert alone."
+    ],
+    "retrieval_query": {
+      "patient_id": "P001",
+      "clinical_question": "Does this patient have sustained severe hypertension or symptoms/measurement issues that require prompt clinician review?",
+      "ehr_topics": [
+        "blood pressure history",
+        "hypertension diagnosis",
+        "antihypertensive medications",
+        "recent medication changes",
+        "recent clinic blood pressure readings",
+        "renal disease",
+        "cardiovascular history"
+      ],
+      "anamnesis_topics": [
+        "headache",
+        "chest pain",
+        "shortness of breath",
+        "neurologic symptoms",
+        "vision changes",
+        "medication adherence",
+        "cuff technique and measurement conditions"
+      ],
+      "lookback_days": 30
+    },
+    "immediate_escalation": false,
+    "confidence": 0.95
+  },
+  "ehr_context": {
+    "patient_id": "P001",
+    "demographics": {},
+    "active_conditions": [
+      {
+        "source_id": "ehr:P001:problem:1",
+        "name": "Essential hypertension",
+        "icd10": "I10",
+        "status": "active"
+      },
+      {
+        "source_id": "ehr:P001:problem:2",
+        "name": "Hyperlipidemia",
+        "icd10": "E78.5",
+        "status": "active"
+      }
+    ],
+    "active_medications": [
+      {
+        "source_id": "ehr:P001:med:1",
+        "name": "Lisinopril",
+        "dose": "20 mg once daily",
+        "started": "2025-11-02",
+        "status": "active"
+      }
+    ],
+    "relevant_labs": [
+      {
+        "source_id": "ehr:P001:lab:1",
+        "test": "Creatinine",
+        "value": 0.9,
+        "unit": "mg/dL",
+        "date": "2026-03-14",
+        "reference_range": "0.6-1.2",
+        "flag": "normal"
+      },
+      {
+        "source_id": "ehr:P001:lab:2",
+        "test": "Potassium",
+        "value": 4.3,
+        "unit": "mmol/L",
+        "date": "2026-03-14",
+        "reference_range": "3.5-5.1",
+        "flag": "normal"
+      }
+    ],
+    "relevant_notes": [
+      {
+        "source_id": "ehr:P001:note:1",
+        "title": "Hypertension follow-up",
+        "date": "2026-03-14",
+        "text": "Clinic blood pressure 132/82. Lisinopril continued. No side effects documented."
+      }
+    ],
+    "allergies": [],
+    "contradictions": [],
+    "missing_data": [
+      "home blood pressure readings",
+      "multiple elevated readings over time",
+      "hypertension symptoms",
+      "measurement technique issues",
+      "end-organ symptoms",
+      "hypertensive urgency/emergency indicators"
+    ],
+    "citations": [
+      {
+        "source_id": "ehr:P001:note:1",
+        "source_type": "visit_notes",
+        "timestamp": "2026-03-14",
+        "label": "Clinic blood pressure 132/82; lisinopril continued; no side effects documented"
+      },
+      {
+        "source_id": "ehr:P001:problem:1",
+        "source_type": "problems",
+        "timestamp": null,
+        "label": "Essential hypertension active"
+      },
+      {
+        "source_id": "ehr:P001:med:1",
+        "source_type": "medications",
+        "timestamp": null,
+        "label": "Lisinopril 20 mg once daily active, started 2025-11-02"
+      },
+      {
+        "source_id": "ehr:P001:lab:1",
+        "source_type": "labs",
+        "timestamp": "2026-03-14",
+        "label": "Creatinine 0.9 mg/dL normal"
+      },
+      {
+        "source_id": "ehr:P001:lab:2",
+        "source_type": "labs",
+        "timestamp": "2026-03-14",
+        "label": "Potassium 4.3 mmol/L normal"
+      }
+    ],
+    "retrieval_confidence": 0.86
+  },
+  "anamnesis_summary": {
+    "patient_id": "P001",
+    "symptoms_and_timeline": [
+      "Persistent dry cough began about three weeks before intake (reported 2026-05-12).",
+      "No chest pain or shortness of breath reported with the cough."
+    ],
+    "medication_adherence": [
+      "Stopped lisinopril five days before intake because the cough was disruptive."
+    ],
+    "lifestyle_factors": [
+      "No major dietary or activity change reported."
+    ],
+    "family_history": [],
+    "patient_concerns": [
+      "Asked whether another blood pressure medicine is possible."
+    ],
+    "sensitive_disclosures": [],
+    "missing_data": [
+      "No blood pressure readings or home/clinic measurement values were provided.",
+      "No information on whether hypertension is sustained, severe, or associated with hypertensive symptoms was provided.",
+      "No other medication list, dose, or prior blood pressure control history was provided.",
+      "No report of headache, vision changes, neurologic symptoms, chest pain, or dyspnea beyond the explicit negatives noted."
+    ],
+    "citations": [
+      {
+        "source_id": "anam:P001:symptoms:1",
+        "source_type": "symptoms",
+        "timestamp": "2026-05-12",
+        "label": "symptoms"
+      },
+      {
+        "source_id": "anam:P001:adherence:1",
+        "source_type": "adherence",
+        "timestamp": "2026-05-12",
+        "label": "adherence"
+      },
+      {
+        "source_id": "anam:P001:lifestyle:1",
+        "source_type": "lifestyle",
+        "timestamp": "2026-05-12",
+        "label": "lifestyle"
+      },
+      {
+        "source_id": "anam:P001:concern:1",
+        "source_type": "concern",
+        "timestamp": "2026-05-12",
+        "label": "concern"
+      }
+    ],
+    "confidence": 0.95
+  },
+  "brief": {
+    "brief_id": "brief:P001:A001",
+    "patient_id": "P001",
+    "generated_at": "2026-05-13T08:10:00Z",
+    "urgency": "Urgent",
+    "alert_summary": "RPM blood pressure alert triggered by 172/106 mmHg, above the supplied high thresholds (160/100), with repeat reading 170/104. This is elevated compared with prior clinic BP 132/82, and the patient had stopped lisinopril 5 days before intake because of a disruptive dry cough.",
+    "patient_snapshot": "Patient has active essential hypertension and was taking lisinopril 20 mg daily; recent intake notes report a dry cough, no chest pain or shortness of breath, and self-stopping lisinopril 5 days before intake. Last documented clinic BP was 132/82 on 2026-03-14; creatinine and potassium were normal on that date.",
+    "contextual_analysis": [
+      {
+        "text": "The current home BP is above the supplied alert thresholds, and the repeat reading remains elevated, which supports that this was not a single isolated value.",
+        "source_ids": [
+          "rpm:P001:alert:A001"
+        ],
+        "confidence": 0.98
+      },
+      {
+        "text": "The patient has active essential hypertension and is on record with lisinopril 20 mg once daily; prior clinic BP was 132/82 with lisinopril continued.",
+        "source_ids": [
+          "ehr:P001:problem:1",
+          "ehr:P001:med:1",
+          "ehr:P001:note:1"
+        ],
+        "confidence": 0.93
+      },
+      {
+        "text": "The patient reported stopping lisinopril 5 days before intake because of a persistent dry cough.",
+        "source_ids": [
+          "anam:P001:adherence:1",
+          "anam:P001:symptoms:1"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "text": "Recent kidney function and potassium were normal, which provides some context for medication safety review but does not explain the current BP elevation.",
+        "source_ids": [
+          "ehr:P001:lab:1",
+          "ehr:P001:lab:2"
+        ],
+        "confidence": 0.9
+      }
+    ],
+    "risk_assessment": [
+      {
+        "text": "The elevated BP plus repeat elevation may indicate a need for prompt clinician review to confirm whether the reading is sustained and to assess for contributing factors such as recent antihypertensive interruption.",
+        "source_ids": [
+          "rpm:P001:alert:A001",
+          "anam:P001:adherence:1"
+        ],
+        "confidence": 0.94
+      },
+      {
+        "text": "There is a potential risk of poor BP control in the setting of active hypertension and recent discontinuation of lisinopril, but no diagnosis can be made from the available data.",
+        "source_ids": [
+          "ehr:P001:problem:1",
+          "ehr:P001:med:1",
+          "anam:P001:adherence:1"
+        ],
+        "confidence": 0.9
+      },
+      {
+        "text": "No chest pain or shortness of breath were reported, and no neurologic, vision, or other end-organ symptoms were provided, so the alert alone does not establish hypertensive emergency.",
+        "source_ids": [
+          "anam:P001:symptoms:1",
+          "ehr:P001:note:1",
+          "ehr:P001:missing_data"
+        ],
+        "confidence": 0.83
+      }
+    ],
+    "recommended_actions": [
+      {
+        "action": "Prompt clinician review of the elevated home BP and repeat reading, with attention to whether the measurement is sustained and whether symptoms are present.",
+        "rationale": "The alert exceeds thresholds and remains elevated on repeat, but no critical symptoms were supplied.",
+        "priority": "High",
+        "confidence": 0.96,
+        "source_ids": [
+          "rpm:P001:alert:A001",
+          "triage_decision"
+        ]
+      },
+      {
+        "action": "Verify recent antihypertensive use, including the reported lisinopril interruption, and reconcile the medication list against current adherence history.",
+        "rationale": "Recent stopping of lisinopril may be relevant to the BP rise and should be reviewed by a clinician.",
+        "priority": "High",
+        "confidence": 0.94,
+        "source_ids": [
+          "anam:P001:adherence:1",
+          "ehr:P001:med:1",
+          "triage_decision"
+        ]
+      },
+      {
+        "action": "Review for missing red-flag symptoms and measurement quality details before deciding on next steps.",
+        "rationale": "Key symptom and technique data are absent from the record, while the cuff is documented as validated and a repeat reading was obtained.",
+        "priority": "High",
+        "confidence": 0.9,
+        "source_ids": [
+          "ehr:P001:missing_data",
+          "rpm:P001:alert:A001",
+          "triage_decision"
+        ]
+      },
+      {
+        "action": "Consider follow-up BP confirmation using clinician judgment, given the prior lower clinic BP and the current higher home readings.",
+        "rationale": "The current reading is meaningfully higher than the last documented clinic BP, but the time gap limits interpretation.",
+        "priority": "Standard",
+        "confidence": 0.88,
+        "source_ids": [
+          "ehr:P001:note:1",
+          "rpm:P001:alert:A001"
+        ]
+      }
+    ],
+    "uncertainties_and_gaps": [
+      "No contemporaneous symptom report for headache, vision change, neurologic symptoms, chest pain, or dyspnea was provided for the time of the alert.",
+      "No additional home or serial BP trend data were supplied beyond this alert and repeat reading.",
+      "No documentation was provided on cuff positioning, rest period, or other measurement conditions beyond 'validated cuff'.",
+      "The most recent clinic BP is from 2026-03-14, so control status between that date and the alert is unknown.",
+      "The record contains a prior clinic note showing lisinopril continued, but the intake history says the patient stopped lisinopril 5 days before intake; the timing relative to the alert is not fully verifiable from the provided data."
+    ],
+    "confidence": 0.86,
+    "citations": [
+      {
+        "source_id": "rpm:P001:alert:A001",
+        "source_type": "rpm_alert",
+        "timestamp": "2026-05-13T08:10:00Z",
+        "label": "Home BP 172/106; repeat 170/104; validated cuff; baseline 134/82; thresholds 160/100"
+      },
+      {
+        "source_id": "triage_decision",
+        "source_type": "triage",
+        "timestamp": null,
+        "label": "Urgent triage decision for elevated BP; no critical symptoms supplied"
+      },
+      {
+        "source_id": "ehr:P001:problem:1",
+        "source_type": "problems",
+        "timestamp": null,
+        "label": "Essential hypertension active"
+      },
+      {
+        "source_id": "ehr:P001:med:1",
+        "source_type": "medications",
+        "timestamp": null,
+        "label": "Lisinopril 20 mg once daily active, started 2025-11-02"
+      },
+      {
+        "source_id": "ehr:P001:note:1",
+        "source_type": "visit_notes",
+        "timestamp": "2026-03-14",
+        "label": "Clinic blood pressure 132/82; lisinopril continued; no side effects documented"
+      },
+      {
+        "source_id": "ehr:P001:lab:1",
+        "source_type": "labs",
+        "timestamp": "2026-03-14",
+        "label": "Creatinine 0.9 mg/dL normal"
+      },
+      {
+        "source_id": "ehr:P001:lab:2",
+        "source_type": "labs",
+        "timestamp": "2026-03-14",
+        "label": "Potassium 4.3 mmol/L normal"
+      },
+      {
+        "source_id": "ehr:P001:missing_data",
+        "source_type": "ehr_missing_data",
+        "timestamp": null,
+        "label": "Missing data list from EHR context"
+      },
+      {
+        "source_id": "anam:P001:symptoms:1",
+        "source_type": "anamnesis",
+        "timestamp": "2026-05-12",
+        "label": "Persistent dry cough began about three weeks before intake; no chest pain or shortness of breath reported with the cough"
+      },
+      {
+        "source_id": "anam:P001:adherence:1",
+        "source_type": "anamnesis",
+        "timestamp": "2026-05-12",
+        "label": "Stopped lisinopril five days before intake because of the cough"
+      },
+      {
+        "source_id": "anam:P001:concern:1",
+        "source_type": "anamnesis",
+        "timestamp": "2026-05-12",
+        "label": "Asked whether another blood pressure medicine is possible"
+      }
+    ],
+    "immediate_escalation": false,
+    "human_review_required": true,
+    "disclaimer": "Educational prototype using simulated data. This output is not a diagnosis or medical advice and must be reviewed by a qualified clinician."
+  },
+  "session_id": "session-271b17396f1e",
+  "elapsed_seconds": 21.746953082998516,
+  "mode": "live",
+  "warnings": [
+    "Safety correction: standard disclaimer restored."
+  ]
+}

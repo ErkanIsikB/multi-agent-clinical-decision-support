@@ -1,0 +1,337 @@
+{
+  "alert": {
+    "alert_id": "A004",
+    "patient_id": "P004",
+    "timestamp": "2026-05-13T09:40:00Z",
+    "device_type": "Bluetooth blood pressure cuff",
+    "alert_category": "blood_pressure",
+    "measurements": {
+      "systolic_bp": 166.0,
+      "diastolic_bp": 101.0,
+      "heart_rate": 78.0
+    },
+    "units": {
+      "systolic_bp": "mmHg",
+      "diastolic_bp": "mmHg",
+      "heart_rate": "bpm"
+    },
+    "baseline": {},
+    "thresholds": {
+      "systolic_bp_high": 160.0,
+      "diastolic_bp_high": 100.0
+    },
+    "trend": [],
+    "device_metadata": {
+      "validated_cuff": true
+    },
+    "source_id": "rpm:P004:alert:A004"
+  },
+  "triage": {
+    "patient_id": "P004",
+    "urgency": "Urgent",
+    "clinical_question": "Is this patient known to have hypertension or other cardiovascular risk, what is the recent blood pressure trend, and are there symptoms or medication adherence issues associated with the elevated home blood pressure reading?",
+    "decision_factors": [
+      "Validated cuff blood pressure reading is above both supplied high thresholds (166/101 mmHg vs 160/100 mmHg).",
+      "Elevation is significant but no critical-range value or symptoms were provided.",
+      "No baseline or trend data are available to determine persistence or trajectory."
+    ],
+    "retrieval_query": {
+      "patient_id": "P004",
+      "clinical_question": "Is this patient known to have hypertension or other cardiovascular risk, what is the recent blood pressure trend, and are there symptoms or medication adherence issues associated with the elevated home blood pressure reading?",
+      "ehr_topics": [
+        "hypertension",
+        "antihypertensive medications",
+        "blood pressure history",
+        "cardiovascular disease",
+        "recent clinic vitals",
+        "symptoms"
+      ],
+      "anamnesis_topics": [
+        "headache",
+        "chest pain",
+        "shortness of breath",
+        "neurologic symptoms",
+        "medication adherence",
+        "home BP monitoring technique"
+      ],
+      "lookback_days": 180
+    },
+    "immediate_escalation": false,
+    "confidence": 0.91
+  },
+  "ehr_context": {
+    "patient_id": "P004",
+    "demographics": {
+      "name": "Omar Reed",
+      "age": 58,
+      "sex": "male",
+      "preferred_language": "English",
+      "fictional_patient": true
+    },
+    "active_conditions": [
+      {
+        "source_id": "ehr:P004:problem:1",
+        "name": "Essential hypertension",
+        "icd10": "I10",
+        "status": "active"
+      }
+    ],
+    "active_medications": [],
+    "relevant_labs": [],
+    "relevant_notes": [
+      {
+        "source_id": "ehr:P004:note:1",
+        "title": "Transfer intake",
+        "date": "2026-05-02",
+        "text": "Patient transferred from an external health system. Prior records requested but not received."
+      }
+    ],
+    "allergies": [],
+    "contradictions": [],
+    "missing_data": [
+      "No blood pressure values or trend data provided.",
+      "No home blood pressure reading provided.",
+      "No symptom description related to elevated blood pressure provided.",
+      "No medication list or adherence information provided.",
+      "No cardiovascular risk factors beyond hypertension documented in the supplied chunks."
+    ],
+    "citations": [
+      {
+        "source_id": "ehr:P004:problem:1",
+        "source_type": "problem",
+        "timestamp": null,
+        "label": "Active problem list entry for essential hypertension"
+      },
+      {
+        "source_id": "ehr:P004:note:1",
+        "source_type": "visit_note",
+        "timestamp": "2026-05-02",
+        "label": "Transfer intake note indicating prior records not yet received"
+      }
+    ],
+    "retrieval_confidence": 0.93
+  },
+  "anamnesis_summary": {
+    "patient_id": "P004",
+    "symptoms_and_timeline": [
+      "Intermittent morning headaches over the past week (anam:P004:symptoms:1, 2026-05-12)."
+    ],
+    "medication_adherence": [
+      "Reports taking a small white blood pressure tablet, but cannot recall the name or dose (anam:P004:adherence:1, 2026-05-12)."
+    ],
+    "lifestyle_factors": [
+      "Recently moved and has not established local primary care (anam:P004:lifestyle:1, 2026-05-12)."
+    ],
+    "family_history": [],
+    "patient_concerns": [
+      "Worries that transfer records have not arrived (anam:P004:concern:1, 2026-05-12)."
+    ],
+    "sensitive_disclosures": [],
+    "missing_data": [
+      "No documented diagnosis of hypertension or other cardiovascular risk factors in the record.",
+      "No blood pressure trend or actual home blood pressure values are provided in the record.",
+      "Home blood pressure reading details and whether symptoms correlate with it are not documented.",
+      "Home medication name and dose remain unverified."
+    ],
+    "citations": [
+      {
+        "source_id": "anam:P004:symptoms:1",
+        "source_type": "symptoms",
+        "timestamp": "2026-05-12",
+        "label": "symptoms"
+      },
+      {
+        "source_id": "anam:P004:adherence:1",
+        "source_type": "medication_adherence",
+        "timestamp": "2026-05-12",
+        "label": "adherence"
+      },
+      {
+        "source_id": "anam:P004:lifestyle:1",
+        "source_type": "lifestyle",
+        "timestamp": "2026-05-12",
+        "label": "lifestyle"
+      },
+      {
+        "source_id": "anam:P004:concern:1",
+        "source_type": "patient_concerns",
+        "timestamp": "2026-05-12",
+        "label": "concern"
+      }
+    ],
+    "confidence": 0.84
+  },
+  "brief": {
+    "brief_id": "brief:P004:2026-05-13T09:40:00Z",
+    "patient_id": "P004",
+    "generated_at": "2026-05-13T09:40:00Z",
+    "urgency": "Urgent",
+    "alert_summary": "Validated home blood pressure reading is elevated at 166/101 mmHg, above the device thresholds. The patient has an active EHR problem list entry for essential hypertension, reports intermittent morning headaches, and describes uncertainty about the name/dose of a blood pressure tablet. No critical-range value, symptom escalation, or trend data were provided.",
+    "patient_snapshot": "Omar Reed is a 58-year-old English-speaking male with active essential hypertension in the EHR. He recently transferred care and prior records have not yet been received. He reports intermittent morning headaches over the past week and says he is taking a small white blood pressure tablet but cannot recall the name or dose.",
+    "contextual_analysis": [
+      {
+        "text": "The RPM alert shows a validated cuff reading of 166/101 mmHg, which is above the supplied high thresholds and supports concern for sustained elevation rather than a single borderline value.",
+        "source_ids": [
+          "rpm:P004:alert:A004"
+        ],
+        "confidence": 0.98
+      },
+      {
+        "text": "The EHR lists essential hypertension as an active condition, indicating the elevated reading occurs in the context of known blood pressure disease.",
+        "source_ids": [
+          "ehr:P004:problem:1"
+        ],
+        "confidence": 0.96
+      },
+      {
+        "text": "The patient reported intermittent morning headaches over the past week, which are relevant symptoms to clarify alongside the elevated blood pressure reading, though they are not specific enough to determine cause.",
+        "source_ids": [
+          "anam:P004:symptoms:1"
+        ],
+        "confidence": 0.84
+      },
+      {
+        "text": "Medication adherence and regimen details remain unclear because the patient cannot recall the blood pressure tablet name or dose, so under-treatment or nonadherence cannot be ruled out.",
+        "source_ids": [
+          "anam:P004:adherence:1"
+        ],
+        "confidence": 0.89
+      },
+      {
+        "text": "Recent transfer of care and missing external records limit assessment of prior blood pressure control, current regimen, and recent clinic vitals.",
+        "source_ids": [
+          "ehr:P004:note:1",
+          "anam:P004:concern:1"
+        ],
+        "confidence": 0.87
+      }
+    ],
+    "risk_assessment": [
+      {
+        "text": "Persistent elevated home blood pressure in a patient with active hypertension increases near-term cardiovascular risk and warrants timely follow-up.",
+        "source_ids": [
+          "rpm:P004:alert:A004",
+          "ehr:P004:problem:1"
+        ],
+        "confidence": 0.92
+      },
+      {
+        "text": "Headache plus elevated blood pressure should prompt symptom review for red flags, because worsening neurologic or cardiopulmonary symptoms would change urgency.",
+        "source_ids": [
+          "rpm:P004:alert:A004",
+          "anam:P004:symptoms:1"
+        ],
+        "confidence": 0.8
+      },
+      {
+        "text": "Unverified medication name/dose and lack of established local primary care create risk for gaps in treatment continuity and delayed optimization of therapy.",
+        "source_ids": [
+          "anam:P004:adherence:1",
+          "anam:P004:lifestyle:1",
+          "ehr:P004:note:1"
+        ],
+        "confidence": 0.9
+      }
+    ],
+    "recommended_actions": [
+      {
+        "action": "Contact the patient today to confirm repeat blood pressure measurement technique and obtain a second reading after rest.",
+        "rationale": "A repeat validated home BP helps determine whether this is persistent elevation versus an isolated reading.",
+        "priority": "High",
+        "confidence": 0.93,
+        "source_ids": [
+          "rpm:P004:alert:A004"
+        ]
+      },
+      {
+        "action": "Perform a focused symptom check for chest pain, shortness of breath, neurologic deficits, severe/worsening headache, or visual changes; escalate if present.",
+        "rationale": "These symptoms would increase concern and change disposition.",
+        "priority": "High",
+        "confidence": 0.91,
+        "source_ids": [
+          "anam:P004:symptoms:1",
+          "rpm:P004:alert:A004"
+        ]
+      },
+      {
+        "action": "Reconcile the blood pressure medication name, dose, and adherence as soon as possible.",
+        "rationale": "Clarifying the regimen is necessary to assess whether missed doses or an incomplete regimen are contributing to the elevated reading.",
+        "priority": "High",
+        "confidence": 0.94,
+        "source_ids": [
+          "anam:P004:adherence:1"
+        ]
+      },
+      {
+        "action": "Arrange timely primary care or hypertension follow-up and request outside records if available.",
+        "rationale": "Known hypertension plus missing transfer records and no current medication list create a continuity gap that needs prompt review.",
+        "priority": "Standard",
+        "confidence": 0.9,
+        "source_ids": [
+          "ehr:P004:problem:1",
+          "ehr:P004:note:1",
+          "anam:P004:lifestyle:1"
+        ]
+      }
+    ],
+    "uncertainties_and_gaps": [
+      "No blood pressure trend or baseline values are available in the supplied data.",
+      "No current medication list, dose, or adherence confirmation is available.",
+      "No documentation of additional cardiovascular risk factors beyond hypertension was provided.",
+      "No same-day symptom severity assessment is available.",
+      "Prior outside records have not yet been received."
+    ],
+    "confidence": 0.91,
+    "citations": [
+      {
+        "source_id": "anam:P004:adherence:1",
+        "source_type": "medication_adherence",
+        "timestamp": "2026-05-12",
+        "label": "adherence"
+      },
+      {
+        "source_id": "anam:P004:concern:1",
+        "source_type": "patient_concerns",
+        "timestamp": "2026-05-12",
+        "label": "concern"
+      },
+      {
+        "source_id": "anam:P004:lifestyle:1",
+        "source_type": "lifestyle",
+        "timestamp": "2026-05-12",
+        "label": "lifestyle"
+      },
+      {
+        "source_id": "anam:P004:symptoms:1",
+        "source_type": "symptoms",
+        "timestamp": "2026-05-12",
+        "label": "symptoms"
+      },
+      {
+        "source_id": "ehr:P004:note:1",
+        "source_type": "visit_note",
+        "timestamp": "2026-05-02",
+        "label": "Transfer intake note indicating prior records not yet received"
+      },
+      {
+        "source_id": "ehr:P004:problem:1",
+        "source_type": "problem",
+        "timestamp": null,
+        "label": "Active problem list entry for essential hypertension"
+      },
+      {
+        "source_id": "rpm:P004:alert:A004",
+        "source_type": "rpm_alert",
+        "timestamp": "2026-05-13T09:40:00+00:00",
+        "label": "blood pressure"
+      }
+    ],
+    "immediate_escalation": false,
+    "human_review_required": true,
+    "disclaimer": "Educational prototype using simulated data. This output is not a diagnosis or medical advice and must be reviewed by a qualified clinician."
+  },
+  "session_id": "session-3bf6eccb69e9",
+  "elapsed_seconds": 14.325573583017103,
+  "mode": "live",
+  "warnings": []
+}

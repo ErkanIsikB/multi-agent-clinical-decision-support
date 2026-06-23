@@ -1,0 +1,333 @@
+{
+  "alert": {
+    "alert_id": "A008",
+    "patient_id": "P008",
+    "timestamp": "2026-05-13T02:15:00Z",
+    "device_type": "Ambulatory blood pressure monitor",
+    "alert_category": "nocturnal_hypertension",
+    "measurements": {
+      "systolic_bp": 164.0,
+      "diastolic_bp": 98.0,
+      "heart_rate": 76.0
+    },
+    "units": {
+      "systolic_bp": "mmHg",
+      "diastolic_bp": "mmHg",
+      "heart_rate": "bpm"
+    },
+    "baseline": {
+      "systolic_bp": 134.0,
+      "diastolic_bp": 81.0
+    },
+    "thresholds": {
+      "night_systolic_high": 150.0
+    },
+    "trend": [
+      {
+        "hours_ago": 24,
+        "systolic_bp": 158
+      },
+      {
+        "hours_ago": 48,
+        "systolic_bp": 160
+      }
+    ],
+    "device_metadata": {
+      "signal_quality": "good"
+    },
+    "source_id": "rpm:P008:alert:A008"
+  },
+  "triage": {
+    "patient_id": "P008",
+    "urgency": "Urgent",
+    "clinical_question": "What EHR and patient-reported factors could contextualize the nocturnal hypertension alert for P008?",
+    "decision_factors": [
+      "Systolic blood pressure 164 mmHg is above the urgent threshold."
+    ],
+    "retrieval_query": {
+      "patient_id": "P008",
+      "clinical_question": "What EHR and patient-reported factors could contextualize the nocturnal hypertension alert for P008?",
+      "ehr_topics": [
+        "blood pressure",
+        "sleep",
+        "NSAID",
+        "pain"
+      ],
+      "anamnesis_topics": [
+        "blood pressure",
+        "sleep",
+        "NSAID",
+        "pain",
+        "medication adherence",
+        "recent symptoms"
+      ],
+      "lookback_days": 180
+    },
+    "immediate_escalation": false,
+    "confidence": 0.88
+  },
+  "ehr_context": {
+    "patient_id": "P008",
+    "demographics": {
+      "name": "Daniel Arslan",
+      "age": 63,
+      "sex": "male",
+      "preferred_language": "English",
+      "fictional_patient": true
+    },
+    "active_conditions": [
+      {
+        "source_id": "ehr:P008:problem:1",
+        "name": "Essential hypertension",
+        "icd10": "I10",
+        "status": "active"
+      },
+      {
+        "source_id": "ehr:P008:problem:2",
+        "name": "Knee osteoarthritis",
+        "icd10": "M17.9",
+        "status": "active"
+      }
+    ],
+    "active_medications": [
+      {
+        "source_id": "ehr:P008:med:1",
+        "name": "Amlodipine",
+        "dose": "10 mg once daily",
+        "started": "2024-04-22",
+        "status": "active"
+      }
+    ],
+    "relevant_labs": [
+      {
+        "source_id": "ehr:P008:lab:1",
+        "test": "Creatinine",
+        "value": 1.0,
+        "unit": "mg/dL",
+        "date": "2026-03-29",
+        "reference_range": "0.6-1.2",
+        "flag": "normal"
+      }
+    ],
+    "relevant_notes": [
+      {
+        "source_id": "ehr:P008:note:1",
+        "title": "Blood pressure review",
+        "date": "2026-03-29",
+        "text": "Daytime home readings generally 128-138/76-86 on amlodipine."
+      }
+    ],
+    "allergies": [],
+    "contradictions": [],
+    "missing_data": [],
+    "citations": [
+      {
+        "source_id": "ehr:P008:problem:1",
+        "source_type": "ehr_problems",
+        "timestamp": null,
+        "label": "Essential hypertension"
+      },
+      {
+        "source_id": "ehr:P008:problem:2",
+        "source_type": "ehr_problems",
+        "timestamp": null,
+        "label": "Knee osteoarthritis"
+      },
+      {
+        "source_id": "ehr:P008:med:1",
+        "source_type": "ehr_medications",
+        "timestamp": null,
+        "label": "Amlodipine"
+      },
+      {
+        "source_id": "ehr:P008:lab:1",
+        "source_type": "ehr_labs",
+        "timestamp": "2026-03-29",
+        "label": "Creatinine"
+      },
+      {
+        "source_id": "ehr:P008:note:1",
+        "source_type": "ehr_visit_notes",
+        "timestamp": "2026-03-29",
+        "label": "Blood pressure review"
+      }
+    ],
+    "retrieval_confidence": 0.9
+  },
+  "anamnesis_summary": {
+    "patient_id": "P008",
+    "symptoms_and_timeline": [
+      "Knee pain has disrupted sleep for four nights."
+    ],
+    "medication_adherence": [
+      "Reports taking amlodipine every morning."
+    ],
+    "lifestyle_factors": [
+      "Started over-the-counter ibuprofen 600 mg three times daily five days ago for knee pain."
+    ],
+    "family_history": [],
+    "patient_concerns": [
+      "Noticed blood pressure is mainly high overnight."
+    ],
+    "sensitive_disclosures": [],
+    "missing_data": [],
+    "citations": [
+      {
+        "source_id": "anam:P008:symptoms:1",
+        "source_type": "anamnesis_symptoms",
+        "timestamp": "2026-05-12",
+        "label": "symptoms"
+      },
+      {
+        "source_id": "anam:P008:adherence:1",
+        "source_type": "anamnesis_medication_adherence",
+        "timestamp": "2026-05-12",
+        "label": "adherence"
+      },
+      {
+        "source_id": "anam:P008:lifestyle:1",
+        "source_type": "anamnesis_lifestyle",
+        "timestamp": "2026-05-12",
+        "label": "lifestyle"
+      },
+      {
+        "source_id": "anam:P008:concern:1",
+        "source_type": "anamnesis_patient_concerns",
+        "timestamp": "2026-05-12",
+        "label": "concern"
+      }
+    ],
+    "confidence": 0.92
+  },
+  "brief": {
+    "brief_id": "ccb-4e2e97bcd1",
+    "patient_id": "P008",
+    "generated_at": "2026-06-20T20:21:54.497340Z",
+    "urgency": "Urgent",
+    "alert_summary": "Nocturnal Hypertension alert: systolic bp 164 mmHg, diastolic bp 98 mmHg, heart rate 76 bpm.",
+    "patient_snapshot": "Active conditions: Essential hypertension, Knee osteoarthritis. Current treatment: Amlodipine.",
+    "contextual_analysis": [
+      {
+        "text": "The RPM alert was classified Urgent.",
+        "source_ids": [
+          "rpm:P008:alert:A008"
+        ],
+        "confidence": 0.88
+      },
+      {
+        "text": "Knee pain has disrupted sleep for four nights.",
+        "source_ids": [
+          "anam:P008:symptoms:1"
+        ],
+        "confidence": 0.92
+      },
+      {
+        "text": "Reports taking amlodipine every morning.",
+        "source_ids": [
+          "anam:P008:adherence:1"
+        ],
+        "confidence": 0.92
+      },
+      {
+        "text": "Started over-the-counter ibuprofen 600 mg three times daily five days ago for knee pain.",
+        "source_ids": [
+          "anam:P008:lifestyle:1"
+        ],
+        "confidence": 0.92
+      }
+    ],
+    "risk_assessment": [
+      {
+        "text": "Repeated overnight blood pressure elevation follows recent ibuprofen use despite previously controlled daytime readings; NSAID exposure is a relevant contextual factor for clinician review.",
+        "source_ids": [
+          "ehr:P008:note:1"
+        ],
+        "confidence": 0.86
+      }
+    ],
+    "recommended_actions": [
+      {
+        "action": "Review the alert and cited context using the appropriate clinical protocol.",
+        "rationale": "The system provides context only; a clinician must determine next steps.",
+        "priority": "High",
+        "confidence": 0.95,
+        "source_ids": [
+          "rpm:P008:alert:A008"
+        ]
+      }
+    ],
+    "uncertainties_and_gaps": [
+      "The prototype cannot independently verify device accuracy or symptoms."
+    ],
+    "confidence": 0.88,
+    "citations": [
+      {
+        "source_id": "rpm:P008:alert:A008",
+        "source_type": "rpm_alert",
+        "timestamp": "2026-05-13T02:15:00+00:00",
+        "label": "nocturnal hypertension"
+      },
+      {
+        "source_id": "ehr:P008:problem:1",
+        "source_type": "ehr_problems",
+        "timestamp": null,
+        "label": "Essential hypertension"
+      },
+      {
+        "source_id": "ehr:P008:problem:2",
+        "source_type": "ehr_problems",
+        "timestamp": null,
+        "label": "Knee osteoarthritis"
+      },
+      {
+        "source_id": "ehr:P008:med:1",
+        "source_type": "ehr_medications",
+        "timestamp": null,
+        "label": "Amlodipine"
+      },
+      {
+        "source_id": "ehr:P008:lab:1",
+        "source_type": "ehr_labs",
+        "timestamp": "2026-03-29",
+        "label": "Creatinine"
+      },
+      {
+        "source_id": "ehr:P008:note:1",
+        "source_type": "ehr_visit_notes",
+        "timestamp": "2026-03-29",
+        "label": "Blood pressure review"
+      },
+      {
+        "source_id": "anam:P008:symptoms:1",
+        "source_type": "anamnesis_symptoms",
+        "timestamp": "2026-05-12",
+        "label": "symptoms"
+      },
+      {
+        "source_id": "anam:P008:adherence:1",
+        "source_type": "anamnesis_medication_adherence",
+        "timestamp": "2026-05-12",
+        "label": "adherence"
+      },
+      {
+        "source_id": "anam:P008:lifestyle:1",
+        "source_type": "anamnesis_lifestyle",
+        "timestamp": "2026-05-12",
+        "label": "lifestyle"
+      },
+      {
+        "source_id": "anam:P008:concern:1",
+        "source_type": "anamnesis_patient_concerns",
+        "timestamp": "2026-05-12",
+        "label": "concern"
+      }
+    ],
+    "immediate_escalation": false,
+    "human_review_required": true,
+    "disclaimer": "Educational prototype using simulated data. This output is not a diagnosis or medical advice and must be reviewed by a qualified clinician."
+  },
+  "session_id": "session-303e53cd940f",
+  "elapsed_seconds": 0.0017550000047776848,
+  "mode": "offline",
+  "warnings": []
+}

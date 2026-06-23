@@ -1,0 +1,134 @@
+{
+  "alert": {
+    "alert_id": "A006",
+    "patient_id": "P006",
+    "timestamp": "2026-05-13T06:50:00Z",
+    "device_type": "Pulse oximeter",
+    "alert_category": "hypoxemia",
+    "measurements": {
+      "spo2": 84.0,
+      "heart_rate": 118.0
+    },
+    "units": {
+      "spo2": "%",
+      "heart_rate": "bpm"
+    },
+    "baseline": {
+      "spo2": 94.0
+    },
+    "thresholds": {
+      "spo2_critical": 88.0
+    },
+    "trend": [
+      {
+        "minutes": -10,
+        "spo2": 86
+      },
+      {
+        "minutes": -5,
+        "spo2": 85
+      }
+    ],
+    "device_metadata": {
+      "signal_quality": "good",
+      "repeat_reading": 84
+    },
+    "source_id": "rpm:P006:alert:A006"
+  },
+  "triage": {
+    "patient_id": "P006",
+    "urgency": "Critical",
+    "clinical_question": "Does this patient have persistent clinically significant hypoxemia requiring immediate intervention, and what is the current respiratory status/source of the low oxygen saturation?",
+    "decision_factors": [
+      "Repeated high-quality SpO2 is 84%, which is below the supplied critical threshold of 88%.",
+      "Trend shows persistent decline over the prior 10 minutes (86% -> 85% -> 84%).",
+      "Baseline SpO2 is 94%, indicating a substantial drop from usual oxygenation.",
+      "Device signal quality is good and the repeat reading matches the low value, reducing concern for artifact.",
+      "Heart rate is elevated at 118 bpm, which may reflect physiologic stress."
+    ],
+    "retrieval_query": {
+      "patient_id": "P006",
+      "clinical_question": "Assess current hypoxemia severity, associated symptoms, recent respiratory status, oxygen use, and any known chronic lung/cardiac conditions relevant to a persistent SpO2 of 84% with tachycardia.",
+      "ehr_topics": [
+        "baseline oxygen saturation",
+        "respiratory diagnoses",
+        "oxygen therapy or home oxygen use",
+        "recent vital signs",
+        "cardiopulmonary comorbidities",
+        "recent encounters for dyspnea or hypoxemia"
+      ],
+      "anamnesis_topics": [
+        "shortness of breath",
+        "chest pain",
+        "cough",
+        "fever",
+        "wheezing",
+        "cyanosis",
+        "recent exertion",
+        "current oxygen use"
+      ],
+      "lookback_days": 30
+    },
+    "immediate_escalation": true,
+    "confidence": 0.98
+  },
+  "ehr_context": null,
+  "anamnesis_summary": null,
+  "brief": {
+    "brief_id": "ccb-dd639d2394",
+    "patient_id": "P006",
+    "generated_at": "2026-06-20T20:11:39.715947Z",
+    "urgency": "Critical",
+    "alert_summary": "Critical simulated RPM alert from Pulse oximeter: Repeated high-quality SpO2 is 84%, which is below the supplied critical threshold of 88%. Trend shows persistent decline over the prior 10 minutes (86% -> 85% -> 84%). Baseline SpO2 is 94%, indicating a substantial drop from usual oxygenation. Device signal quality is good and the repeat reading matches the low value, reducing concern for artifact. Heart rate is elevated at 118 bpm, which may reflect physiologic stress.",
+    "patient_snapshot": "Full contextual retrieval was intentionally bypassed because the critical safety rule requires immediate human escalation.",
+    "contextual_analysis": [
+      {
+        "text": "The deterministic critical threshold was crossed.",
+        "source_ids": [
+          "rpm:P006:alert:A006"
+        ],
+        "confidence": 0.99
+      }
+    ],
+    "risk_assessment": [
+      {
+        "text": "Delay while awaiting automated synthesis could be unsafe; the measurement requires immediate verification and clinician review.",
+        "source_ids": [
+          "rpm:P006:alert:A006"
+        ],
+        "confidence": 0.99
+      }
+    ],
+    "recommended_actions": [
+      {
+        "action": "Immediately notify the responsible clinician or emergency escalation pathway and verify the reading using the approved clinical protocol.",
+        "rationale": "Critical alerts fail safe and bypass nonessential automation.",
+        "priority": "Immediate",
+        "confidence": 0.99,
+        "source_ids": [
+          "rpm:P006:alert:A006"
+        ]
+      }
+    ],
+    "uncertainties_and_gaps": [
+      "EHR and anamnesis context were not retrieved before escalation.",
+      "Device accuracy and the patient's current symptoms require human verification."
+    ],
+    "confidence": 0.99,
+    "citations": [
+      {
+        "source_id": "rpm:P006:alert:A006",
+        "source_type": "rpm_alert",
+        "timestamp": "2026-05-13T06:50:00+00:00",
+        "label": "hypoxemia"
+      }
+    ],
+    "immediate_escalation": true,
+    "human_review_required": true,
+    "disclaimer": "Educational prototype using simulated data. This output is not a diagnosis or medical advice and must be reviewed by a qualified clinician."
+  },
+  "session_id": "session-9bb06a03800f",
+  "elapsed_seconds": 3.5935319580021314,
+  "mode": "live",
+  "warnings": []
+}

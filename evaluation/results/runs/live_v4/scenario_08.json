@@ -1,0 +1,397 @@
+{
+  "alert": {
+    "alert_id": "A008",
+    "patient_id": "P008",
+    "timestamp": "2026-05-13T02:15:00Z",
+    "device_type": "Ambulatory blood pressure monitor",
+    "alert_category": "nocturnal_hypertension",
+    "measurements": {
+      "systolic_bp": 164.0,
+      "diastolic_bp": 98.0,
+      "heart_rate": 76.0
+    },
+    "units": {
+      "systolic_bp": "mmHg",
+      "diastolic_bp": "mmHg",
+      "heart_rate": "bpm"
+    },
+    "baseline": {
+      "systolic_bp": 134.0,
+      "diastolic_bp": 81.0
+    },
+    "thresholds": {
+      "night_systolic_high": 150.0
+    },
+    "trend": [
+      {
+        "hours_ago": 24,
+        "systolic_bp": 158
+      },
+      {
+        "hours_ago": 48,
+        "systolic_bp": 160
+      }
+    ],
+    "device_metadata": {
+      "signal_quality": "good"
+    },
+    "source_id": "rpm:P008:alert:A008"
+  },
+  "triage": {
+    "patient_id": "P008",
+    "urgency": "Urgent",
+    "clinical_question": "Is the patient’s nocturnal blood pressure elevation persistent or clinically concerning compared with baseline and recent home/ambulatory readings?",
+    "decision_factors": [
+      "Systolic blood pressure 164 mmHg is above the urgent threshold.",
+      "Deterministic triage tool classified the alert as Urgent and this urgency is copied exactly.",
+      "Nighttime systolic blood pressure is 164 mmHg, above the supplied nocturnal high threshold of 150 mmHg.",
+      "Current diastolic blood pressure is 98 mmHg, also elevated, with heart rate 76 bpm.",
+      "Current reading is higher than the documented baseline (134/81 mmHg).",
+      "Recent trend remains elevated over the prior 48 hours (160 and 158 mmHg), supporting persistence rather than a single isolated value.",
+      "Device signal quality is good, which supports measurement reliability.",
+      "No repeat blood pressure measurement is provided, so persistence on this specific alert cannot be confirmed from a repeat reading.",
+      "Source traceability preserved: rpm:P008:alert:A008."
+    ],
+    "retrieval_query": {
+      "patient_id": "P008",
+      "clinical_question": "Review prior blood pressure history and related context for persistent nocturnal hypertension and potential contributing factors.",
+      "ehr_topics": [
+        "Blood pressure history and hypertension diagnosis",
+        "Antihypertensive medications and adherence",
+        "Cardiovascular comorbidities",
+        "Kidney disease and relevant labs",
+        "Recent clinic or home BP logs"
+      ],
+      "anamnesis_topics": [
+        "Sleep timing and nocturnal BP pattern",
+        "Medication timing and missed doses",
+        "Symptoms during elevated readings",
+        "Recent caffeine, alcohol, or NSAID use",
+        "Snoring or sleep apnea symptoms"
+      ],
+      "lookback_days": 90
+    },
+    "immediate_escalation": false,
+    "confidence": 0.95
+  },
+  "ehr_context": {
+    "patient_id": "P008",
+    "demographics": {
+      "name": "Daniel Arslan",
+      "age": 63,
+      "sex": "male",
+      "preferred_language": "English",
+      "fictional_patient": true
+    },
+    "active_conditions": [
+      {
+        "source_id": "ehr:P008:problem:1",
+        "name": "Essential hypertension",
+        "icd10": "I10",
+        "status": "active"
+      },
+      {
+        "source_id": "ehr:P008:problem:2",
+        "name": "Knee osteoarthritis",
+        "icd10": "M17.9",
+        "status": "active"
+      }
+    ],
+    "active_medications": [
+      {
+        "source_id": "ehr:P008:med:1",
+        "name": "Amlodipine",
+        "dose": "10 mg once daily",
+        "started": "2024-04-22",
+        "status": "active"
+      }
+    ],
+    "relevant_labs": [
+      {
+        "source_id": "ehr:P008:lab:1",
+        "test": "Creatinine",
+        "value": 1.0,
+        "unit": "mg/dL",
+        "date": "2026-03-29",
+        "reference_range": "0.6-1.2",
+        "flag": "normal"
+      }
+    ],
+    "relevant_notes": [
+      {
+        "source_id": "ehr:P008:note:1",
+        "title": "Blood pressure review",
+        "date": "2026-03-29",
+        "text": "Daytime home readings generally 128-138/76-86 on amlodipine."
+      }
+    ],
+    "allergies": [],
+    "contradictions": [],
+    "missing_data": [
+      "No nocturnal blood pressure values or ambulatory/nighttime readings were provided in the retrieved chunks.",
+      "No baseline nighttime BP history or prior ambulatory BP trend was provided in the retrieved chunks."
+    ],
+    "citations": [
+      {
+        "source_id": "ehr:P008:note:1",
+        "source_type": "note",
+        "timestamp": "2026-03-29",
+        "label": "Daytime home readings generally 128-138/76-86 on amlodipine."
+      },
+      {
+        "source_id": "ehr:P008:problem:1",
+        "source_type": "problem",
+        "timestamp": null,
+        "label": "Essential hypertension active"
+      },
+      {
+        "source_id": "ehr:P008:med:1",
+        "source_type": "medication",
+        "timestamp": null,
+        "label": "Amlodipine 10 mg once daily active"
+      },
+      {
+        "source_id": "ehr:P008:lab:1",
+        "source_type": "lab",
+        "timestamp": "2026-03-29",
+        "label": "Creatinine 1.0 mg/dL normal"
+      }
+    ],
+    "retrieval_confidence": 0.89
+  },
+  "anamnesis_summary": {
+    "patient_id": "P008",
+    "symptoms_and_timeline": [
+      "2026-05-12: Knee pain has disrupted sleep for four nights.",
+      "2026-05-12: Patient reports blood pressure is mainly high overnight."
+    ],
+    "medication_adherence": [
+      "2026-05-12: Reports taking amlodipine every morning."
+    ],
+    "lifestyle_factors": [
+      "2026-05-12: Started over-the-counter ibuprofen 600 mg three times daily five days ago for knee pain.",
+      "2026-05-12: Knee pain has been affecting sleep for four nights."
+    ],
+    "family_history": [],
+    "patient_concerns": [
+      "Wants to know whether the nocturnal blood pressure elevation is persistent or concerning."
+    ],
+    "sensitive_disclosures": [],
+    "missing_data": [
+      "No baseline blood pressure values provided.",
+      "No recent home blood pressure log provided.",
+      "No ambulatory blood pressure monitoring results provided.",
+      "No daytime blood pressure comparison provided.",
+      "No prior duration of nocturnal blood pressure elevation provided."
+    ],
+    "citations": [
+      {
+        "source_id": "anam:P008:symptoms:1",
+        "source_type": "symptoms",
+        "timestamp": "2026-05-12",
+        "label": "symptoms"
+      },
+      {
+        "source_id": "anam:P008:adherence:1",
+        "source_type": "adherence",
+        "timestamp": "2026-05-12",
+        "label": "adherence"
+      },
+      {
+        "source_id": "anam:P008:lifestyle:1",
+        "source_type": "lifestyle",
+        "timestamp": "2026-05-12",
+        "label": "lifestyle"
+      },
+      {
+        "source_id": "anam:P008:concern:1",
+        "source_type": "concern",
+        "timestamp": "2026-05-12",
+        "label": "concern"
+      }
+    ],
+    "confidence": 0.86
+  },
+  "brief": {
+    "brief_id": "brief:P008:A008",
+    "patient_id": "P008",
+    "generated_at": "2026-06-20T00:00:00Z",
+    "urgency": "Urgent",
+    "alert_summary": "Urgent nocturnal blood pressure alert: ambulatory reading 164/98 mmHg at 02:15 is above the supplied nighttime systolic threshold of 150 mmHg and above recent values, with good signal quality.",
+    "patient_snapshot": "63-year-old male with active essential hypertension, taking amlodipine 10 mg each morning. Recent daytime home readings were generally 128–138/76–86 on amlodipine. Creatinine was normal on 2026-03-29.",
+    "contextual_analysis": [
+      {
+        "text": "The RPM alert shows nocturnal BP 164/98 mmHg with heart rate 76 bpm; systolic is above the supplied nighttime high threshold and above the documented baseline of 134/81 mmHg.",
+        "source_ids": [
+          "rpm:P008:alert:A008",
+          "ehr:P008:note:1"
+        ],
+        "confidence": 0.98
+      },
+      {
+        "text": "Recent ambulatory/home systolic values remain elevated over 48 hours (160 and 158 mmHg), supporting persistence rather than a single isolated reading.",
+        "source_ids": [
+          "rpm:P008:alert:A008"
+        ],
+        "confidence": 0.97
+      },
+      {
+        "text": "The patient has active essential hypertension and is on amlodipine 10 mg once daily; recent daytime home readings were generally 128–138/76–86 on that regimen.",
+        "source_ids": [
+          "ehr:P008:problem:1",
+          "ehr:P008:med:1",
+          "ehr:P008:note:1"
+        ],
+        "confidence": 0.9
+      },
+      {
+        "text": "Patient-reported context includes taking amlodipine every morning, knee pain disrupting sleep for four nights, and starting ibuprofen 600 mg three times daily five days ago.",
+        "source_ids": [
+          "anam:P008:adherence:1",
+          "anam:P008:symptoms:1",
+          "anam:P008:lifestyle:1"
+        ],
+        "confidence": 0.86
+      },
+      {
+        "text": "Kidney function in the available chart data is normal (creatinine 1.0 mg/dL on 2026-03-29), which provides limited context for risk review but does not explain the current nocturnal elevation.",
+        "source_ids": [
+          "ehr:P008:lab:1"
+        ],
+        "confidence": 0.89
+      }
+    ],
+    "risk_assessment": [
+      {
+        "text": "Persistent nocturnal systolic elevation may warrant clinician review for inadequate overnight BP control or a contributing factor, given the repeated elevated readings and existing hypertension history.",
+        "source_ids": [
+          "rpm:P008:alert:A008",
+          "ehr:P008:problem:1",
+          "ehr:P008:note:1"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "text": "Recent ibuprofen use and disrupted sleep from pain could be contributing context for the elevated nighttime BP pattern, but this cannot be confirmed from the available data.",
+        "source_ids": [
+          "anam:P008:lifestyle:1",
+          "anam:P008:symptoms:1"
+        ],
+        "confidence": 0.82
+      },
+      {
+        "text": "No repeat measurement is provided for the current alert, so persistence on this specific reading cannot be verified from a confirmatory recheck.",
+        "source_ids": [
+          "rpm:P008:alert:A008"
+        ],
+        "confidence": 0.93
+      }
+    ],
+    "recommended_actions": [
+      {
+        "action": "Review the nocturnal BP trend, current medication regimen, and recent context with clinician judgment.",
+        "rationale": "The alert is urgent because the nighttime systolic BP is above threshold and remains elevated over recent readings.",
+        "priority": "High",
+        "confidence": 0.96,
+        "source_ids": [
+          "rpm:P008:alert:A008",
+          "ehr:P008:problem:1",
+          "ehr:P008:med:1"
+        ]
+      },
+      {
+        "action": "Verify whether the elevated readings coincide with pain, sleep disruption, or recent ibuprofen use, and whether there are any other recent BP logs available.",
+        "rationale": "Patient-reported sleep disruption and NSAID use may be relevant contributors, and the available record lacks broader recent BP context.",
+        "priority": "High",
+        "confidence": 0.88,
+        "source_ids": [
+          "anam:P008:symptoms:1",
+          "anam:P008:lifestyle:1",
+          "anam:P008:concern:1"
+        ]
+      },
+      {
+        "action": "Check for missing or unverifiable data before concluding persistence, including a repeat BP, more nocturnal values, and recent home/ambulatory logs.",
+        "rationale": "The alert shows a single current reading plus a short trend, but no confirmatory repeat or broader log is provided.",
+        "priority": "Standard",
+        "confidence": 0.94,
+        "source_ids": [
+          "rpm:P008:alert:A008",
+          "ehr:P008:note:1",
+          "anam:P008:concern:1"
+        ]
+      }
+    ],
+    "uncertainties_and_gaps": [
+      "No repeat blood pressure measurement is provided for the current alert.",
+      "No recent ambulatory/nighttime BP series beyond the 48-hour trend is available.",
+      "The EHR excerpt does not provide medication timing details beyond morning amlodipine use.",
+      "No prior nocturnal baseline BP history is available in the retrieved chart data.",
+      "The effect of pain, sleep disruption, or ibuprofen on the BP elevation is unverified."
+    ],
+    "confidence": 0.86,
+    "citations": [
+      {
+        "source_id": "anam:P008:adherence:1",
+        "source_type": "adherence",
+        "timestamp": "2026-05-12",
+        "label": "adherence"
+      },
+      {
+        "source_id": "anam:P008:concern:1",
+        "source_type": "concern",
+        "timestamp": "2026-05-12",
+        "label": "concern"
+      },
+      {
+        "source_id": "anam:P008:lifestyle:1",
+        "source_type": "lifestyle",
+        "timestamp": "2026-05-12",
+        "label": "lifestyle"
+      },
+      {
+        "source_id": "anam:P008:symptoms:1",
+        "source_type": "symptoms",
+        "timestamp": "2026-05-12",
+        "label": "symptoms"
+      },
+      {
+        "source_id": "ehr:P008:lab:1",
+        "source_type": "lab",
+        "timestamp": "2026-03-29",
+        "label": "Creatinine 1.0 mg/dL normal"
+      },
+      {
+        "source_id": "ehr:P008:med:1",
+        "source_type": "medication",
+        "timestamp": null,
+        "label": "Amlodipine 10 mg once daily active"
+      },
+      {
+        "source_id": "ehr:P008:note:1",
+        "source_type": "note",
+        "timestamp": "2026-03-29",
+        "label": "Daytime home readings generally 128-138/76-86 on amlodipine."
+      },
+      {
+        "source_id": "ehr:P008:problem:1",
+        "source_type": "problem",
+        "timestamp": null,
+        "label": "Essential hypertension active"
+      },
+      {
+        "source_id": "rpm:P008:alert:A008",
+        "source_type": "rpm_alert",
+        "timestamp": "2026-05-13T02:15:00+00:00",
+        "label": "nocturnal hypertension"
+      }
+    ],
+    "immediate_escalation": false,
+    "human_review_required": true,
+    "disclaimer": "Educational prototype only; not a diagnosis or treatment recommendation. Human clinician review is required for interpretation and next-step decisions."
+  },
+  "session_id": "session-9d3e824e6998",
+  "elapsed_seconds": 16.30810916601331,
+  "mode": "live",
+  "warnings": []
+}

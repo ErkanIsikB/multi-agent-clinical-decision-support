@@ -1,0 +1,433 @@
+{
+  "alert": {
+    "alert_id": "A003",
+    "patient_id": "P003",
+    "timestamp": "2026-05-13T07:05:00Z",
+    "device_type": "Connected scale",
+    "alert_category": "weight_gain_trend",
+    "measurements": {
+      "weight": 74.8
+    },
+    "units": {
+      "weight": "kg"
+    },
+    "baseline": {
+      "weight": 72.0
+    },
+    "thresholds": {
+      "fourteen_day_gain": 2.0
+    },
+    "trend": [
+      {
+        "days_ago": 14,
+        "weight": 72.1
+      },
+      {
+        "days_ago": 7,
+        "weight": 73.2
+      },
+      {
+        "days_ago": 3,
+        "weight": 74.1
+      }
+    ],
+    "device_metadata": {
+      "surface": "hard floor",
+      "signal_quality": "good"
+    },
+    "source_id": "rpm:P003:alert:A003"
+  },
+  "triage": {
+    "patient_id": "P003",
+    "urgency": "Urgent",
+    "clinical_question": "What is driving the patient's rising weight trend, and does the increase need near-term clinical review?",
+    "decision_factors": [
+      "Alert category 'weight_gain_trend' can indicate gradual deterioration.",
+      "Deterministic triage tool classified this alert as Urgent for alert category 'weight_gain_trend'; urgency copied exactly.",
+      "Weight is 74.8 kg at 2026-05-13T07:05:00Z, up from baseline 72.0 kg; total gain is 2.8 kg.",
+      "Trend shows steady increase over 14 days: 72.1 kg (14 days ago) -> 73.2 kg (7 days ago) -> 74.1 kg (3 days ago) -> 74.8 kg now.",
+      "The gain exceeds the supplied fourteen-day threshold of 2.0 kg.",
+      "Units are present and consistent (kg); device metadata reports hard floor placement and good signal quality, supporting measurement reliability.",
+      "No repeat measurement is provided; no conflicting threshold or baseline data were supplied.",
+      "Source traceability preserved: rpm:P003:alert:A003."
+    ],
+    "retrieval_query": {
+      "patient_id": "P003",
+      "clinical_question": "Evaluate recent causes and management context for a 2.8 kg weight gain over 14 days from a connected scale alert.",
+      "ehr_topics": [
+        "recent weights and fluid status",
+        "heart failure or renal disease history",
+        "diuretic and other relevant medication changes",
+        "recent clinic contacts or triage notes",
+        "edema, dyspnea, orthopnea, or other volume-related symptoms"
+      ],
+      "anamnesis_topics": [
+        "recent dietary or salt intake changes",
+        "missed medications or adherence issues",
+        "new swelling, shortness of breath, or reduced exercise tolerance",
+        "recent illness, travel, or changes in scale use"
+      ],
+      "lookback_days": 30
+    },
+    "immediate_escalation": false,
+    "confidence": 0.92
+  },
+  "ehr_context": {
+    "patient_id": "P003",
+    "demographics": {},
+    "active_conditions": [
+      {
+        "source_id": "ehr:P003:problem:1",
+        "name": "Heart failure with reduced ejection fraction",
+        "icd10": "I50.2",
+        "status": "active"
+      },
+      {
+        "source_id": "ehr:P003:problem:2",
+        "name": "Essential hypertension",
+        "icd10": "I10",
+        "status": "active"
+      }
+    ],
+    "active_medications": [
+      {
+        "source_id": "ehr:P003:med:1",
+        "name": "Furosemide",
+        "dose": "40 mg each morning",
+        "started": "2025-10-21",
+        "status": "active"
+      },
+      {
+        "source_id": "ehr:P003:med:2",
+        "name": "Carvedilol",
+        "dose": "12.5 mg twice daily",
+        "started": "2025-10-21",
+        "status": "active"
+      }
+    ],
+    "relevant_labs": [
+      {
+        "source_id": "ehr:P003:lab:1",
+        "test": "BNP",
+        "value": 280,
+        "unit": "pg/mL",
+        "date": "2026-04-20",
+        "reference_range": "<100",
+        "flag": "high"
+      }
+    ],
+    "relevant_notes": [
+      {
+        "source_id": "ehr:P003:note:1",
+        "title": "Heart failure monitoring plan",
+        "date": "2026-04-20",
+        "text": "Dry weight approximately 72.0 kg. Call care team for rapid weight gain, edema, or dyspnea."
+      }
+    ],
+    "allergies": [],
+    "contradictions": [],
+    "missing_data": [
+      "No actual weight trend measurements or dates beyond dry weight are provided.",
+      "No symptom report is provided to confirm edema, dyspnea, or other volume-overload signs.",
+      "No documentation of dietary, medication adherence, renal function, or other alternative causes of weight gain is provided."
+    ],
+    "citations": [
+      {
+        "source_id": "ehr:P003:note:1",
+        "source_type": "note",
+        "timestamp": "2026-04-20",
+        "label": "Heart failure monitoring plan"
+      },
+      {
+        "source_id": "ehr:P003:problem:1",
+        "source_type": "problem",
+        "timestamp": null,
+        "label": "Heart failure with reduced ejection fraction"
+      },
+      {
+        "source_id": "ehr:P003:lab:1",
+        "source_type": "lab",
+        "timestamp": "2026-04-20",
+        "label": "BNP 280 pg/mL high"
+      },
+      {
+        "source_id": "ehr:P003:med:1",
+        "source_type": "medication",
+        "timestamp": null,
+        "label": "Furosemide 40 mg each morning active"
+      },
+      {
+        "source_id": "ehr:P003:med:2",
+        "source_type": "medication",
+        "timestamp": null,
+        "label": "Carvedilol 12.5 mg twice daily active"
+      }
+    ],
+    "retrieval_confidence": 0.79
+  },
+  "anamnesis_summary": {
+    "patient_id": "P003",
+    "symptoms_and_timeline": [
+      "2026-05-12: Ankle swelling has gradually increased over six days.",
+      "2026-05-12: Mild breathlessness when climbing stairs is slightly worse than usual.",
+      "2026-05-12: Reports shoes feel tighter by evening."
+    ],
+    "medication_adherence": [
+      "2026-05-12: Reports taking furosemide every morning."
+    ],
+    "lifestyle_factors": [
+      "2026-05-12: Ate several salty prepared meals this week."
+    ],
+    "family_history": [],
+    "patient_concerns": [
+      "Concerned that shoes feel tighter by evening."
+    ],
+    "sensitive_disclosures": [],
+    "missing_data": [
+      "No explicit weight measurements or stated weight trend were provided.",
+      "No information on recent change in furosemide dose, missed doses, fluid intake, or prior baseline swelling/breathlessness was provided.",
+      "No objective vital signs, exam findings, or timeframe beyond six days for the swelling were provided."
+    ],
+    "citations": [
+      {
+        "source_id": "anam:P003:symptoms:1",
+        "source_type": "anamnesis_record",
+        "timestamp": "2026-05-12",
+        "label": "symptoms"
+      },
+      {
+        "source_id": "anam:P003:symptoms:2",
+        "source_type": "anamnesis_record",
+        "timestamp": "2026-05-12",
+        "label": "symptoms"
+      },
+      {
+        "source_id": "anam:P003:adherence:1",
+        "source_type": "anamnesis_record",
+        "timestamp": "2026-05-12",
+        "label": "adherence"
+      },
+      {
+        "source_id": "anam:P003:lifestyle:1",
+        "source_type": "anamnesis_record",
+        "timestamp": "2026-05-12",
+        "label": "lifestyle"
+      },
+      {
+        "source_id": "anam:P003:concern:1",
+        "source_type": "anamnesis_record",
+        "timestamp": "2026-05-12",
+        "label": "concern"
+      }
+    ],
+    "confidence": 0.83
+  },
+  "brief": {
+    "brief_id": "brief:P003:A003",
+    "patient_id": "P003",
+    "generated_at": "2026-06-20T00:00:00Z",
+    "urgency": "Urgent",
+    "alert_summary": "Urgent weight-gain alert: connected scale shows 74.8 kg, up 2.8 kg from the 72.0 kg dry-weight baseline over 14 days and above the supplied 2.0 kg threshold.",
+    "patient_snapshot": "Patient has active heart failure with reduced ejection fraction and is taking furosemide 40 mg each morning and carvedilol 12.5 mg twice daily. EHR notes a dry weight of about 72.0 kg and advises calling the care team for rapid weight gain, edema, or dyspnea. Patient-reported context includes increasing ankle swelling over six days, slightly worse exertional breathlessness, and several salty prepared meals this week.",
+    "contextual_analysis": [
+      {
+        "text": "The alert was triggered by a steady 14-day weight increase on a connected scale: 72.1 kg 14 days ago, 73.2 kg 7 days ago, 74.1 kg 3 days ago, and 74.8 kg at the alert time.",
+        "source_ids": [
+          "rpm:P003:alert:A003"
+        ],
+        "confidence": 0.99
+      },
+      {
+        "text": "The current weight is 2.8 kg above the EHR dry weight of approximately 72.0 kg, which exceeds the supplied 2.0 kg 14-day gain threshold.",
+        "source_ids": [
+          "rpm:P003:alert:A003",
+          "ehr:P003:note:1"
+        ],
+        "confidence": 0.97
+      },
+      {
+        "text": "The patient has active heart failure with reduced ejection fraction and an EHR monitoring plan that flags rapid weight gain, edema, or dyspnea for care-team contact.",
+        "source_ids": [
+          "ehr:P003:problem:1",
+          "ehr:P003:note:1"
+        ],
+        "confidence": 0.94
+      },
+      {
+        "text": "Patient-reported swelling and breathlessness have worsened over six days, and the patient reports taking furosemide every morning.",
+        "source_ids": [
+          "anam:P003:symptoms:1",
+          "anam:P003:symptoms:2",
+          "anam:P003:adherence:1",
+          "ehr:P003:med:1"
+        ],
+        "confidence": 0.9
+      },
+      {
+        "text": "The patient reports several salty prepared meals this week, which may be relevant context for the rising weight trend.",
+        "source_ids": [
+          "anam:P003:lifestyle:1"
+        ],
+        "confidence": 0.86
+      },
+      {
+        "text": "A prior BNP was elevated at 280 pg/mL on 2026-04-20, supporting recent cardiovascular context, but it does not by itself explain the current weight change.",
+        "source_ids": [
+          "ehr:P003:lab:1"
+        ],
+        "confidence": 0.74
+      }
+    ],
+    "risk_assessment": [
+      {
+        "text": "The combination of rising weight, ankle swelling, and slightly worse exertional breathlessness may indicate worsening fluid retention or another volume-related issue that merits near-term clinical review.",
+        "source_ids": [
+          "rpm:P003:alert:A003",
+          "anam:P003:symptoms:1",
+          "anam:P003:symptoms:2",
+          "ehr:P003:problem:1"
+        ],
+        "confidence": 0.9
+      },
+      {
+        "text": "Salty meal intake and chronic heart failure increase concern that the weight trend could be clinically meaningful rather than measurement noise.",
+        "source_ids": [
+          "anam:P003:lifestyle:1",
+          "ehr:P003:problem:1",
+          "rpm:P003:alert:A003"
+        ],
+        "confidence": 0.84
+      },
+      {
+        "text": "Available data do not verify renal function, exam findings, vitals, or whether there were missed diuretic doses, so the cause of the weight increase remains uncertain.",
+        "source_ids": [
+          "ehr:P003:med:1",
+          "anam:P003:adherence:1",
+          "ehr:P003:note:1"
+        ],
+        "confidence": 0.78
+      }
+    ],
+    "recommended_actions": [
+      {
+        "action": "Prompt clinician review of the weight trend and symptom report in the near term.",
+        "rationale": "The alert is Urgent, the gain exceeds threshold, and the patient has heart-failure context with swelling and mild worsening breathlessness.",
+        "priority": "High",
+        "confidence": 0.94,
+        "source_ids": [
+          "rpm:P003:alert:A003",
+          "ehr:P003:problem:1",
+          "ehr:P003:note:1",
+          "anam:P003:symptoms:1",
+          "anam:P003:symptoms:2"
+        ]
+      },
+      {
+        "action": "Verify recent self-monitoring details and check for contributing factors such as dietary sodium change, adherence issues, recent illness, or scale-use problems.",
+        "rationale": "The history suggests possible fluid-related worsening, but alternative or contributing causes are not confirmed in the available data.",
+        "priority": "High",
+        "confidence": 0.86,
+        "source_ids": [
+          "anam:P003:lifestyle:1",
+          "anam:P003:adherence:1",
+          "rpm:P003:alert:A003"
+        ]
+      },
+      {
+        "action": "Review whether additional assessment is needed for edema or dyspnea progression in the context of the heart-failure monitoring plan.",
+        "rationale": "EHR guidance specifically highlights rapid weight gain, edema, and dyspnea as reasons for care-team contact.",
+        "priority": "High",
+        "confidence": 0.9,
+        "source_ids": [
+          "ehr:P003:note:1",
+          "ehr:P003:problem:1",
+          "anam:P003:symptoms:1",
+          "anam:P003:symptoms:2"
+        ]
+      },
+      {
+        "action": "Escalate according to local clinician judgment if symptoms are worsening or if further data suggest instability.",
+        "rationale": "The alert is not marked for immediate escalation, but the trend and associated symptoms warrant timely review.",
+        "priority": "Standard",
+        "confidence": 0.8,
+        "source_ids": [
+          "rpm:P003:alert:A003",
+          "anam:P003:symptoms:1",
+          "anam:P003:symptoms:2",
+          "ehr:P003:note:1"
+        ]
+      }
+    ],
+    "uncertainties_and_gaps": [
+      "No objective vitals, exam findings, or repeat confirmatory weight are provided.",
+      "No renal function, recent medication changes, or diuretic dose adjustment information is available.",
+      "The patient-reported swelling and breathlessness are not objectively verified in the record provided.",
+      "The provided EHR note is from 2026-04-20, so supporting context is not contemporaneous with the alert.",
+      "The earlier message says no actual weight trend measurements beyond dry weight were provided, but the RPM alert does provide serial measurements; this discrepancy is limited to the source set and does not change the alert trend."
+    ],
+    "confidence": 0.79,
+    "citations": [
+      {
+        "source_id": "anam:P003:adherence:1",
+        "source_type": "anamnesis_record",
+        "timestamp": "2026-05-12",
+        "label": "adherence"
+      },
+      {
+        "source_id": "anam:P003:lifestyle:1",
+        "source_type": "anamnesis_record",
+        "timestamp": "2026-05-12",
+        "label": "lifestyle"
+      },
+      {
+        "source_id": "anam:P003:symptoms:1",
+        "source_type": "anamnesis_record",
+        "timestamp": "2026-05-12",
+        "label": "symptoms"
+      },
+      {
+        "source_id": "anam:P003:symptoms:2",
+        "source_type": "anamnesis_record",
+        "timestamp": "2026-05-12",
+        "label": "symptoms"
+      },
+      {
+        "source_id": "ehr:P003:lab:1",
+        "source_type": "lab",
+        "timestamp": "2026-04-20",
+        "label": "BNP 280 pg/mL high"
+      },
+      {
+        "source_id": "ehr:P003:med:1",
+        "source_type": "medication",
+        "timestamp": null,
+        "label": "Furosemide 40 mg each morning active"
+      },
+      {
+        "source_id": "ehr:P003:note:1",
+        "source_type": "note",
+        "timestamp": "2026-04-20",
+        "label": "Heart failure monitoring plan"
+      },
+      {
+        "source_id": "ehr:P003:problem:1",
+        "source_type": "problem",
+        "timestamp": null,
+        "label": "Heart failure with reduced ejection fraction"
+      },
+      {
+        "source_id": "rpm:P003:alert:A003",
+        "source_type": "rpm_alert",
+        "timestamp": "2026-05-13T07:05:00+00:00",
+        "label": "weight gain trend"
+      }
+    ],
+    "immediate_escalation": false,
+    "human_review_required": true,
+    "disclaimer": "Educational-prototype brief for clinician review only; not a diagnosis or treatment recommendation."
+  },
+  "session_id": "session-ff75f351be2f",
+  "elapsed_seconds": 19.471015041985083,
+  "mode": "live",
+  "warnings": []
+}

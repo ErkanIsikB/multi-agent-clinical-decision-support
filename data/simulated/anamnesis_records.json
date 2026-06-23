@@ -1,0 +1,443 @@
+[
+  {
+    "patient_id": "P001",
+    "intake_date": "2026-05-12",
+    "symptoms": [
+      {
+        "source_id": "anam:P001:symptoms:1",
+        "label": "symptoms",
+        "date": "2026-05-12",
+        "text": "Persistent dry cough began about three weeks ago; no chest pain or shortness of breath."
+      }
+    ],
+    "medication_adherence": [
+      {
+        "source_id": "anam:P001:adherence:1",
+        "label": "adherence",
+        "date": "2026-05-12",
+        "text": "Patient stopped lisinopril five days ago because the cough was disruptive."
+      }
+    ],
+    "lifestyle": [
+      {
+        "source_id": "anam:P001:lifestyle:1",
+        "label": "lifestyle",
+        "date": "2026-05-12",
+        "text": "No major dietary or activity change reported."
+      }
+    ],
+    "family_history": [],
+    "patient_concerns": [
+      {
+        "source_id": "anam:P001:concern:1",
+        "label": "concern",
+        "date": "2026-05-12",
+        "text": "Asks whether another blood pressure medicine is possible."
+      }
+    ],
+    "sensitive_disclosures": [],
+    "missing_data": []
+  },
+  {
+    "patient_id": "P002",
+    "intake_date": "2026-05-12",
+    "symptoms": [
+      {
+        "source_id": "anam:P002:symptoms:1",
+        "label": "symptoms",
+        "date": "2026-05-12",
+        "text": "Feels well and reports no polyuria, vomiting, or confusion."
+      }
+    ],
+    "medication_adherence": [
+      {
+        "source_id": "anam:P002:adherence:1",
+        "label": "adherence",
+        "date": "2026-05-12",
+        "text": "Reports taking metformin and the new weekly injection as directed."
+      }
+    ],
+    "lifestyle": [
+      {
+        "source_id": "anam:P002:lifestyle:1",
+        "label": "lifestyle",
+        "date": "2026-05-12",
+        "text": "Planned dietary change for a family celebration included a carbohydrate-heavy meal before the reading."
+      }
+    ],
+    "family_history": [],
+    "patient_concerns": [
+      {
+        "source_id": "anam:P002:concern:1",
+        "label": "concern",
+        "date": "2026-05-12",
+        "text": "Wants to know whether one high reading is dangerous."
+      }
+    ],
+    "sensitive_disclosures": [],
+    "missing_data": []
+  },
+  {
+    "patient_id": "P003",
+    "intake_date": "2026-05-12",
+    "symptoms": [
+      {
+        "source_id": "anam:P003:symptoms:1",
+        "label": "symptoms",
+        "date": "2026-05-12",
+        "text": "Ankle swelling has gradually increased over six days."
+      },
+      {
+        "source_id": "anam:P003:symptoms:2",
+        "label": "symptoms",
+        "date": "2026-05-12",
+        "text": "Mild breathlessness when climbing stairs is slightly worse than usual."
+      }
+    ],
+    "medication_adherence": [
+      {
+        "source_id": "anam:P003:adherence:1",
+        "label": "adherence",
+        "date": "2026-05-12",
+        "text": "Reports taking furosemide every morning."
+      }
+    ],
+    "lifestyle": [
+      {
+        "source_id": "anam:P003:lifestyle:1",
+        "label": "lifestyle",
+        "date": "2026-05-12",
+        "text": "Ate several salty prepared meals this week."
+      }
+    ],
+    "family_history": [],
+    "patient_concerns": [
+      {
+        "source_id": "anam:P003:concern:1",
+        "label": "concern",
+        "date": "2026-05-12",
+        "text": "Concerned that shoes feel tighter by evening."
+      }
+    ],
+    "sensitive_disclosures": [],
+    "missing_data": []
+  },
+  {
+    "patient_id": "P004",
+    "intake_date": "2026-05-12",
+    "symptoms": [
+      {
+        "source_id": "anam:P004:symptoms:1",
+        "label": "symptoms",
+        "date": "2026-05-12",
+        "text": "Intermittent morning headaches over the past week."
+      }
+    ],
+    "medication_adherence": [
+      {
+        "source_id": "anam:P004:adherence:1",
+        "label": "adherence",
+        "date": "2026-05-12",
+        "text": "Reports taking a small white blood pressure tablet but cannot recall its name or dose."
+      }
+    ],
+    "lifestyle": [
+      {
+        "source_id": "anam:P004:lifestyle:1",
+        "label": "lifestyle",
+        "date": "2026-05-12",
+        "text": "Recently moved and has not established local primary care."
+      }
+    ],
+    "family_history": [],
+    "patient_concerns": [
+      {
+        "source_id": "anam:P004:concern:1",
+        "label": "concern",
+        "date": "2026-05-12",
+        "text": "Worries that transfer records have not arrived."
+      }
+    ],
+    "sensitive_disclosures": [],
+    "missing_data": [
+      "Home medication name and dose remain unverified."
+    ]
+  },
+  {
+    "patient_id": "P005",
+    "intake_date": "2026-05-12",
+    "symptoms": [
+      {
+        "source_id": "anam:P005:symptoms:1",
+        "label": "symptoms",
+        "date": "2026-05-12",
+        "text": "No seizure symptoms or new neurologic complaints reported."
+      }
+    ],
+    "medication_adherence": [
+      {
+        "source_id": "anam:P005:adherence:1",
+        "label": "adherence",
+        "date": "2026-05-12",
+        "text": "Reports taking every valproate dose and denies intentional or accidental missed doses."
+      }
+    ],
+    "lifestyle": [
+      {
+        "source_id": "anam:P005:lifestyle:1",
+        "label": "lifestyle",
+        "date": "2026-05-12",
+        "text": "No new supplements or major diet changes reported."
+      }
+    ],
+    "family_history": [],
+    "patient_concerns": [
+      {
+        "source_id": "anam:P005:concern:1",
+        "label": "concern",
+        "date": "2026-05-12",
+        "text": "Surprised that the medication level was low."
+      }
+    ],
+    "sensitive_disclosures": [],
+    "missing_data": []
+  },
+  {
+    "patient_id": "P006",
+    "intake_date": "2026-05-12",
+    "symptoms": [
+      {
+        "source_id": "anam:P006:symptoms:1",
+        "label": "symptoms",
+        "date": "2026-05-12",
+        "text": "Reports new shortness of breath at rest this morning."
+      }
+    ],
+    "medication_adherence": [
+      {
+        "source_id": "anam:P006:adherence:1",
+        "label": "adherence",
+        "date": "2026-05-12",
+        "text": "Used rescue inhaler twice with limited relief."
+      }
+    ],
+    "lifestyle": [],
+    "family_history": [],
+    "patient_concerns": [
+      {
+        "source_id": "anam:P006:concern:1",
+        "label": "concern",
+        "date": "2026-05-12",
+        "text": "Says breathing feels substantially worse than baseline."
+      }
+    ],
+    "sensitive_disclosures": [],
+    "missing_data": []
+  },
+  {
+    "patient_id": "P007",
+    "intake_date": "2026-05-12",
+    "symptoms": [
+      {
+        "source_id": "anam:P007:symptoms:1",
+        "label": "symptoms",
+        "date": "2026-05-12",
+        "text": "Felt briefly winded after climbing stairs but denies chest pain, fainting, or persistent palpitations."
+      }
+    ],
+    "medication_adherence": [
+      {
+        "source_id": "anam:P007:adherence:1",
+        "label": "adherence",
+        "date": "2026-05-12",
+        "text": "Reports taking sertraline consistently."
+      }
+    ],
+    "lifestyle": [
+      {
+        "source_id": "anam:P007:lifestyle:1",
+        "label": "lifestyle",
+        "date": "2026-05-12",
+        "text": "The alert occurred during vigorous activity; the watch strap was loose and showed poor skin contact."
+      }
+    ],
+    "family_history": [],
+    "patient_concerns": [
+      {
+        "source_id": "anam:P007:concern:1",
+        "label": "concern",
+        "date": "2026-05-12",
+        "text": "Asks whether the watch reading could be inaccurate."
+      }
+    ],
+    "sensitive_disclosures": [],
+    "missing_data": []
+  },
+  {
+    "patient_id": "P008",
+    "intake_date": "2026-05-12",
+    "symptoms": [
+      {
+        "source_id": "anam:P008:symptoms:1",
+        "label": "symptoms",
+        "date": "2026-05-12",
+        "text": "Knee pain has disrupted sleep for four nights."
+      }
+    ],
+    "medication_adherence": [
+      {
+        "source_id": "anam:P008:adherence:1",
+        "label": "adherence",
+        "date": "2026-05-12",
+        "text": "Reports taking amlodipine every morning."
+      }
+    ],
+    "lifestyle": [
+      {
+        "source_id": "anam:P008:lifestyle:1",
+        "label": "lifestyle",
+        "date": "2026-05-12",
+        "text": "Started over-the-counter ibuprofen 600 mg three times daily five days ago for knee pain."
+      }
+    ],
+    "family_history": [],
+    "patient_concerns": [
+      {
+        "source_id": "anam:P008:concern:1",
+        "label": "concern",
+        "date": "2026-05-12",
+        "text": "Noticed blood pressure is mainly high overnight."
+      }
+    ],
+    "sensitive_disclosures": [],
+    "missing_data": []
+  },
+  {
+    "patient_id": "P009",
+    "intake_date": "2026-05-12",
+    "symptoms": [
+      {
+        "source_id": "anam:P009:symptoms:1",
+        "label": "symptoms",
+        "date": "2026-05-12",
+        "text": "No new symptoms reported."
+      }
+    ],
+    "medication_adherence": [
+      {
+        "source_id": "anam:P009:adherence:1",
+        "label": "adherence",
+        "date": "2026-05-12",
+        "text": "Reports taking medication as directed."
+      }
+    ],
+    "lifestyle": [
+      {
+        "source_id": "anam:P009:lifestyle:1",
+        "label": "lifestyle",
+        "date": "2026-05-12",
+        "text": "No recent lifestyle change reported."
+      }
+    ],
+    "family_history": [],
+    "patient_concerns": [],
+    "sensitive_disclosures": [],
+    "missing_data": []
+  },
+  {
+    "patient_id": "P010",
+    "intake_date": "2026-05-12",
+    "symptoms": [
+      {
+        "source_id": "anam:P010:symptoms:1",
+        "label": "symptoms",
+        "date": "2026-05-12",
+        "text": "No new symptoms reported."
+      }
+    ],
+    "medication_adherence": [
+      {
+        "source_id": "anam:P010:adherence:1",
+        "label": "adherence",
+        "date": "2026-05-12",
+        "text": "Reports taking medication as directed."
+      }
+    ],
+    "lifestyle": [
+      {
+        "source_id": "anam:P010:lifestyle:1",
+        "label": "lifestyle",
+        "date": "2026-05-12",
+        "text": "No recent lifestyle change reported."
+      }
+    ],
+    "family_history": [],
+    "patient_concerns": [],
+    "sensitive_disclosures": [],
+    "missing_data": []
+  },
+  {
+    "patient_id": "P011",
+    "intake_date": "2026-05-12",
+    "symptoms": [
+      {
+        "source_id": "anam:P011:symptoms:1",
+        "label": "symptoms",
+        "date": "2026-05-12",
+        "text": "No new symptoms reported."
+      }
+    ],
+    "medication_adherence": [
+      {
+        "source_id": "anam:P011:adherence:1",
+        "label": "adherence",
+        "date": "2026-05-12",
+        "text": "Reports taking medication as directed."
+      }
+    ],
+    "lifestyle": [
+      {
+        "source_id": "anam:P011:lifestyle:1",
+        "label": "lifestyle",
+        "date": "2026-05-12",
+        "text": "No recent lifestyle change reported."
+      }
+    ],
+    "family_history": [],
+    "patient_concerns": [],
+    "sensitive_disclosures": [],
+    "missing_data": []
+  },
+  {
+    "patient_id": "P012",
+    "intake_date": "2026-05-12",
+    "symptoms": [
+      {
+        "source_id": "anam:P012:symptoms:1",
+        "label": "symptoms",
+        "date": "2026-05-12",
+        "text": "No new symptoms reported."
+      }
+    ],
+    "medication_adherence": [
+      {
+        "source_id": "anam:P012:adherence:1",
+        "label": "adherence",
+        "date": "2026-05-12",
+        "text": "Reports taking medication as directed."
+      }
+    ],
+    "lifestyle": [
+      {
+        "source_id": "anam:P012:lifestyle:1",
+        "label": "lifestyle",
+        "date": "2026-05-12",
+        "text": "No recent lifestyle change reported."
+      }
+    ],
+    "family_history": [],
+    "patient_concerns": [],
+    "sensitive_disclosures": [],
+    "missing_data": []
+  }
+]

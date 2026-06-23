@@ -1,0 +1,190 @@
+{
+  "triage": {
+    "v1": {
+      "score": 4,
+      "maximum": 8,
+      "checks": {
+        "role_definition": true,
+        "structured_output": true,
+        "safety_boundary": true,
+        "uncertainty": false,
+        "source_traceability": false,
+        "negative_constraints": true,
+        "confidence_calibration": false,
+        "explicit_procedure": false
+      },
+      "word_count": 56
+    },
+    "v2": {
+      "score": 7,
+      "maximum": 8,
+      "checks": {
+        "role_definition": true,
+        "structured_output": true,
+        "safety_boundary": true,
+        "uncertainty": true,
+        "source_traceability": false,
+        "negative_constraints": true,
+        "confidence_calibration": true,
+        "explicit_procedure": true
+      },
+      "word_count": 121
+    },
+    "v3": {
+      "score": 8,
+      "maximum": 8,
+      "checks": {
+        "role_definition": true,
+        "structured_output": true,
+        "safety_boundary": true,
+        "uncertainty": true,
+        "source_traceability": true,
+        "negative_constraints": true,
+        "confidence_calibration": true,
+        "explicit_procedure": true
+      },
+      "word_count": 231
+    }
+  },
+  "ehr": {
+    "v1": {
+      "score": 4,
+      "maximum": 8,
+      "checks": {
+        "role_definition": true,
+        "structured_output": false,
+        "safety_boundary": true,
+        "uncertainty": true,
+        "source_traceability": false,
+        "negative_constraints": true,
+        "confidence_calibration": false,
+        "explicit_procedure": false
+      },
+      "word_count": 42
+    },
+    "v2": {
+      "score": 5,
+      "maximum": 8,
+      "checks": {
+        "role_definition": true,
+        "structured_output": false,
+        "safety_boundary": false,
+        "uncertainty": true,
+        "source_traceability": false,
+        "negative_constraints": true,
+        "confidence_calibration": true,
+        "explicit_procedure": true
+      },
+      "word_count": 77
+    },
+    "v3": {
+      "score": 8,
+      "maximum": 8,
+      "checks": {
+        "role_definition": true,
+        "structured_output": true,
+        "safety_boundary": true,
+        "uncertainty": true,
+        "source_traceability": true,
+        "negative_constraints": true,
+        "confidence_calibration": true,
+        "explicit_procedure": true
+      },
+      "word_count": 180
+    }
+  },
+  "anamnesis": {
+    "v1": {
+      "score": 3,
+      "maximum": 8,
+      "checks": {
+        "role_definition": true,
+        "structured_output": false,
+        "safety_boundary": true,
+        "uncertainty": false,
+        "source_traceability": false,
+        "negative_constraints": true,
+        "confidence_calibration": false,
+        "explicit_procedure": false
+      },
+      "word_count": 40
+    },
+    "v2": {
+      "score": 4,
+      "maximum": 8,
+      "checks": {
+        "role_definition": true,
+        "structured_output": false,
+        "safety_boundary": false,
+        "uncertainty": false,
+        "source_traceability": true,
+        "negative_constraints": true,
+        "confidence_calibration": false,
+        "explicit_procedure": true
+      },
+      "word_count": 64
+    },
+    "v3": {
+      "score": 8,
+      "maximum": 8,
+      "checks": {
+        "role_definition": true,
+        "structured_output": true,
+        "safety_boundary": true,
+        "uncertainty": true,
+        "source_traceability": true,
+        "negative_constraints": true,
+        "confidence_calibration": true,
+        "explicit_procedure": true
+      },
+      "word_count": 171
+    }
+  },
+  "synthesis": {
+    "v1": {
+      "score": 5,
+      "maximum": 8,
+      "checks": {
+        "role_definition": true,
+        "structured_output": false,
+        "safety_boundary": true,
+        "uncertainty": false,
+        "source_traceability": true,
+        "negative_constraints": true,
+        "confidence_calibration": true,
+        "explicit_procedure": false
+      },
+      "word_count": 44
+    },
+    "v2": {
+      "score": 5,
+      "maximum": 8,
+      "checks": {
+        "role_definition": true,
+        "structured_output": false,
+        "safety_boundary": false,
+        "uncertainty": true,
+        "source_traceability": true,
+        "negative_constraints": false,
+        "confidence_calibration": true,
+        "explicit_procedure": true
+      },
+      "word_count": 62
+    },
+    "v3": {
+      "score": 8,
+      "maximum": 8,
+      "checks": {
+        "role_definition": true,
+        "structured_output": true,
+        "safety_boundary": true,
+        "uncertainty": true,
+        "source_traceability": true,
+        "negative_constraints": true,
+        "confidence_calibration": true,
+        "explicit_procedure": true
+      },
+      "word_count": 219
+    }
+  }
+}

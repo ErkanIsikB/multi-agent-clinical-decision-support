@@ -1,0 +1,387 @@
+{
+  "alert": {
+    "alert_id": "A007",
+    "patient_id": "P007",
+    "timestamp": "2026-05-13T17:20:00Z",
+    "device_type": "Smartwatch",
+    "alert_category": "device_artifact",
+    "measurements": {
+      "heart_rate": 148.0
+    },
+    "units": {
+      "heart_rate": "bpm"
+    },
+    "baseline": {
+      "heart_rate": 72.0
+    },
+    "thresholds": {
+      "heart_rate_high": 130.0
+    },
+    "trend": [
+      {
+        "minutes": 5,
+        "heart_rate": 94
+      },
+      {
+        "minutes": 10,
+        "heart_rate": 78
+      }
+    ],
+    "device_metadata": {
+      "motion": "high",
+      "skin_contact": "poor"
+    },
+    "source_id": "rpm:P007:alert:A007"
+  },
+  "triage": {
+    "patient_id": "P007",
+    "urgency": "Urgent",
+    "clinical_question": "Does the smartwatch tachycardia alert (source_id rpm:P007:alert:A007) reflect a true sustained heart rate elevation or a device artifact requiring prompt review?",
+    "decision_factors": [
+      "Heart rate 148 bpm exceeds the supplied high threshold of 130 bpm.",
+      "Baseline heart rate is 72 bpm, indicating a marked deviation from usual.",
+      "Recent trend shows lower values over the prior 5 and 10 minutes (94 bpm and 78 bpm), suggesting the current spike may be transient.",
+      "Alert category is device_artifact and device metadata show high motion with poor skin contact, making artifact possible but not sufficient to dismiss the alert.",
+      "No repeat measurement or higher-quality confirmatory reading is provided."
+    ],
+    "retrieval_query": {
+      "patient_id": "P007",
+      "clinical_question": "Review the smartwatch tachycardia alert (source_id rpm:P007:alert:A007) for context on whether this is a true sustained tachycardia versus artifact and whether any related symptoms or prior arrhythmia history are documented.",
+      "ehr_topics": [
+        "cardiovascular history",
+        "arrhythmia history",
+        "recent vitals or telemetry",
+        "symptoms around alert time",
+        "medications affecting heart rate"
+      ],
+      "anamnesis_topics": [
+        "palpitations",
+        "chest pain",
+        "shortness of breath",
+        "dizziness or syncope",
+        "activity level and device wear conditions"
+      ],
+      "lookback_days": 14
+    },
+    "immediate_escalation": false,
+    "confidence": 0.9
+  },
+  "ehr_context": {
+    "patient_id": "P007",
+    "demographics": {
+      "source_id": "ehr:P007:demographics",
+      "name": "Zeynep Hart",
+      "age": 36,
+      "sex": "female",
+      "preferred_language": "English",
+      "fictional_patient": true
+    },
+    "active_conditions": [
+      {
+        "source_id": "ehr:P007:problem:1",
+        "name": "Generalized anxiety disorder",
+        "icd10": "F41.1",
+        "status": "active"
+      }
+    ],
+    "active_medications": [
+      {
+        "source_id": "ehr:P007:med:1",
+        "name": "Sertraline",
+        "dose": "50 mg once daily",
+        "started": "2025-08-09",
+        "status": "active"
+      }
+    ],
+    "relevant_labs": [],
+    "relevant_notes": [
+      {
+        "source_id": "ehr:P007:note:1",
+        "title": "Palpitations review",
+        "date": "2026-01-17",
+        "text": "Prior ECG showed sinus rhythm. Patient advised to document activity and device fit during alerts."
+      }
+    ],
+    "allergies": [],
+    "contradictions": [
+      "No direct evidence in the retrieved chunks confirms whether source_id rpm:P007:alert:A007 represents a true sustained heart rate elevation versus a smartwatch artifact.",
+      "Prior ECG showed sinus rhythm, but this does not directly establish the nature of the smartwatch alert."
+    ],
+    "missing_data": [
+      "The smartwatch alert record itself (source_id rpm:P007:alert:A007) is not included in the retrieved chunks.",
+      "No heart rate values, duration, rhythm strip, or device download data are provided.",
+      "No contemporaneous symptom/activity context at the time of the alert is provided.",
+      "No allergy data are present in the retrieved chunks."
+    ],
+    "citations": [
+      {
+        "source_id": "ehr:P007:note:1",
+        "source_type": "visit_notes",
+        "timestamp": "2026-01-17",
+        "label": "Palpitations review"
+      },
+      {
+        "source_id": "ehr:P007:problem:1",
+        "source_type": "problems",
+        "timestamp": null,
+        "label": "Generalized anxiety disorder"
+      },
+      {
+        "source_id": "ehr:P007:med:1",
+        "source_type": "medications",
+        "timestamp": null,
+        "label": "Sertraline"
+      },
+      {
+        "source_id": "ehr:P007:demographics",
+        "source_type": "demographics",
+        "timestamp": null,
+        "label": "Demographics"
+      }
+    ],
+    "retrieval_confidence": 0.56
+  },
+  "anamnesis_summary": {
+    "patient_id": "P007",
+    "symptoms_and_timeline": [
+      "2026-05-12: Briefly winded after climbing stairs.",
+      "Denies chest pain, fainting, or persistent palpitations.",
+      "No report of ongoing or sustained tachycardia symptoms in the record."
+    ],
+    "medication_adherence": [
+      "Reports taking sertraline consistently."
+    ],
+    "lifestyle_factors": [
+      "The smartwatch alert occurred during vigorous activity.",
+      "Watch strap was loose with poor skin contact, which may affect accuracy of the reading."
+    ],
+    "family_history": [],
+    "patient_concerns": [
+      "Asks whether the watch reading could be inaccurate."
+    ],
+    "sensitive_disclosures": [],
+    "missing_data": [
+      "No actual heart rate values or duration of the alert are provided.",
+      "No repeat manual pulse or ECG confirmation is documented.",
+      "No additional symptoms during or after the alert are documented."
+    ],
+    "citations": [
+      {
+        "source_id": "anam:P007:symptoms:1",
+        "source_type": "anamnesis_record",
+        "timestamp": "2026-05-12",
+        "label": "symptoms"
+      },
+      {
+        "source_id": "anam:P007:adherence:1",
+        "source_type": "anamnesis_record",
+        "timestamp": "2026-05-12",
+        "label": "adherence"
+      },
+      {
+        "source_id": "anam:P007:lifestyle:1",
+        "source_type": "anamnesis_record",
+        "timestamp": "2026-05-12",
+        "label": "lifestyle"
+      },
+      {
+        "source_id": "anam:P007:concern:1",
+        "source_type": "anamnesis_record",
+        "timestamp": "2026-05-12",
+        "label": "concern"
+      }
+    ],
+    "confidence": 0.88
+  },
+  "brief": {
+    "brief_id": "brief:P007:A007",
+    "patient_id": "P007",
+    "generated_at": "2026-06-20T00:00:00Z",
+    "urgency": "Urgent",
+    "alert_summary": "Urgent review triggered by a smartwatch heart rate alert of 148 bpm, above the stated threshold of 130 bpm, with high motion and poor skin contact suggesting possible artifact rather than confirmed sustained tachycardia.",
+    "patient_snapshot": "36-year-old woman with active generalized anxiety disorder, taking sertraline 50 mg daily, and a prior note documenting sinus rhythm on ECG during a palpitations review.",
+    "contextual_analysis": [
+      {
+        "text": "The alert source reports heart rate 148 bpm on a smartwatch, exceeding the supplied high threshold of 130 bpm.",
+        "source_ids": [
+          "rpm:P007:alert:A007"
+        ],
+        "confidence": 0.96
+      },
+      {
+        "text": "The trend in the prior 5 and 10 minutes was lower at 94 bpm and 78 bpm, which is less consistent with a clearly sustained elevation.",
+        "source_ids": [
+          "rpm:P007:alert:A007"
+        ],
+        "confidence": 0.91
+      },
+      {
+        "text": "Device metadata show high motion and poor skin contact, both of which can reduce wearable signal reliability and support possible artifact.",
+        "source_ids": [
+          "rpm:P007:alert:A007",
+          "anam:P007:lifestyle:1"
+        ],
+        "confidence": 0.92
+      },
+      {
+        "text": "A prior EHR note states an ECG showed sinus rhythm during a palpitations review, but this does not confirm the nature of the current smartwatch alert.",
+        "source_ids": [
+          "ehr:P007:note:1"
+        ],
+        "confidence": 0.84
+      },
+      {
+        "text": "The chart lists generalized anxiety disorder and ongoing sertraline use, which are relevant context but do not establish the cause of the alert.",
+        "source_ids": [
+          "ehr:P007:problem:1",
+          "ehr:P007:med:1"
+        ],
+        "confidence": 0.72
+      },
+      {
+        "text": "Anamnesis records the alert occurred during vigorous activity, and the patient asked whether the watch reading could be inaccurate.",
+        "source_ids": [
+          "anam:P007:lifestyle:1",
+          "anam:P007:concern:1"
+        ],
+        "confidence": 0.9
+      }
+    ],
+    "risk_assessment": [
+      {
+        "text": "Because the device reading is above threshold, a true transient tachycardia cannot be excluded from the available data.",
+        "source_ids": [
+          "rpm:P007:alert:A007"
+        ],
+        "confidence": 0.87
+      },
+      {
+        "text": "High motion, poor skin contact, and a reported vigorous-activity context increase the likelihood that the alert may be artifact or overestimated by the wearable.",
+        "source_ids": [
+          "rpm:P007:alert:A007",
+          "anam:P007:lifestyle:1"
+        ],
+        "confidence": 0.9
+      },
+      {
+        "text": "Absence of reported chest pain, fainting, or persistent palpitations lowers immediate concern, but does not rule out a clinically relevant episode.",
+        "source_ids": [
+          "anam:P007:symptoms:1"
+        ],
+        "confidence": 0.83
+      },
+      {
+        "text": "Prior sinus rhythm on ECG reduces support for a known arrhythmia history in the retrieved record, but does not provide current rhythm confirmation.",
+        "source_ids": [
+          "ehr:P007:note:1"
+        ],
+        "confidence": 0.79
+      }
+    ],
+    "recommended_actions": [
+      {
+        "action": "Review the alert in context of the wearable conditions, activity level, and the prior lower trend before deciding whether it represents a true event.",
+        "rationale": "The alert is urgent but has strong artifact features and no confirmatory rhythm data.",
+        "priority": "High",
+        "confidence": 0.92,
+        "source_ids": [
+          "rpm:P007:alert:A007",
+          "anam:P007:lifestyle:1",
+          "ehr:P007:note:1"
+        ]
+      },
+      {
+        "action": "Seek clinician verification using available corroborating data such as repeat wearable readings, manual pulse, ECG, or device download if accessible.",
+        "rationale": "No repeat measurement or rhythm confirmation is included, so the alert cannot be validated from the current record.",
+        "priority": "High",
+        "confidence": 0.9,
+        "source_ids": [
+          "rpm:P007:alert:A007",
+          "ehr:P007:note:1",
+          "anam:P007:symptoms:1"
+        ]
+      },
+      {
+        "action": "Check for any contemporaneous symptoms or recurrence in the record, especially chest pain, syncope, dyspnea, or persistent palpitations.",
+        "rationale": "The anamnesis documents denial of major symptoms, which is reassuring but incomplete for the alert time.",
+        "priority": "Standard",
+        "confidence": 0.88,
+        "source_ids": [
+          "anam:P007:symptoms:1",
+          "anam:P007:concern:1"
+        ]
+      },
+      {
+        "action": "Use clinician judgment to determine whether further same-day follow-up is needed based on the full clinical picture and any new symptoms.",
+        "rationale": "The triage category is urgent, but the current evidence is mixed and does not establish a sustained arrhythmia.",
+        "priority": "High",
+        "confidence": 0.81,
+        "source_ids": [
+          "rpm:P007:alert:A007",
+          "ehr:P007:note:1",
+          "anam:P007:symptoms:1"
+        ]
+      }
+    ],
+    "uncertainties_and_gaps": [
+      "No rhythm strip, device download, repeat heart rate, or manual pulse is provided.",
+      "The smartwatch alert record is not included as a full waveform or confirmatory measurement source.",
+      "No contemporaneous symptom report at the exact alert time is documented.",
+      "No additional arrhythmia history, telemetry, or recent vital-sign context is present in the retrieved EHR chunks.",
+      "The alert occurred during vigorous activity with poor skin contact, which makes reliability uncertain.",
+      "No allergy data are present in the retrieved chunks."
+    ],
+    "confidence": 0.56,
+    "citations": [
+      {
+        "source_id": "anam:P007:concern:1",
+        "source_type": "anamnesis_record",
+        "timestamp": "2026-05-12",
+        "label": "concern"
+      },
+      {
+        "source_id": "anam:P007:lifestyle:1",
+        "source_type": "anamnesis_record",
+        "timestamp": "2026-05-12",
+        "label": "lifestyle"
+      },
+      {
+        "source_id": "anam:P007:symptoms:1",
+        "source_type": "anamnesis_record",
+        "timestamp": "2026-05-12",
+        "label": "symptoms"
+      },
+      {
+        "source_id": "ehr:P007:med:1",
+        "source_type": "medications",
+        "timestamp": null,
+        "label": "Sertraline"
+      },
+      {
+        "source_id": "ehr:P007:note:1",
+        "source_type": "visit_notes",
+        "timestamp": "2026-01-17",
+        "label": "Palpitations review"
+      },
+      {
+        "source_id": "ehr:P007:problem:1",
+        "source_type": "problems",
+        "timestamp": null,
+        "label": "Generalized anxiety disorder"
+      },
+      {
+        "source_id": "rpm:P007:alert:A007",
+        "source_type": "rpm_alert",
+        "timestamp": "2026-05-13T17:20:00+00:00",
+        "label": "device artifact"
+      }
+    ],
+    "immediate_escalation": false,
+    "human_review_required": true,
+    "disclaimer": "Educational prototype using simulated data. This output is not a diagnosis or medical advice and must be reviewed by a qualified clinician."
+  },
+  "session_id": "session-fd0cbf74c675",
+  "elapsed_seconds": 15.94826608299627,
+  "mode": "live",
+  "warnings": []
+}

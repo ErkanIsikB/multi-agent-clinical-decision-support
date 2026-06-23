@@ -1,0 +1,619 @@
+[
+  {
+    "patient_id": "P001",
+    "demographics": {
+      "name": "Maria Demir",
+      "age": 61,
+      "sex": "female",
+      "preferred_language": "English",
+      "fictional_patient": true
+    },
+    "problems": [
+      {
+        "source_id": "ehr:P001:problem:1",
+        "name": "Essential hypertension",
+        "icd10": "I10",
+        "status": "active"
+      },
+      {
+        "source_id": "ehr:P001:problem:2",
+        "name": "Hyperlipidemia",
+        "icd10": "E78.5",
+        "status": "active"
+      }
+    ],
+    "medications": [
+      {
+        "source_id": "ehr:P001:med:1",
+        "name": "Lisinopril",
+        "dose": "20 mg once daily",
+        "started": "2025-11-02",
+        "status": "active"
+      },
+      {
+        "source_id": "ehr:P001:med:2",
+        "name": "Atorvastatin",
+        "dose": "20 mg nightly",
+        "started": "2025-07-18",
+        "status": "active"
+      }
+    ],
+    "labs": [
+      {
+        "source_id": "ehr:P001:lab:1",
+        "test": "Creatinine",
+        "value": 0.9,
+        "unit": "mg/dL",
+        "date": "2026-03-14",
+        "reference_range": "0.6-1.2",
+        "flag": "normal"
+      },
+      {
+        "source_id": "ehr:P001:lab:2",
+        "test": "Potassium",
+        "value": 4.3,
+        "unit": "mmol/L",
+        "date": "2026-03-14",
+        "reference_range": "3.5-5.1",
+        "flag": "normal"
+      }
+    ],
+    "visit_notes": [
+      {
+        "source_id": "ehr:P001:note:1",
+        "title": "Hypertension follow-up",
+        "date": "2026-03-14",
+        "text": "Clinic blood pressure 132/82. Lisinopril continued. No side effects documented."
+      }
+    ],
+    "allergies": [],
+    "known_gaps": [],
+    "contradictions": [
+      "The EHR lists lisinopril as active, while the patient reports stopping it."
+    ]
+  },
+  {
+    "patient_id": "P002",
+    "demographics": {
+      "name": "James Kaya",
+      "age": 54,
+      "sex": "male",
+      "preferred_language": "English",
+      "fictional_patient": true
+    },
+    "problems": [
+      {
+        "source_id": "ehr:P002:problem:1",
+        "name": "Type 2 diabetes mellitus",
+        "icd10": "E11.9",
+        "status": "active"
+      },
+      {
+        "source_id": "ehr:P002:problem:2",
+        "name": "Obesity",
+        "icd10": "E66.9",
+        "status": "active"
+      }
+    ],
+    "medications": [
+      {
+        "source_id": "ehr:P002:med:1",
+        "name": "Metformin XR",
+        "dose": "1000 mg twice daily",
+        "started": "2024-09-11",
+        "status": "active"
+      },
+      {
+        "source_id": "ehr:P002:med:2",
+        "name": "Semaglutide",
+        "dose": "0.5 mg weekly",
+        "started": "2026-05-05",
+        "status": "active"
+      }
+    ],
+    "labs": [
+      {
+        "source_id": "ehr:P002:lab:1",
+        "test": "HbA1c",
+        "value": 7.8,
+        "unit": "%",
+        "date": "2026-04-28",
+        "reference_range": "4.0-5.6",
+        "flag": "high"
+      },
+      {
+        "source_id": "ehr:P002:lab:2",
+        "test": "Fasting glucose",
+        "value": 151,
+        "unit": "mg/dL",
+        "date": "2026-04-28",
+        "reference_range": "70-99",
+        "flag": "high"
+      }
+    ],
+    "visit_notes": [
+      {
+        "source_id": "ehr:P002:note:1",
+        "title": "Diabetes medication adjustment",
+        "date": "2026-05-05",
+        "text": "Semaglutide initiated. Short-term glucose variability discussed during titration."
+      }
+    ],
+    "allergies": [],
+    "known_gaps": [],
+    "contradictions": []
+  },
+  {
+    "patient_id": "P003",
+    "demographics": {
+      "name": "Aylin Foster",
+      "age": 69,
+      "sex": "female",
+      "preferred_language": "English",
+      "fictional_patient": true
+    },
+    "problems": [
+      {
+        "source_id": "ehr:P003:problem:1",
+        "name": "Heart failure with reduced ejection fraction",
+        "icd10": "I50.2",
+        "status": "active"
+      },
+      {
+        "source_id": "ehr:P003:problem:2",
+        "name": "Essential hypertension",
+        "icd10": "I10",
+        "status": "active"
+      }
+    ],
+    "medications": [
+      {
+        "source_id": "ehr:P003:med:1",
+        "name": "Furosemide",
+        "dose": "40 mg each morning",
+        "started": "2025-10-21",
+        "status": "active"
+      },
+      {
+        "source_id": "ehr:P003:med:2",
+        "name": "Carvedilol",
+        "dose": "12.5 mg twice daily",
+        "started": "2025-10-21",
+        "status": "active"
+      }
+    ],
+    "labs": [
+      {
+        "source_id": "ehr:P003:lab:1",
+        "test": "BNP",
+        "value": 280,
+        "unit": "pg/mL",
+        "date": "2026-04-20",
+        "reference_range": "<100",
+        "flag": "high"
+      },
+      {
+        "source_id": "ehr:P003:lab:2",
+        "test": "Creatinine",
+        "value": 1.1,
+        "unit": "mg/dL",
+        "date": "2026-04-20",
+        "reference_range": "0.6-1.2",
+        "flag": "normal"
+      }
+    ],
+    "visit_notes": [
+      {
+        "source_id": "ehr:P003:note:1",
+        "title": "Heart failure monitoring plan",
+        "date": "2026-04-20",
+        "text": "Dry weight approximately 72.0 kg. Call care team for rapid weight gain, edema, or dyspnea."
+      }
+    ],
+    "allergies": [],
+    "known_gaps": [],
+    "contradictions": []
+  },
+  {
+    "patient_id": "P004",
+    "demographics": {
+      "name": "Omar Reed",
+      "age": 58,
+      "sex": "male",
+      "preferred_language": "English",
+      "fictional_patient": true
+    },
+    "problems": [
+      {
+        "source_id": "ehr:P004:problem:1",
+        "name": "Essential hypertension",
+        "icd10": "I10",
+        "status": "active"
+      }
+    ],
+    "medications": [],
+    "labs": [],
+    "visit_notes": [
+      {
+        "source_id": "ehr:P004:note:1",
+        "title": "Transfer intake",
+        "date": "2026-05-02",
+        "text": "Patient transferred from an external health system. Prior records requested but not received."
+      }
+    ],
+    "allergies": [],
+    "known_gaps": [
+      "External medication list is unavailable.",
+      "No prior laboratory history is available.",
+      "Problem list may be incomplete after transfer."
+    ],
+    "contradictions": []
+  },
+  {
+    "patient_id": "P005",
+    "demographics": {
+      "name": "Leyla Stone",
+      "age": 42,
+      "sex": "female",
+      "preferred_language": "English",
+      "fictional_patient": true
+    },
+    "problems": [
+      {
+        "source_id": "ehr:P005:problem:1",
+        "name": "Epilepsy",
+        "icd10": "G40.909",
+        "status": "active"
+      }
+    ],
+    "medications": [
+      {
+        "source_id": "ehr:P005:med:1",
+        "name": "Valproate",
+        "dose": "500 mg twice daily",
+        "started": "2023-06-12",
+        "status": "active"
+      }
+    ],
+    "labs": [
+      {
+        "source_id": "ehr:P005:lab:1",
+        "test": "Valproate level",
+        "value": 34,
+        "unit": "mcg/mL",
+        "date": "2026-05-10",
+        "reference_range": "50-100",
+        "flag": "sub-therapeutic"
+      }
+    ],
+    "visit_notes": [
+      {
+        "source_id": "ehr:P005:note:1",
+        "title": "Neurology follow-up",
+        "date": "2026-02-19",
+        "text": "No reported seizure activity. Continue current valproate dose and monitor levels."
+      }
+    ],
+    "allergies": [],
+    "known_gaps": [],
+    "contradictions": [
+      "Measured valproate level is sub-therapeutic despite reported full adherence."
+    ]
+  },
+  {
+    "patient_id": "P006",
+    "demographics": {
+      "name": "Thomas Çelik",
+      "age": 67,
+      "sex": "male",
+      "preferred_language": "English",
+      "fictional_patient": true
+    },
+    "problems": [
+      {
+        "source_id": "ehr:P006:problem:1",
+        "name": "Chronic obstructive pulmonary disease",
+        "icd10": "J44.9",
+        "status": "active"
+      }
+    ],
+    "medications": [
+      {
+        "source_id": "ehr:P006:med:1",
+        "name": "Tiotropium",
+        "dose": "18 mcg inhaled daily",
+        "started": "2025-02-03",
+        "status": "active"
+      },
+      {
+        "source_id": "ehr:P006:med:2",
+        "name": "Albuterol",
+        "dose": "2 puffs as needed",
+        "started": "2025-02-03",
+        "status": "active"
+      }
+    ],
+    "labs": [],
+    "visit_notes": [
+      {
+        "source_id": "ehr:P006:note:1",
+        "title": "Pulmonary follow-up",
+        "date": "2026-03-01",
+        "text": "Usual home SpO2 reported as 93-95% on room air."
+      }
+    ],
+    "allergies": [],
+    "known_gaps": [],
+    "contradictions": []
+  },
+  {
+    "patient_id": "P007",
+    "demographics": {
+      "name": "Zeynep Hart",
+      "age": 36,
+      "sex": "female",
+      "preferred_language": "English",
+      "fictional_patient": true
+    },
+    "problems": [
+      {
+        "source_id": "ehr:P007:problem:1",
+        "name": "Generalized anxiety disorder",
+        "icd10": "F41.1",
+        "status": "active"
+      }
+    ],
+    "medications": [
+      {
+        "source_id": "ehr:P007:med:1",
+        "name": "Sertraline",
+        "dose": "50 mg once daily",
+        "started": "2025-08-09",
+        "status": "active"
+      }
+    ],
+    "labs": [],
+    "visit_notes": [
+      {
+        "source_id": "ehr:P007:note:1",
+        "title": "Palpitations review",
+        "date": "2026-01-17",
+        "text": "Prior ECG showed sinus rhythm. Patient advised to document activity and device fit during alerts."
+      }
+    ],
+    "allergies": [],
+    "known_gaps": [],
+    "contradictions": []
+  },
+  {
+    "patient_id": "P008",
+    "demographics": {
+      "name": "Daniel Arslan",
+      "age": 63,
+      "sex": "male",
+      "preferred_language": "English",
+      "fictional_patient": true
+    },
+    "problems": [
+      {
+        "source_id": "ehr:P008:problem:1",
+        "name": "Essential hypertension",
+        "icd10": "I10",
+        "status": "active"
+      },
+      {
+        "source_id": "ehr:P008:problem:2",
+        "name": "Knee osteoarthritis",
+        "icd10": "M17.9",
+        "status": "active"
+      }
+    ],
+    "medications": [
+      {
+        "source_id": "ehr:P008:med:1",
+        "name": "Amlodipine",
+        "dose": "10 mg once daily",
+        "started": "2024-04-22",
+        "status": "active"
+      }
+    ],
+    "labs": [
+      {
+        "source_id": "ehr:P008:lab:1",
+        "test": "Creatinine",
+        "value": 1.0,
+        "unit": "mg/dL",
+        "date": "2026-03-29",
+        "reference_range": "0.6-1.2",
+        "flag": "normal"
+      }
+    ],
+    "visit_notes": [
+      {
+        "source_id": "ehr:P008:note:1",
+        "title": "Blood pressure review",
+        "date": "2026-03-29",
+        "text": "Daytime home readings generally 128-138/76-86 on amlodipine."
+      }
+    ],
+    "allergies": [],
+    "known_gaps": [],
+    "contradictions": []
+  },
+  {
+    "patient_id": "P009",
+    "demographics": {
+      "name": "Nora Wells",
+      "age": 47,
+      "sex": "female",
+      "preferred_language": "English",
+      "fictional_patient": true
+    },
+    "problems": [
+      {
+        "source_id": "ehr:P009:problem:1",
+        "name": "Asthma",
+        "icd10": "J45.909",
+        "status": "active"
+      }
+    ],
+    "medications": [
+      {
+        "source_id": "ehr:P009:med:1",
+        "name": "Budesonide-formoterol",
+        "dose": "2 puffs twice daily",
+        "started": "2025-06-01",
+        "status": "active"
+      }
+    ],
+    "labs": [],
+    "visit_notes": [
+      {
+        "source_id": "ehr:P009:note:1",
+        "title": "Asthma review",
+        "date": "2026-03-12",
+        "text": "Symptoms well controlled."
+      }
+    ],
+    "allergies": [
+      {
+        "source_id": "ehr:P009:allergy:1",
+        "substance": "Penicillin",
+        "reaction": "rash",
+        "status": "active"
+      }
+    ],
+    "known_gaps": [],
+    "contradictions": []
+  },
+  {
+    "patient_id": "P010",
+    "demographics": {
+      "name": "Kemal Price",
+      "age": 72,
+      "sex": "male",
+      "preferred_language": "English",
+      "fictional_patient": true
+    },
+    "problems": [
+      {
+        "source_id": "ehr:P010:problem:1",
+        "name": "Atrial fibrillation",
+        "icd10": "I48.91",
+        "status": "active"
+      }
+    ],
+    "medications": [
+      {
+        "source_id": "ehr:P010:med:1",
+        "name": "Apixaban",
+        "dose": "5 mg twice daily",
+        "started": "2024-12-10",
+        "status": "active"
+      },
+      {
+        "source_id": "ehr:P010:med:2",
+        "name": "Metoprolol",
+        "dose": "50 mg once daily",
+        "started": "2024-12-10",
+        "status": "active"
+      }
+    ],
+    "labs": [],
+    "visit_notes": [
+      {
+        "source_id": "ehr:P010:note:1",
+        "title": "Cardiology follow-up",
+        "date": "2026-02-25",
+        "text": "Rate controlled."
+      }
+    ],
+    "allergies": [],
+    "known_gaps": [],
+    "contradictions": []
+  },
+  {
+    "patient_id": "P011",
+    "demographics": {
+      "name": "Selin Moore",
+      "age": 51,
+      "sex": "female",
+      "preferred_language": "English",
+      "fictional_patient": true
+    },
+    "problems": [
+      {
+        "source_id": "ehr:P011:problem:1",
+        "name": "Hypothyroidism",
+        "icd10": "E03.9",
+        "status": "active"
+      }
+    ],
+    "medications": [
+      {
+        "source_id": "ehr:P011:med:1",
+        "name": "Levothyroxine",
+        "dose": "75 mcg once daily",
+        "started": "2022-10-04",
+        "status": "active"
+      }
+    ],
+    "labs": [
+      {
+        "source_id": "ehr:P011:lab:1",
+        "test": "TSH",
+        "value": 2.1,
+        "unit": "mIU/L",
+        "date": "2026-03-03",
+        "reference_range": "0.4-4.0",
+        "flag": "normal"
+      }
+    ],
+    "visit_notes": [],
+    "allergies": [],
+    "known_gaps": [],
+    "contradictions": []
+  },
+  {
+    "patient_id": "P012",
+    "demographics": {
+      "name": "Victor Aksoy",
+      "age": 59,
+      "sex": "male",
+      "preferred_language": "English",
+      "fictional_patient": true
+    },
+    "problems": [
+      {
+        "source_id": "ehr:P012:problem:1",
+        "name": "Chronic kidney disease stage 3a",
+        "icd10": "N18.31",
+        "status": "active"
+      }
+    ],
+    "medications": [
+      {
+        "source_id": "ehr:P012:med:1",
+        "name": "Losartan",
+        "dose": "50 mg once daily",
+        "started": "2025-05-13",
+        "status": "active"
+      }
+    ],
+    "labs": [
+      {
+        "source_id": "ehr:P012:lab:1",
+        "test": "eGFR",
+        "value": 52,
+        "unit": "mL/min/1.73m2",
+        "date": "2026-04-01",
+        "reference_range": ">60",
+        "flag": "low"
+      }
+    ],
+    "visit_notes": [],
+    "allergies": [],
+    "known_gaps": [],
+    "contradictions": []
+  }
+]

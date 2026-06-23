@@ -1,0 +1,169 @@
+[
+  {
+    "scenario_id": "scenario_01",
+    "title": "The Missed Medication",
+    "patient_id": "P001",
+    "alert_id": "A001",
+    "description": "Blood pressure rises after the patient stops lisinopril because of cough.",
+    "expected_urgency": "Urgent",
+    "gold_standard": {
+      "primary_concern": "Elevated blood pressure in the setting of self-discontinued lisinopril.",
+      "key_concerns": [
+        "Medication interruption",
+        "Persistent cough as the reported reason",
+        "EHR still lists lisinopril as active"
+      ],
+      "required_source_ids": [
+        "rpm:P001:alert:A001",
+        "ehr:P001:med:1",
+        "anam:P001:adherence:1",
+        "anam:P001:symptoms:1"
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_02",
+    "title": "The Contextually Benign Alert",
+    "patient_id": "P002",
+    "alert_id": "A002",
+    "description": "A high glucose reading follows a planned meal during recent medication titration.",
+    "expected_urgency": "Routine",
+    "gold_standard": {
+      "primary_concern": "Transient glucose elevation requiring trend review rather than automatic escalation.",
+      "key_concerns": [
+        "Carbohydrate-heavy meal before reading",
+        "Recent semaglutide initiation",
+        "No acute symptoms"
+      ],
+      "required_source_ids": [
+        "rpm:P002:alert:A002",
+        "ehr:P002:note:1",
+        "anam:P002:lifestyle:1"
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_03",
+    "title": "The Silent Deterioration",
+    "patient_id": "P003",
+    "alert_id": "A003",
+    "description": "Gradual weight gain combines with edema and mild worsening breathlessness.",
+    "expected_urgency": "Urgent",
+    "gold_standard": {
+      "primary_concern": "Possible worsening fluid status requiring prompt clinical review.",
+      "key_concerns": [
+        "2.8 kg weight increase over two weeks",
+        "Increasing ankle swelling",
+        "Mildly worse exertional breathlessness"
+      ],
+      "required_source_ids": [
+        "rpm:P003:alert:A003",
+        "ehr:P003:note:1",
+        "anam:P003:symptoms:1",
+        "anam:P003:symptoms:2"
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_04",
+    "title": "The Incomplete Record",
+    "patient_id": "P004",
+    "alert_id": "A004",
+    "description": "A recent transfer has a sparse EHR, making anamnesis and explicit uncertainty central.",
+    "expected_urgency": "Urgent",
+    "gold_standard": {
+      "primary_concern": "Elevated blood pressure with an unverified medication regimen and sparse history.",
+      "key_concerns": [
+        "Unknown antihypertensive name and dose",
+        "Missing external records",
+        "Morning headaches"
+      ],
+      "required_source_ids": [
+        "rpm:P004:alert:A004",
+        "ehr:P004:note:1",
+        "anam:P004:adherence:1"
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_05",
+    "title": "The Conflicting Data",
+    "patient_id": "P005",
+    "alert_id": "A005",
+    "description": "Reported full adherence conflicts with a sub-therapeutic valproate level.",
+    "expected_urgency": "Urgent",
+    "gold_standard": {
+      "primary_concern": "Neutral investigation of discordant adherence and drug-level evidence.",
+      "key_concerns": [
+        "Sub-therapeutic valproate level",
+        "Patient reports no missed doses",
+        "Avoid accusatory interpretation"
+      ],
+      "required_source_ids": [
+        "rpm:P005:alert:A005",
+        "ehr:P005:lab:1",
+        "anam:P005:adherence:1"
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_06",
+    "title": "Critical Hypoxemia",
+    "patient_id": "P006",
+    "alert_id": "A006",
+    "description": "Repeated SpO2 of 84% activates the fail-safe immediate escalation pathway.",
+    "expected_urgency": "Critical",
+    "gold_standard": {
+      "primary_concern": "Immediate human escalation for critically low oxygen saturation.",
+      "key_concerns": [
+        "SpO2 below critical threshold",
+        "Worsening breathlessness",
+        "Bypass routine synthesis"
+      ],
+      "required_source_ids": [
+        "rpm:P006:alert:A006"
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_07",
+    "title": "The Device Artifact",
+    "patient_id": "P007",
+    "alert_id": "A007",
+    "description": "An isolated tachycardia reading occurs during activity with poor watch contact.",
+    "expected_urgency": "Urgent",
+    "gold_standard": {
+      "primary_concern": "Verify a potentially artifactual high heart-rate reading.",
+      "key_concerns": [
+        "Vigorous activity",
+        "Poor skin contact",
+        "Rapid return toward baseline"
+      ],
+      "required_source_ids": [
+        "rpm:P007:alert:A007",
+        "anam:P007:lifestyle:1"
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_08",
+    "title": "Nocturnal Hypertension and NSAID Use",
+    "patient_id": "P008",
+    "alert_id": "A008",
+    "description": "New nocturnal hypertension appears after several days of high-dose ibuprofen use.",
+    "expected_urgency": "Urgent",
+    "gold_standard": {
+      "primary_concern": "Nocturnal blood pressure elevation with recent NSAID exposure.",
+      "key_concerns": [
+        "Repeated overnight elevation",
+        "Recent ibuprofen use",
+        "Previously controlled daytime readings"
+      ],
+      "required_source_ids": [
+        "rpm:P008:alert:A008",
+        "ehr:P008:note:1",
+        "anam:P008:lifestyle:1"
+      ]
+    }
+  }
+]

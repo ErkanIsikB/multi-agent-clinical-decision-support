@@ -1,0 +1,126 @@
+{
+  "alert": {
+    "alert_id": "A006",
+    "patient_id": "P006",
+    "timestamp": "2026-05-13T06:50:00Z",
+    "device_type": "Pulse oximeter",
+    "alert_category": "hypoxemia",
+    "measurements": {
+      "spo2": 84.0,
+      "heart_rate": 118.0
+    },
+    "units": {
+      "spo2": "%",
+      "heart_rate": "bpm"
+    },
+    "baseline": {
+      "spo2": 94.0
+    },
+    "thresholds": {
+      "spo2_critical": 88.0
+    },
+    "trend": [
+      {
+        "minutes": -10,
+        "spo2": 86
+      },
+      {
+        "minutes": -5,
+        "spo2": 85
+      }
+    ],
+    "device_metadata": {
+      "signal_quality": "good",
+      "repeat_reading": 84
+    },
+    "source_id": "rpm:P006:alert:A006"
+  },
+  "triage": {
+    "patient_id": "P006",
+    "urgency": "Critical",
+    "clinical_question": "What EHR and patient-reported factors could contextualize the hypoxemia alert for P006?",
+    "decision_factors": [
+      "SpO2 84% is below the critical safety threshold of 88%."
+    ],
+    "retrieval_query": {
+      "patient_id": "P006",
+      "clinical_question": "What EHR and patient-reported factors could contextualize the hypoxemia alert for P006?",
+      "ehr_topics": [
+        "oxygen",
+        "SpO2",
+        "pulmonary",
+        "respiratory"
+      ],
+      "anamnesis_topics": [
+        "oxygen",
+        "SpO2",
+        "pulmonary",
+        "respiratory",
+        "medication adherence",
+        "recent symptoms"
+      ],
+      "lookback_days": 180
+    },
+    "immediate_escalation": true,
+    "confidence": 0.96
+  },
+  "ehr_context": null,
+  "anamnesis_summary": null,
+  "brief": {
+    "brief_id": "ccb-07df80bc6d",
+    "patient_id": "P006",
+    "generated_at": "2026-06-20T20:06:02.664099Z",
+    "urgency": "Critical",
+    "alert_summary": "Critical simulated RPM alert from Pulse oximeter: SpO2 84% is below the critical safety threshold of 88%.",
+    "patient_snapshot": "Full contextual retrieval was intentionally bypassed because the critical safety rule requires immediate human escalation.",
+    "contextual_analysis": [
+      {
+        "text": "The deterministic critical threshold was crossed.",
+        "source_ids": [
+          "rpm:P006:alert:A006"
+        ],
+        "confidence": 0.99
+      }
+    ],
+    "risk_assessment": [
+      {
+        "text": "Delay while awaiting automated synthesis could be unsafe; the measurement requires immediate verification and clinician review.",
+        "source_ids": [
+          "rpm:P006:alert:A006"
+        ],
+        "confidence": 0.99
+      }
+    ],
+    "recommended_actions": [
+      {
+        "action": "Immediately notify the responsible clinician or emergency escalation pathway and verify the reading using the approved clinical protocol.",
+        "rationale": "Critical alerts fail safe and bypass nonessential automation.",
+        "priority": "Immediate",
+        "confidence": 0.99,
+        "source_ids": [
+          "rpm:P006:alert:A006"
+        ]
+      }
+    ],
+    "uncertainties_and_gaps": [
+      "EHR and anamnesis context were not retrieved before escalation.",
+      "Device accuracy and the patient's current symptoms require human verification."
+    ],
+    "confidence": 0.99,
+    "citations": [
+      {
+        "source_id": "rpm:P006:alert:A006",
+        "source_type": "rpm_alert",
+        "timestamp": "2026-05-13T06:50:00+00:00",
+        "label": "hypoxemia"
+      }
+    ],
+    "immediate_escalation": true,
+    "human_review_required": true,
+    "disclaimer": "Educational prototype using simulated data. This output is not a diagnosis or medical advice and must be reviewed by a qualified clinician."
+  },
+  "session_id": "session-1622da71fe58",
+  "elapsed_seconds": 0.0007463340007234365,
+  "mode": "offline",
+  "warnings": []
+}

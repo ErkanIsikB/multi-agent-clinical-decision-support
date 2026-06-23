@@ -1,0 +1,359 @@
+{
+  "alert": {
+    "alert_id": "A005",
+    "patient_id": "P005",
+    "timestamp": "2026-05-13T10:15:00Z",
+    "device_type": "Medication monitoring portal",
+    "alert_category": "medication_discrepancy",
+    "measurements": {
+      "valproate_level": 34.0
+    },
+    "units": {
+      "valproate_level": "mcg/mL"
+    },
+    "baseline": {
+      "valproate_level": 68.0
+    },
+    "thresholds": {
+      "valproate_level_low": 50.0
+    },
+    "trend": [],
+    "device_metadata": {
+      "laboratory_verified": true
+    },
+    "source_id": "rpm:P005:alert:A005"
+  },
+  "triage": {
+    "patient_id": "P005",
+    "urgency": "Routine",
+    "clinical_question": "Is the subtherapeutic valproate level of 34 mcg/mL intentional, and has there been any recent dose change, nonadherence, missed refills, or clinical change requiring adjustment?",
+    "decision_factors": [
+      "Patient identifier is present and the valproate result is laboratory-verified.",
+      "Measured valproate level is 34 mcg/mL, below the supplied low threshold of 50 mcg/mL.",
+      "Current level is decreased from the listed baseline of 68 mcg/mL, suggesting a meaningful downward change.",
+      "No repeat reading, adverse symptom data, or concerning trend is provided to indicate immediate danger."
+    ],
+    "retrieval_query": {
+      "patient_id": "P005",
+      "clinical_question": "Review the low laboratory-verified valproate level and determine whether it reflects an intentional regimen, adherence issue, recent dose change, or need for follow-up adjustment.",
+      "ehr_topics": [
+        "Medication list",
+        "Valproate dosing",
+        "Recent prescription changes",
+        "Refill history",
+        "Problem list",
+        "Relevant labs",
+        "Neurology/psychiatry notes"
+      ],
+      "anamnesis_topics": [
+        "Missed doses",
+        "Adherence",
+        "Recent dose changes",
+        "Side effects",
+        "Seizure or mood symptoms",
+        "Last taken dose"
+      ],
+      "lookback_days": 30
+    },
+    "immediate_escalation": false,
+    "confidence": 0.92
+  },
+  "ehr_context": {
+    "patient_id": "P005",
+    "demographics": {
+      "name": "Leyla Stone",
+      "age": 42,
+      "sex": "female",
+      "preferred_language": "English",
+      "fictional_patient": true
+    },
+    "active_conditions": [
+      {
+        "source_id": "ehr:P005:problem:1",
+        "name": "Epilepsy",
+        "icd10": "G40.909",
+        "status": "active"
+      }
+    ],
+    "active_medications": [
+      {
+        "source_id": "ehr:P005:med:1",
+        "name": "Valproate",
+        "dose": "500 mg twice daily",
+        "started": "2023-06-12",
+        "status": "active"
+      }
+    ],
+    "relevant_labs": [
+      {
+        "source_id": "ehr:P005:lab:1",
+        "test": "Valproate level",
+        "value": 34,
+        "unit": "mcg/mL",
+        "date": "2026-05-10",
+        "reference_range": "50-100",
+        "flag": "sub-therapeutic"
+      }
+    ],
+    "relevant_notes": [
+      {
+        "source_id": "ehr:P005:note:1",
+        "title": "Neurology follow-up",
+        "date": "2026-02-19",
+        "text": "No reported seizure activity. Continue current valproate dose and monitor levels."
+      }
+    ],
+    "allergies": [],
+    "contradictions": [],
+    "missing_data": [
+      "No documentation of intentional target valproate range below standard therapeutic range.",
+      "No note indicating recent dose change, missed refills, or nonadherence.",
+      "No medication administration/refill history or adherence assessment in retrieved chunks.",
+      "No more recent neurology follow-up than 2026-02-19 to clarify whether dose adjustment was considered after 2026-05-10 lab."
+    ],
+    "citations": [
+      {
+        "source_id": "ehr:P005:lab:1",
+        "source_type": "lab",
+        "timestamp": "2026-05-10",
+        "label": "Valproate level 34 mcg/mL, sub-therapeutic"
+      },
+      {
+        "source_id": "ehr:P005:med:1",
+        "source_type": "medication",
+        "timestamp": "2023-06-12",
+        "label": "Valproate 500 mg twice daily, active"
+      },
+      {
+        "source_id": "ehr:P005:note:1",
+        "source_type": "visit_note",
+        "timestamp": "2026-02-19",
+        "label": "Neurology follow-up: continue current valproate dose and monitor levels"
+      },
+      {
+        "source_id": "ehr:P005:problem:1",
+        "source_type": "problem",
+        "timestamp": null,
+        "label": "Active epilepsy"
+      }
+    ],
+    "retrieval_confidence": 0.81
+  },
+  "anamnesis_summary": {
+    "patient_id": "P005",
+    "symptoms_and_timeline": [
+      "As of 2026-05-12, no seizure symptoms or new neurologic complaints were reported. [anam:P005:symptoms:1]"
+    ],
+    "medication_adherence": [
+      "Reports taking every valproate dose and denies intentional or accidental missed doses. [anam:P005:adherence:1]"
+    ],
+    "lifestyle_factors": [
+      "No new supplements or major diet changes reported. [anam:P005:lifestyle:1]"
+    ],
+    "family_history": [],
+    "patient_concerns": [
+      "Patient was surprised that the medication level was low. [anam:P005:concern:1]"
+    ],
+    "sensitive_disclosures": [],
+    "missing_data": [
+      "No information in the record about whether the valproate level of 34 mcg/mL was intentional.",
+      "No recent dose change is documented.",
+      "No missed refills are documented.",
+      "No clinical change requiring adjustment is documented beyond the absence of seizures/new neurologic complaints."
+    ],
+    "citations": [
+      {
+        "source_id": "anam:P005:symptoms:1",
+        "source_type": "symptoms",
+        "timestamp": "2026-05-12",
+        "label": "symptoms"
+      },
+      {
+        "source_id": "anam:P005:adherence:1",
+        "source_type": "medication_adherence",
+        "timestamp": "2026-05-12",
+        "label": "adherence"
+      },
+      {
+        "source_id": "anam:P005:lifestyle:1",
+        "source_type": "lifestyle",
+        "timestamp": "2026-05-12",
+        "label": "lifestyle"
+      },
+      {
+        "source_id": "anam:P005:concern:1",
+        "source_type": "patient_concerns",
+        "timestamp": "2026-05-12",
+        "label": "concern"
+      }
+    ],
+    "confidence": 0.97
+  },
+  "brief": {
+    "brief_id": "brief:P005:A005",
+    "patient_id": "P005",
+    "generated_at": "2026-06-20T00:00:00Z",
+    "urgency": "Routine",
+    "alert_summary": "Laboratory-verified valproate level is low at 34 mcg/mL, below the supplied threshold of 50 mcg/mL and lower than the prior baseline of 68 mcg/mL. Current evidence does not show seizures, new neurologic complaints, or a documented intentional low target, so clinician review is warranted, but there is no indication of immediate escalation from the provided data. [rpm:P005:alert:A005, ehr:P005:lab:1, ehr:P005:note:1, anam:P005:symptoms:1]",
+    "patient_snapshot": "42-year-old woman with active epilepsy on valproate 500 mg twice daily, with a recent sub-therapeutic valproate level and no reported seizure activity or new neurologic symptoms. She reports taking doses as prescribed and was surprised by the low result. [ehr:P005:problem:1, ehr:P005:med:1, ehr:P005:lab:1, anam:P005:symptoms:1, anam:P005:adherence:1, anam:P005:concern:1]",
+    "contextual_analysis": [
+      {
+        "text": "The RPM alert shows a laboratory-verified valproate level of 34 mcg/mL, below the provided low threshold of 50 mcg/mL and below baseline 68 mcg/mL, supporting a meaningful downward change. [rpm:P005:alert:A005]",
+        "source_ids": [
+          "rpm:P005:alert:A005"
+        ],
+        "confidence": 0.98
+      },
+      {
+        "text": "EHR data confirm an active valproate prescription at 500 mg twice daily and a sub-therapeutic lab value of 34 mcg/mL on 2026-05-10. [ehr:P005:med:1, ehr:P005:lab:1]",
+        "source_ids": [
+          "ehr:P005:med:1",
+          "ehr:P005:lab:1"
+        ],
+        "confidence": 0.97
+      },
+      {
+        "text": "Neurology follow-up previously advised continuing the current valproate dose and monitoring levels, which does not explain whether the current low level was intended. [ehr:P005:note:1]",
+        "source_ids": [
+          "ehr:P005:note:1"
+        ],
+        "confidence": 0.84
+      },
+      {
+        "text": "Patient-reported adherence is reassuring: she denies missed doses and reports no new supplements or major diet changes, while also reporting no seizure symptoms or new neurologic complaints. [anam:P005:adherence:1, anam:P005:lifestyle:1, anam:P005:symptoms:1]",
+        "source_ids": [
+          "anam:P005:adherence:1",
+          "anam:P005:lifestyle:1",
+          "anam:P005:symptoms:1"
+        ],
+        "confidence": 0.91
+      }
+    ],
+    "risk_assessment": [
+      {
+        "text": "Persistently low valproate exposure could reduce seizure prophylaxis effectiveness if the level is not intentionally targeted. [ehr:P005:lab:1, ehr:P005:problem:1]",
+        "source_ids": [
+          "ehr:P005:lab:1",
+          "ehr:P005:problem:1"
+        ],
+        "confidence": 0.88
+      },
+      {
+        "text": "There is no current symptom evidence of breakthrough seizures or acute neurologic deterioration, which lowers concern for immediate harm from the alert alone. [anam:P005:symptoms:1, ehr:P005:note:1]",
+        "source_ids": [
+          "anam:P005:symptoms:1",
+          "ehr:P005:note:1"
+        ],
+        "confidence": 0.9
+      },
+      {
+        "text": "The record does not document intentional sub-therapeutic targeting, dose changes, refill problems, or nonadherence beyond the patient's self-report, so the reason for the low level remains uncertain. [ehr:P005:lab:1, ehr:P005:med:1, ehr:P005:note:1, anam:P005:adherence:1]",
+        "source_ids": [
+          "ehr:P005:lab:1",
+          "ehr:P005:med:1",
+          "ehr:P005:note:1",
+          "anam:P005:adherence:1"
+        ],
+        "confidence": 0.89
+      }
+    ],
+    "recommended_actions": [
+      {
+        "action": "Clinician review of the valproate result with confirmation of whether the current level is intentional for this patient and whether any dose adjustment is needed. [ehr:P005:lab:1, ehr:P005:note:1]",
+        "rationale": "The level is below the therapeutic range and lower than baseline, but intent is not documented. [ehr:P005:lab:1, ehr:P005:note:1]",
+        "priority": "High",
+        "confidence": 0.93,
+        "source_ids": [
+          "ehr:P005:lab:1",
+          "ehr:P005:note:1"
+        ]
+      },
+      {
+        "action": "Verify refill history, recent prescription changes, and ongoing adherence with the patient and medication record. [anam:P005:adherence:1, ehr:P005:med:1]",
+        "rationale": "Patient reports taking doses, but the chart lacks refill and dose-change documentation to explain the low level. [anam:P005:adherence:1, ehr:P005:med:1, ehr:P005:note:1]",
+        "priority": "High",
+        "confidence": 0.88,
+        "source_ids": [
+          "anam:P005:adherence:1",
+          "ehr:P005:med:1",
+          "ehr:P005:note:1"
+        ]
+      },
+      {
+        "action": "Assess for any interval seizure activity or new neurologic symptoms and reinforce return precautions if symptoms develop. [anam:P005:symptoms:1, ehr:P005:problem:1]",
+        "rationale": "Current symptom report is reassuring, but epilepsy plus sub-therapeutic level warrants clinical follow-up. [anam:P005:symptoms:1, ehr:P005:problem:1, ehr:P005:lab:1]",
+        "priority": "Standard",
+        "confidence": 0.85,
+        "source_ids": [
+          "anam:P005:symptoms:1",
+          "ehr:P005:problem:1",
+          "ehr:P005:lab:1"
+        ]
+      }
+    ],
+    "uncertainties_and_gaps": [
+      "No documentation confirms that a valproate target below the standard therapeutic range was intended. [ehr:P005:lab:1, ehr:P005:note:1]",
+      "No recent dose change or refill history is available in the retrieved record. [ehr:P005:med:1, ehr:P005:note:1]",
+      "No objective adherence data beyond patient report is available. [anam:P005:adherence:1]",
+      "No more recent neurology follow-up than 2026-02-19 is available to explain the 2026-05-10 low level. [ehr:P005:note:1, ehr:P005:lab:1]"
+    ],
+    "confidence": 0.9,
+    "citations": [
+      {
+        "source_id": "anam:P005:adherence:1",
+        "source_type": "medication_adherence",
+        "timestamp": "2026-05-12",
+        "label": "adherence"
+      },
+      {
+        "source_id": "anam:P005:lifestyle:1",
+        "source_type": "lifestyle",
+        "timestamp": "2026-05-12",
+        "label": "lifestyle"
+      },
+      {
+        "source_id": "anam:P005:symptoms:1",
+        "source_type": "symptoms",
+        "timestamp": "2026-05-12",
+        "label": "symptoms"
+      },
+      {
+        "source_id": "ehr:P005:lab:1",
+        "source_type": "lab",
+        "timestamp": "2026-05-10",
+        "label": "Valproate level 34 mcg/mL, sub-therapeutic"
+      },
+      {
+        "source_id": "ehr:P005:med:1",
+        "source_type": "medication",
+        "timestamp": "2023-06-12",
+        "label": "Valproate 500 mg twice daily, active"
+      },
+      {
+        "source_id": "ehr:P005:note:1",
+        "source_type": "visit_note",
+        "timestamp": "2026-02-19",
+        "label": "Neurology follow-up: continue current valproate dose and monitor levels"
+      },
+      {
+        "source_id": "ehr:P005:problem:1",
+        "source_type": "problem",
+        "timestamp": null,
+        "label": "Active epilepsy"
+      },
+      {
+        "source_id": "rpm:P005:alert:A005",
+        "source_type": "rpm_alert",
+        "timestamp": "2026-05-13T10:15:00+00:00",
+        "label": "medication discrepancy"
+      }
+    ],
+    "immediate_escalation": false,
+    "human_review_required": true,
+    "disclaimer": "Educational prototype using simulated data. This output is not a diagnosis or medical advice and must be reviewed by a qualified clinician."
+  },
+  "session_id": "session-63b702c40448",
+  "elapsed_seconds": 19.787232625007164,
+  "mode": "live",
+  "warnings": []
+}

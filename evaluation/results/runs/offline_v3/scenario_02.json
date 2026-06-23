@@ -1,0 +1,373 @@
+{
+  "alert": {
+    "alert_id": "A002",
+    "patient_id": "P002",
+    "timestamp": "2026-05-13T19:30:00Z",
+    "device_type": "Continuous glucose monitor",
+    "alert_category": "high_glucose",
+    "measurements": {
+      "glucose": 238.0
+    },
+    "units": {
+      "glucose": "mg/dL"
+    },
+    "baseline": {
+      "glucose": 142.0
+    },
+    "thresholds": {
+      "glucose_high": 220.0
+    },
+    "trend": [
+      {
+        "minutes": -60,
+        "glucose": 176
+      },
+      {
+        "minutes": -30,
+        "glucose": 214
+      }
+    ],
+    "device_metadata": {
+      "sensor_age_days": 5,
+      "signal_quality": "good"
+    },
+    "source_id": "rpm:P002:alert:A002"
+  },
+  "triage": {
+    "patient_id": "P002",
+    "urgency": "Routine",
+    "clinical_question": "What EHR and patient-reported factors could contextualize the high glucose alert for P002?",
+    "decision_factors": [
+      "Threshold breach requires context but no critical feature is present."
+    ],
+    "retrieval_query": {
+      "patient_id": "P002",
+      "clinical_question": "What EHR and patient-reported factors could contextualize the high glucose alert for P002?",
+      "ehr_topics": [
+        "diabetes",
+        "glucose",
+        "HbA1c",
+        "insulin",
+        "diet"
+      ],
+      "anamnesis_topics": [
+        "diabetes",
+        "glucose",
+        "HbA1c",
+        "insulin",
+        "diet",
+        "medication adherence",
+        "recent symptoms"
+      ],
+      "lookback_days": 180
+    },
+    "immediate_escalation": false,
+    "confidence": 0.88
+  },
+  "ehr_context": {
+    "patient_id": "P002",
+    "demographics": {
+      "name": "James Kaya",
+      "age": 54,
+      "sex": "male",
+      "preferred_language": "English",
+      "fictional_patient": true
+    },
+    "active_conditions": [
+      {
+        "source_id": "ehr:P002:problem:1",
+        "name": "Type 2 diabetes mellitus",
+        "icd10": "E11.9",
+        "status": "active"
+      },
+      {
+        "source_id": "ehr:P002:problem:2",
+        "name": "Obesity",
+        "icd10": "E66.9",
+        "status": "active"
+      }
+    ],
+    "active_medications": [
+      {
+        "source_id": "ehr:P002:med:2",
+        "name": "Semaglutide",
+        "dose": "0.5 mg weekly",
+        "started": "2026-05-05",
+        "status": "active"
+      },
+      {
+        "source_id": "ehr:P002:med:1",
+        "name": "Metformin XR",
+        "dose": "1000 mg twice daily",
+        "started": "2024-09-11",
+        "status": "active"
+      }
+    ],
+    "relevant_labs": [
+      {
+        "source_id": "ehr:P002:lab:1",
+        "test": "HbA1c",
+        "value": 7.8,
+        "unit": "%",
+        "date": "2026-04-28",
+        "reference_range": "4.0-5.6",
+        "flag": "high"
+      },
+      {
+        "source_id": "ehr:P002:lab:2",
+        "test": "Fasting glucose",
+        "value": 151,
+        "unit": "mg/dL",
+        "date": "2026-04-28",
+        "reference_range": "70-99",
+        "flag": "high"
+      }
+    ],
+    "relevant_notes": [
+      {
+        "source_id": "ehr:P002:note:1",
+        "title": "Diabetes medication adjustment",
+        "date": "2026-05-05",
+        "text": "Semaglutide initiated. Short-term glucose variability discussed during titration."
+      }
+    ],
+    "allergies": [],
+    "contradictions": [],
+    "missing_data": [],
+    "citations": [
+      {
+        "source_id": "ehr:P002:problem:1",
+        "source_type": "ehr_problems",
+        "timestamp": null,
+        "label": "Type 2 diabetes mellitus"
+      },
+      {
+        "source_id": "ehr:P002:problem:2",
+        "source_type": "ehr_problems",
+        "timestamp": null,
+        "label": "Obesity"
+      },
+      {
+        "source_id": "ehr:P002:med:2",
+        "source_type": "ehr_medications",
+        "timestamp": null,
+        "label": "Semaglutide"
+      },
+      {
+        "source_id": "ehr:P002:med:1",
+        "source_type": "ehr_medications",
+        "timestamp": null,
+        "label": "Metformin XR"
+      },
+      {
+        "source_id": "ehr:P002:lab:1",
+        "source_type": "ehr_labs",
+        "timestamp": "2026-04-28",
+        "label": "HbA1c"
+      },
+      {
+        "source_id": "ehr:P002:lab:2",
+        "source_type": "ehr_labs",
+        "timestamp": "2026-04-28",
+        "label": "Fasting glucose"
+      },
+      {
+        "source_id": "ehr:P002:note:1",
+        "source_type": "ehr_visit_notes",
+        "timestamp": "2026-05-05",
+        "label": "Diabetes medication adjustment"
+      }
+    ],
+    "retrieval_confidence": 0.9
+  },
+  "anamnesis_summary": {
+    "patient_id": "P002",
+    "symptoms_and_timeline": [
+      "Feels well and reports no polyuria, vomiting, or confusion."
+    ],
+    "medication_adherence": [
+      "Reports taking metformin and the new weekly injection as directed."
+    ],
+    "lifestyle_factors": [
+      "Planned dietary change for a family celebration included a carbohydrate-heavy meal before the reading."
+    ],
+    "family_history": [],
+    "patient_concerns": [
+      "Wants to know whether one high reading is dangerous."
+    ],
+    "sensitive_disclosures": [],
+    "missing_data": [],
+    "citations": [
+      {
+        "source_id": "anam:P002:symptoms:1",
+        "source_type": "anamnesis_symptoms",
+        "timestamp": "2026-05-12",
+        "label": "symptoms"
+      },
+      {
+        "source_id": "anam:P002:adherence:1",
+        "source_type": "anamnesis_medication_adherence",
+        "timestamp": "2026-05-12",
+        "label": "adherence"
+      },
+      {
+        "source_id": "anam:P002:lifestyle:1",
+        "source_type": "anamnesis_lifestyle",
+        "timestamp": "2026-05-12",
+        "label": "lifestyle"
+      },
+      {
+        "source_id": "anam:P002:concern:1",
+        "source_type": "anamnesis_patient_concerns",
+        "timestamp": "2026-05-12",
+        "label": "concern"
+      }
+    ],
+    "confidence": 0.92
+  },
+  "brief": {
+    "brief_id": "ccb-957b35a3d3",
+    "patient_id": "P002",
+    "generated_at": "2026-06-20T20:06:02.655423Z",
+    "urgency": "Routine",
+    "alert_summary": "High Glucose alert: glucose 238 mg/dL.",
+    "patient_snapshot": "Active conditions: Type 2 diabetes mellitus, Obesity. Current treatment: Semaglutide, Metformin XR.",
+    "contextual_analysis": [
+      {
+        "text": "The RPM alert was classified Routine.",
+        "source_ids": [
+          "rpm:P002:alert:A002"
+        ],
+        "confidence": 0.88
+      },
+      {
+        "text": "Feels well and reports no polyuria, vomiting, or confusion.",
+        "source_ids": [
+          "anam:P002:symptoms:1"
+        ],
+        "confidence": 0.92
+      },
+      {
+        "text": "Reports taking metformin and the new weekly injection as directed.",
+        "source_ids": [
+          "anam:P002:adherence:1"
+        ],
+        "confidence": 0.92
+      },
+      {
+        "text": "Planned dietary change for a family celebration included a carbohydrate-heavy meal before the reading.",
+        "source_ids": [
+          "anam:P002:lifestyle:1"
+        ],
+        "confidence": 0.92
+      }
+    ],
+    "risk_assessment": [
+      {
+        "text": "The glucose alert may reflect a documented short-term dietary change and recent treatment adjustment, but persistence still requires review.",
+        "source_ids": [
+          "rpm:P002:alert:A002",
+          "ehr:P002:lab:2",
+          "ehr:P002:note:1"
+        ],
+        "confidence": 0.84
+      }
+    ],
+    "recommended_actions": [
+      {
+        "action": "Review the alert and cited context using the appropriate clinical protocol.",
+        "rationale": "The system provides context only; a clinician must determine next steps.",
+        "priority": "Standard",
+        "confidence": 0.95,
+        "source_ids": [
+          "rpm:P002:alert:A002"
+        ]
+      }
+    ],
+    "uncertainties_and_gaps": [
+      "The prototype cannot independently verify device accuracy or symptoms."
+    ],
+    "confidence": 0.88,
+    "citations": [
+      {
+        "source_id": "rpm:P002:alert:A002",
+        "source_type": "rpm_alert",
+        "timestamp": "2026-05-13T19:30:00+00:00",
+        "label": "high glucose"
+      },
+      {
+        "source_id": "ehr:P002:problem:1",
+        "source_type": "ehr_problems",
+        "timestamp": null,
+        "label": "Type 2 diabetes mellitus"
+      },
+      {
+        "source_id": "ehr:P002:problem:2",
+        "source_type": "ehr_problems",
+        "timestamp": null,
+        "label": "Obesity"
+      },
+      {
+        "source_id": "ehr:P002:med:2",
+        "source_type": "ehr_medications",
+        "timestamp": null,
+        "label": "Semaglutide"
+      },
+      {
+        "source_id": "ehr:P002:med:1",
+        "source_type": "ehr_medications",
+        "timestamp": null,
+        "label": "Metformin XR"
+      },
+      {
+        "source_id": "ehr:P002:lab:1",
+        "source_type": "ehr_labs",
+        "timestamp": "2026-04-28",
+        "label": "HbA1c"
+      },
+      {
+        "source_id": "ehr:P002:lab:2",
+        "source_type": "ehr_labs",
+        "timestamp": "2026-04-28",
+        "label": "Fasting glucose"
+      },
+      {
+        "source_id": "ehr:P002:note:1",
+        "source_type": "ehr_visit_notes",
+        "timestamp": "2026-05-05",
+        "label": "Diabetes medication adjustment"
+      },
+      {
+        "source_id": "anam:P002:symptoms:1",
+        "source_type": "anamnesis_symptoms",
+        "timestamp": "2026-05-12",
+        "label": "symptoms"
+      },
+      {
+        "source_id": "anam:P002:adherence:1",
+        "source_type": "anamnesis_medication_adherence",
+        "timestamp": "2026-05-12",
+        "label": "adherence"
+      },
+      {
+        "source_id": "anam:P002:lifestyle:1",
+        "source_type": "anamnesis_lifestyle",
+        "timestamp": "2026-05-12",
+        "label": "lifestyle"
+      },
+      {
+        "source_id": "anam:P002:concern:1",
+        "source_type": "anamnesis_patient_concerns",
+        "timestamp": "2026-05-12",
+        "label": "concern"
+      }
+    ],
+    "immediate_escalation": false,
+    "human_review_required": true,
+    "disclaimer": "Educational prototype using simulated data. This output is not a diagnosis or medical advice and must be reviewed by a qualified clinician."
+  },
+  "session_id": "session-e38af4ef9b77",
+  "elapsed_seconds": 0.002857375016901642,
+  "mode": "offline",
+  "warnings": []
+}

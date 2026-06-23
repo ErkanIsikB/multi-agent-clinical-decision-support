@@ -1,0 +1,31 @@
+[
+  {
+    "case": "side effect and adherence",
+    "input": "I quit the pressure pill five days ago because this dry cough would not stop.",
+    "expected": {
+      "symptoms_and_timeline": ["Persistent dry cough; duration provided in record."],
+      "medication_adherence": ["Self-discontinued antihypertensive five days ago because of cough."],
+      "tone": "neutral"
+    }
+  },
+  {
+    "case": "gradual deterioration",
+    "input": "My shoes get tight by dinner and stairs make me more winded than last week.",
+    "expected": {
+      "symptoms_and_timeline": [
+        "Increasing evening ankle swelling.",
+        "Mild worsening exertional breathlessness."
+      ]
+    }
+  },
+  {
+    "case": "edge case conflicting adherence",
+    "input": "I have taken every dose. I do not know why the level is low.",
+    "expected": {
+      "medication_adherence": ["Patient reports full adherence."],
+      "patient_concerns": ["Patient is surprised by the low level."],
+      "prohibited": "Do not accuse the patient of nonadherence."
+    }
+  }
+]
+

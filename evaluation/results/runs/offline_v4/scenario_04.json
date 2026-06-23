@@ -1,0 +1,272 @@
+{
+  "alert": {
+    "alert_id": "A004",
+    "patient_id": "P004",
+    "timestamp": "2026-05-13T09:40:00Z",
+    "device_type": "Bluetooth blood pressure cuff",
+    "alert_category": "blood_pressure",
+    "measurements": {
+      "systolic_bp": 166.0,
+      "diastolic_bp": 101.0,
+      "heart_rate": 78.0
+    },
+    "units": {
+      "systolic_bp": "mmHg",
+      "diastolic_bp": "mmHg",
+      "heart_rate": "bpm"
+    },
+    "baseline": {},
+    "thresholds": {
+      "systolic_bp_high": 160.0,
+      "diastolic_bp_high": 100.0
+    },
+    "trend": [],
+    "device_metadata": {
+      "validated_cuff": true
+    },
+    "source_id": "rpm:P004:alert:A004"
+  },
+  "triage": {
+    "patient_id": "P004",
+    "urgency": "Urgent",
+    "clinical_question": "What EHR and patient-reported factors could contextualize the blood pressure alert for P004?",
+    "decision_factors": [
+      "Systolic blood pressure 166 mmHg is above the urgent threshold.",
+      "Diastolic blood pressure 101 mmHg is above the urgent threshold."
+    ],
+    "retrieval_query": {
+      "patient_id": "P004",
+      "clinical_question": "What EHR and patient-reported factors could contextualize the blood pressure alert for P004?",
+      "ehr_topics": [
+        "hypertension",
+        "blood pressure",
+        "antihypertensive",
+        "renal"
+      ],
+      "anamnesis_topics": [
+        "hypertension",
+        "blood pressure",
+        "antihypertensive",
+        "renal",
+        "medication adherence",
+        "recent symptoms"
+      ],
+      "lookback_days": 180
+    },
+    "immediate_escalation": false,
+    "confidence": 0.88
+  },
+  "ehr_context": {
+    "patient_id": "P004",
+    "demographics": {
+      "name": "Omar Reed",
+      "age": 58,
+      "sex": "male",
+      "preferred_language": "English",
+      "fictional_patient": true
+    },
+    "active_conditions": [
+      {
+        "source_id": "ehr:P004:problem:1",
+        "name": "Essential hypertension",
+        "icd10": "I10",
+        "status": "active"
+      }
+    ],
+    "active_medications": [],
+    "relevant_labs": [],
+    "relevant_notes": [
+      {
+        "source_id": "ehr:P004:note:1",
+        "title": "Transfer intake",
+        "date": "2026-05-02",
+        "text": "Patient transferred from an external health system. Prior records requested but not received."
+      }
+    ],
+    "allergies": [],
+    "contradictions": [],
+    "missing_data": [
+      "External medication list is unavailable.",
+      "No prior laboratory history is available.",
+      "Problem list may be incomplete after transfer."
+    ],
+    "citations": [
+      {
+        "source_id": "ehr:P004:problem:1",
+        "source_type": "ehr_problems",
+        "timestamp": null,
+        "label": "Essential hypertension"
+      },
+      {
+        "source_id": "ehr:P004:note:1",
+        "source_type": "ehr_visit_notes",
+        "timestamp": "2026-05-02",
+        "label": "Transfer intake"
+      }
+    ],
+    "retrieval_confidence": 0.9
+  },
+  "anamnesis_summary": {
+    "patient_id": "P004",
+    "symptoms_and_timeline": [
+      "Intermittent morning headaches over the past week."
+    ],
+    "medication_adherence": [
+      "Reports taking a small white blood pressure tablet but cannot recall its name or dose."
+    ],
+    "lifestyle_factors": [
+      "Recently moved and has not established local primary care."
+    ],
+    "family_history": [],
+    "patient_concerns": [
+      "Worries that transfer records have not arrived."
+    ],
+    "sensitive_disclosures": [],
+    "missing_data": [
+      "Home medication name and dose remain unverified."
+    ],
+    "citations": [
+      {
+        "source_id": "anam:P004:symptoms:1",
+        "source_type": "anamnesis_symptoms",
+        "timestamp": "2026-05-12",
+        "label": "symptoms"
+      },
+      {
+        "source_id": "anam:P004:adherence:1",
+        "source_type": "anamnesis_medication_adherence",
+        "timestamp": "2026-05-12",
+        "label": "adherence"
+      },
+      {
+        "source_id": "anam:P004:lifestyle:1",
+        "source_type": "anamnesis_lifestyle",
+        "timestamp": "2026-05-12",
+        "label": "lifestyle"
+      },
+      {
+        "source_id": "anam:P004:concern:1",
+        "source_type": "anamnesis_patient_concerns",
+        "timestamp": "2026-05-12",
+        "label": "concern"
+      }
+    ],
+    "confidence": 0.76
+  },
+  "brief": {
+    "brief_id": "ccb-56bda11c31",
+    "patient_id": "P004",
+    "generated_at": "2026-06-20T20:21:54.489843Z",
+    "urgency": "Urgent",
+    "alert_summary": "Blood Pressure alert: systolic bp 166 mmHg, diastolic bp 101 mmHg, heart rate 78 bpm.",
+    "patient_snapshot": "Active conditions: Essential hypertension. Current treatment: no active medication retrieved.",
+    "contextual_analysis": [
+      {
+        "text": "The RPM alert was classified Urgent.",
+        "source_ids": [
+          "rpm:P004:alert:A004"
+        ],
+        "confidence": 0.88
+      },
+      {
+        "text": "Intermittent morning headaches over the past week.",
+        "source_ids": [
+          "anam:P004:symptoms:1"
+        ],
+        "confidence": 0.76
+      },
+      {
+        "text": "Reports taking a small white blood pressure tablet but cannot recall its name or dose.",
+        "source_ids": [
+          "anam:P004:adherence:1"
+        ],
+        "confidence": 0.76
+      },
+      {
+        "text": "Recently moved and has not established local primary care.",
+        "source_ids": [
+          "anam:P004:lifestyle:1"
+        ],
+        "confidence": 0.76
+      }
+    ],
+    "risk_assessment": [
+      {
+        "text": "Sparse longitudinal EHR data materially limits contextual confidence.",
+        "source_ids": [
+          "rpm:P004:alert:A004"
+        ],
+        "confidence": 0.95
+      }
+    ],
+    "recommended_actions": [
+      {
+        "action": "Review the alert and cited context using the appropriate clinical protocol.",
+        "rationale": "The system provides context only; a clinician must determine next steps.",
+        "priority": "High",
+        "confidence": 0.95,
+        "source_ids": [
+          "rpm:P004:alert:A004"
+        ]
+      }
+    ],
+    "uncertainties_and_gaps": [
+      "External medication list is unavailable.",
+      "No prior laboratory history is available.",
+      "Problem list may be incomplete after transfer.",
+      "Home medication name and dose remain unverified."
+    ],
+    "confidence": 0.76,
+    "citations": [
+      {
+        "source_id": "rpm:P004:alert:A004",
+        "source_type": "rpm_alert",
+        "timestamp": "2026-05-13T09:40:00+00:00",
+        "label": "blood pressure"
+      },
+      {
+        "source_id": "ehr:P004:problem:1",
+        "source_type": "ehr_problems",
+        "timestamp": null,
+        "label": "Essential hypertension"
+      },
+      {
+        "source_id": "ehr:P004:note:1",
+        "source_type": "ehr_visit_notes",
+        "timestamp": "2026-05-02",
+        "label": "Transfer intake"
+      },
+      {
+        "source_id": "anam:P004:symptoms:1",
+        "source_type": "anamnesis_symptoms",
+        "timestamp": "2026-05-12",
+        "label": "symptoms"
+      },
+      {
+        "source_id": "anam:P004:adherence:1",
+        "source_type": "anamnesis_medication_adherence",
+        "timestamp": "2026-05-12",
+        "label": "adherence"
+      },
+      {
+        "source_id": "anam:P004:lifestyle:1",
+        "source_type": "anamnesis_lifestyle",
+        "timestamp": "2026-05-12",
+        "label": "lifestyle"
+      },
+      {
+        "source_id": "anam:P004:concern:1",
+        "source_type": "anamnesis_patient_concerns",
+        "timestamp": "2026-05-12",
+        "label": "concern"
+      }
+    ],
+    "immediate_escalation": false,
+    "human_review_required": true,
+    "disclaimer": "Educational prototype using simulated data. This output is not a diagnosis or medical advice and must be reviewed by a qualified clinician."
+  },
+  "session_id": "session-cfc4f0165deb",
+  "elapsed_seconds": 0.00191762502072379,
+  "mode": "offline",
+  "warnings": []
+}

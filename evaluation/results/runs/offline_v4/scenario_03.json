@@ -1,0 +1,378 @@
+{
+  "alert": {
+    "alert_id": "A003",
+    "patient_id": "P003",
+    "timestamp": "2026-05-13T07:05:00Z",
+    "device_type": "Connected scale",
+    "alert_category": "weight_gain_trend",
+    "measurements": {
+      "weight": 74.8
+    },
+    "units": {
+      "weight": "kg"
+    },
+    "baseline": {
+      "weight": 72.0
+    },
+    "thresholds": {
+      "fourteen_day_gain": 2.0
+    },
+    "trend": [
+      {
+        "days_ago": 14,
+        "weight": 72.1
+      },
+      {
+        "days_ago": 7,
+        "weight": 73.2
+      },
+      {
+        "days_ago": 3,
+        "weight": 74.1
+      }
+    ],
+    "device_metadata": {
+      "surface": "hard floor",
+      "signal_quality": "good"
+    },
+    "source_id": "rpm:P003:alert:A003"
+  },
+  "triage": {
+    "patient_id": "P003",
+    "urgency": "Urgent",
+    "clinical_question": "What EHR and patient-reported factors could contextualize the weight gain trend alert for P003?",
+    "decision_factors": [
+      "Alert category 'weight_gain_trend' can indicate gradual deterioration."
+    ],
+    "retrieval_query": {
+      "patient_id": "P003",
+      "clinical_question": "What EHR and patient-reported factors could contextualize the weight gain trend alert for P003?",
+      "ehr_topics": [
+        "heart failure",
+        "weight",
+        "edema",
+        "diuretic",
+        "dyspnea"
+      ],
+      "anamnesis_topics": [
+        "heart failure",
+        "weight",
+        "edema",
+        "diuretic",
+        "dyspnea",
+        "medication adherence",
+        "recent symptoms"
+      ],
+      "lookback_days": 180
+    },
+    "immediate_escalation": false,
+    "confidence": 0.88
+  },
+  "ehr_context": {
+    "patient_id": "P003",
+    "demographics": {
+      "name": "Aylin Foster",
+      "age": 69,
+      "sex": "female",
+      "preferred_language": "English",
+      "fictional_patient": true
+    },
+    "active_conditions": [
+      {
+        "source_id": "ehr:P003:problem:1",
+        "name": "Heart failure with reduced ejection fraction",
+        "icd10": "I50.2",
+        "status": "active"
+      },
+      {
+        "source_id": "ehr:P003:problem:2",
+        "name": "Essential hypertension",
+        "icd10": "I10",
+        "status": "active"
+      }
+    ],
+    "active_medications": [
+      {
+        "source_id": "ehr:P003:med:1",
+        "name": "Furosemide",
+        "dose": "40 mg each morning",
+        "started": "2025-10-21",
+        "status": "active"
+      },
+      {
+        "source_id": "ehr:P003:med:2",
+        "name": "Carvedilol",
+        "dose": "12.5 mg twice daily",
+        "started": "2025-10-21",
+        "status": "active"
+      }
+    ],
+    "relevant_labs": [
+      {
+        "source_id": "ehr:P003:lab:2",
+        "test": "Creatinine",
+        "value": 1.1,
+        "unit": "mg/dL",
+        "date": "2026-04-20",
+        "reference_range": "0.6-1.2",
+        "flag": "normal"
+      }
+    ],
+    "relevant_notes": [
+      {
+        "source_id": "ehr:P003:note:1",
+        "title": "Heart failure monitoring plan",
+        "date": "2026-04-20",
+        "text": "Dry weight approximately 72.0 kg. Call care team for rapid weight gain, edema, or dyspnea."
+      }
+    ],
+    "allergies": [],
+    "contradictions": [],
+    "missing_data": [],
+    "citations": [
+      {
+        "source_id": "ehr:P003:problem:1",
+        "source_type": "ehr_problems",
+        "timestamp": null,
+        "label": "Heart failure with reduced ejection fraction"
+      },
+      {
+        "source_id": "ehr:P003:problem:2",
+        "source_type": "ehr_problems",
+        "timestamp": null,
+        "label": "Essential hypertension"
+      },
+      {
+        "source_id": "ehr:P003:med:1",
+        "source_type": "ehr_medications",
+        "timestamp": null,
+        "label": "Furosemide"
+      },
+      {
+        "source_id": "ehr:P003:med:2",
+        "source_type": "ehr_medications",
+        "timestamp": null,
+        "label": "Carvedilol"
+      },
+      {
+        "source_id": "ehr:P003:lab:2",
+        "source_type": "ehr_labs",
+        "timestamp": "2026-04-20",
+        "label": "Creatinine"
+      },
+      {
+        "source_id": "ehr:P003:note:1",
+        "source_type": "ehr_visit_notes",
+        "timestamp": "2026-04-20",
+        "label": "Heart failure monitoring plan"
+      }
+    ],
+    "retrieval_confidence": 0.9
+  },
+  "anamnesis_summary": {
+    "patient_id": "P003",
+    "symptoms_and_timeline": [
+      "Ankle swelling has gradually increased over six days.",
+      "Mild breathlessness when climbing stairs is slightly worse than usual."
+    ],
+    "medication_adherence": [
+      "Reports taking furosemide every morning."
+    ],
+    "lifestyle_factors": [
+      "Ate several salty prepared meals this week."
+    ],
+    "family_history": [],
+    "patient_concerns": [
+      "Concerned that shoes feel tighter by evening."
+    ],
+    "sensitive_disclosures": [],
+    "missing_data": [],
+    "citations": [
+      {
+        "source_id": "anam:P003:symptoms:1",
+        "source_type": "anamnesis_symptoms",
+        "timestamp": "2026-05-12",
+        "label": "symptoms"
+      },
+      {
+        "source_id": "anam:P003:symptoms:2",
+        "source_type": "anamnesis_symptoms",
+        "timestamp": "2026-05-12",
+        "label": "symptoms"
+      },
+      {
+        "source_id": "anam:P003:adherence:1",
+        "source_type": "anamnesis_medication_adherence",
+        "timestamp": "2026-05-12",
+        "label": "adherence"
+      },
+      {
+        "source_id": "anam:P003:lifestyle:1",
+        "source_type": "anamnesis_lifestyle",
+        "timestamp": "2026-05-12",
+        "label": "lifestyle"
+      },
+      {
+        "source_id": "anam:P003:concern:1",
+        "source_type": "anamnesis_patient_concerns",
+        "timestamp": "2026-05-12",
+        "label": "concern"
+      }
+    ],
+    "confidence": 0.92
+  },
+  "brief": {
+    "brief_id": "ccb-5250daf58e",
+    "patient_id": "P003",
+    "generated_at": "2026-06-20T20:21:54.487542Z",
+    "urgency": "Urgent",
+    "alert_summary": "Weight Gain Trend alert: weight 74.8 kg.",
+    "patient_snapshot": "Active conditions: Heart failure with reduced ejection fraction, Essential hypertension. Current treatment: Furosemide, Carvedilol.",
+    "contextual_analysis": [
+      {
+        "text": "The RPM alert was classified Urgent.",
+        "source_ids": [
+          "rpm:P003:alert:A003"
+        ],
+        "confidence": 0.88
+      },
+      {
+        "text": "Ankle swelling has gradually increased over six days.",
+        "source_ids": [
+          "anam:P003:symptoms:1"
+        ],
+        "confidence": 0.92
+      },
+      {
+        "text": "Mild breathlessness when climbing stairs is slightly worse than usual.",
+        "source_ids": [
+          "anam:P003:symptoms:2"
+        ],
+        "confidence": 0.92
+      },
+      {
+        "text": "Reports taking furosemide every morning.",
+        "source_ids": [
+          "anam:P003:adherence:1"
+        ],
+        "confidence": 0.92
+      },
+      {
+        "text": "Ate several salty prepared meals this week.",
+        "source_ids": [
+          "anam:P003:lifestyle:1"
+        ],
+        "confidence": 0.92
+      }
+    ],
+    "risk_assessment": [
+      {
+        "text": "Gradual weight increase together with reported ankle swelling may indicate worsening fluid status and deserves prompt clinician assessment.",
+        "source_ids": [
+          "rpm:P003:alert:A003",
+          "ehr:P003:problem:1",
+          "ehr:P003:note:1",
+          "anam:P003:symptoms:1",
+          "anam:P003:symptoms:2"
+        ],
+        "confidence": 0.91
+      }
+    ],
+    "recommended_actions": [
+      {
+        "action": "Review the alert and cited context using the appropriate clinical protocol.",
+        "rationale": "The system provides context only; a clinician must determine next steps.",
+        "priority": "High",
+        "confidence": 0.95,
+        "source_ids": [
+          "rpm:P003:alert:A003"
+        ]
+      }
+    ],
+    "uncertainties_and_gaps": [
+      "The prototype cannot independently verify device accuracy or symptoms."
+    ],
+    "confidence": 0.88,
+    "citations": [
+      {
+        "source_id": "rpm:P003:alert:A003",
+        "source_type": "rpm_alert",
+        "timestamp": "2026-05-13T07:05:00+00:00",
+        "label": "weight gain trend"
+      },
+      {
+        "source_id": "ehr:P003:problem:1",
+        "source_type": "ehr_problems",
+        "timestamp": null,
+        "label": "Heart failure with reduced ejection fraction"
+      },
+      {
+        "source_id": "ehr:P003:problem:2",
+        "source_type": "ehr_problems",
+        "timestamp": null,
+        "label": "Essential hypertension"
+      },
+      {
+        "source_id": "ehr:P003:med:1",
+        "source_type": "ehr_medications",
+        "timestamp": null,
+        "label": "Furosemide"
+      },
+      {
+        "source_id": "ehr:P003:med:2",
+        "source_type": "ehr_medications",
+        "timestamp": null,
+        "label": "Carvedilol"
+      },
+      {
+        "source_id": "ehr:P003:lab:2",
+        "source_type": "ehr_labs",
+        "timestamp": "2026-04-20",
+        "label": "Creatinine"
+      },
+      {
+        "source_id": "ehr:P003:note:1",
+        "source_type": "ehr_visit_notes",
+        "timestamp": "2026-04-20",
+        "label": "Heart failure monitoring plan"
+      },
+      {
+        "source_id": "anam:P003:symptoms:1",
+        "source_type": "anamnesis_symptoms",
+        "timestamp": "2026-05-12",
+        "label": "symptoms"
+      },
+      {
+        "source_id": "anam:P003:symptoms:2",
+        "source_type": "anamnesis_symptoms",
+        "timestamp": "2026-05-12",
+        "label": "symptoms"
+      },
+      {
+        "source_id": "anam:P003:adherence:1",
+        "source_type": "anamnesis_medication_adherence",
+        "timestamp": "2026-05-12",
+        "label": "adherence"
+      },
+      {
+        "source_id": "anam:P003:lifestyle:1",
+        "source_type": "anamnesis_lifestyle",
+        "timestamp": "2026-05-12",
+        "label": "lifestyle"
+      },
+      {
+        "source_id": "anam:P003:concern:1",
+        "source_type": "anamnesis_patient_concerns",
+        "timestamp": "2026-05-12",
+        "label": "concern"
+      }
+    ],
+    "immediate_escalation": false,
+    "human_review_required": true,
+    "disclaimer": "Educational prototype using simulated data. This output is not a diagnosis or medical advice and must be reviewed by a qualified clinician."
+  },
+  "session_id": "session-8f1c7a1614bc",
+  "elapsed_seconds": 0.0021613750141113997,
+  "mode": "offline",
+  "warnings": []
+}

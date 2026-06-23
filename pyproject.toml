@@ -1,0 +1,61 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "clinicalbridge"
+version = "0.1.0"
+description = "An educational multi-agent prototype that synthesizes simulated EHR, RPM, and anamnesis data."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+  { name = "Erkan Işık Bacak" },
+  { name = "Raymond Lasses" },
+  { name = "Ata Uzun" },
+  { name = "Kutlay Başar Aklan" },
+]
+dependencies = [
+  "chromadb>=1.0",
+  "langchain>=1.0",
+  "langchain-chroma>=1.0",
+  "langchain-openai>=1.0",
+  "langgraph>=1.0",
+  "numpy>=2.0",
+  "openai>=2.0",
+  "pandas>=2.2",
+  "pydantic>=2.9",
+  "python-dotenv>=1.0",
+  "rich>=13.9",
+  "scikit-learn>=1.5",
+  "streamlit>=1.40",
+  "typer>=0.15",
+]
+
+[project.optional-dependencies]
+dev = [
+  "ipykernel>=6.29",
+  "nbconvert>=7.16",
+  "nbformat>=5.10",
+  "pytest>=8.3",
+  "pytest-cov>=6.0",
+  "ruff>=0.9",
+]
+
+[project.scripts]
+clinicalbridge = "clinicalbridge.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/clinicalbridge"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"]

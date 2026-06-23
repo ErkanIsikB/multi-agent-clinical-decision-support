@@ -1,0 +1,10 @@
+{
+  "dataset_name": "ClinicalBridge Simulated Cohort",
+  "version": "1.0",
+  "generated_at": "2026-06-20T19:23:22.998731+00:00",
+  "patient_count": 12,
+  "scenario_count": 8,
+  "contains_real_patient_data": false,
+  "generation_method": "Programmatically generated fictional records designed around capstone test cases.",
+  "warning": "For education and software testing only. Not clinically validated."
+}

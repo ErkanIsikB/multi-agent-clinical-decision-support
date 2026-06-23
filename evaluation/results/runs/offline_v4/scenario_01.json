@@ -1,0 +1,378 @@
+{
+  "alert": {
+    "alert_id": "A001",
+    "patient_id": "P001",
+    "timestamp": "2026-05-13T08:10:00Z",
+    "device_type": "Bluetooth blood pressure cuff",
+    "alert_category": "blood_pressure",
+    "measurements": {
+      "systolic_bp": 172.0,
+      "diastolic_bp": 106.0,
+      "heart_rate": 82.0
+    },
+    "units": {
+      "systolic_bp": "mmHg",
+      "diastolic_bp": "mmHg",
+      "heart_rate": "bpm"
+    },
+    "baseline": {
+      "systolic_bp": 134.0,
+      "diastolic_bp": 82.0
+    },
+    "thresholds": {
+      "systolic_bp_high": 160.0,
+      "diastolic_bp_high": 100.0
+    },
+    "trend": [],
+    "device_metadata": {
+      "validated_cuff": true,
+      "repeat_reading": "170/104"
+    },
+    "source_id": "rpm:P001:alert:A001"
+  },
+  "triage": {
+    "patient_id": "P001",
+    "urgency": "Urgent",
+    "clinical_question": "What EHR and patient-reported factors could contextualize the blood pressure alert for P001?",
+    "decision_factors": [
+      "Systolic blood pressure 172 mmHg is above the urgent threshold.",
+      "Diastolic blood pressure 106 mmHg is above the urgent threshold."
+    ],
+    "retrieval_query": {
+      "patient_id": "P001",
+      "clinical_question": "What EHR and patient-reported factors could contextualize the blood pressure alert for P001?",
+      "ehr_topics": [
+        "hypertension",
+        "blood pressure",
+        "antihypertensive",
+        "renal"
+      ],
+      "anamnesis_topics": [
+        "hypertension",
+        "blood pressure",
+        "antihypertensive",
+        "renal",
+        "medication adherence",
+        "recent symptoms"
+      ],
+      "lookback_days": 180
+    },
+    "immediate_escalation": false,
+    "confidence": 0.88
+  },
+  "ehr_context": {
+    "patient_id": "P001",
+    "demographics": {
+      "name": "Maria Demir",
+      "age": 61,
+      "sex": "female",
+      "preferred_language": "English",
+      "fictional_patient": true
+    },
+    "active_conditions": [
+      {
+        "source_id": "ehr:P001:problem:1",
+        "name": "Essential hypertension",
+        "icd10": "I10",
+        "status": "active"
+      },
+      {
+        "source_id": "ehr:P001:problem:2",
+        "name": "Hyperlipidemia",
+        "icd10": "E78.5",
+        "status": "active"
+      }
+    ],
+    "active_medications": [
+      {
+        "source_id": "ehr:P001:med:2",
+        "name": "Atorvastatin",
+        "dose": "20 mg nightly",
+        "started": "2025-07-18",
+        "status": "active"
+      },
+      {
+        "source_id": "ehr:P001:med:1",
+        "name": "Lisinopril",
+        "dose": "20 mg once daily",
+        "started": "2025-11-02",
+        "status": "active"
+      }
+    ],
+    "relevant_labs": [
+      {
+        "source_id": "ehr:P001:lab:1",
+        "test": "Creatinine",
+        "value": 0.9,
+        "unit": "mg/dL",
+        "date": "2026-03-14",
+        "reference_range": "0.6-1.2",
+        "flag": "normal"
+      },
+      {
+        "source_id": "ehr:P001:lab:2",
+        "test": "Potassium",
+        "value": 4.3,
+        "unit": "mmol/L",
+        "date": "2026-03-14",
+        "reference_range": "3.5-5.1",
+        "flag": "normal"
+      }
+    ],
+    "relevant_notes": [
+      {
+        "source_id": "ehr:P001:note:1",
+        "title": "Hypertension follow-up",
+        "date": "2026-03-14",
+        "text": "Clinic blood pressure 132/82. Lisinopril continued. No side effects documented."
+      }
+    ],
+    "allergies": [],
+    "contradictions": [
+      "The EHR lists lisinopril as active, while the patient reports stopping it."
+    ],
+    "missing_data": [],
+    "citations": [
+      {
+        "source_id": "ehr:P001:problem:1",
+        "source_type": "ehr_problems",
+        "timestamp": null,
+        "label": "Essential hypertension"
+      },
+      {
+        "source_id": "ehr:P001:problem:2",
+        "source_type": "ehr_problems",
+        "timestamp": null,
+        "label": "Hyperlipidemia"
+      },
+      {
+        "source_id": "ehr:P001:med:2",
+        "source_type": "ehr_medications",
+        "timestamp": null,
+        "label": "Atorvastatin"
+      },
+      {
+        "source_id": "ehr:P001:med:1",
+        "source_type": "ehr_medications",
+        "timestamp": null,
+        "label": "Lisinopril"
+      },
+      {
+        "source_id": "ehr:P001:lab:1",
+        "source_type": "ehr_labs",
+        "timestamp": "2026-03-14",
+        "label": "Creatinine"
+      },
+      {
+        "source_id": "ehr:P001:lab:2",
+        "source_type": "ehr_labs",
+        "timestamp": "2026-03-14",
+        "label": "Potassium"
+      },
+      {
+        "source_id": "ehr:P001:note:1",
+        "source_type": "ehr_visit_notes",
+        "timestamp": "2026-03-14",
+        "label": "Hypertension follow-up"
+      }
+    ],
+    "retrieval_confidence": 0.9
+  },
+  "anamnesis_summary": {
+    "patient_id": "P001",
+    "symptoms_and_timeline": [
+      "Persistent dry cough began about three weeks ago; no chest pain or shortness of breath."
+    ],
+    "medication_adherence": [
+      "Patient stopped lisinopril five days ago because the cough was disruptive."
+    ],
+    "lifestyle_factors": [
+      "No major dietary or activity change reported."
+    ],
+    "family_history": [],
+    "patient_concerns": [
+      "Asks whether another blood pressure medicine is possible."
+    ],
+    "sensitive_disclosures": [],
+    "missing_data": [],
+    "citations": [
+      {
+        "source_id": "anam:P001:symptoms:1",
+        "source_type": "anamnesis_symptoms",
+        "timestamp": "2026-05-12",
+        "label": "symptoms"
+      },
+      {
+        "source_id": "anam:P001:adherence:1",
+        "source_type": "anamnesis_medication_adherence",
+        "timestamp": "2026-05-12",
+        "label": "adherence"
+      },
+      {
+        "source_id": "anam:P001:lifestyle:1",
+        "source_type": "anamnesis_lifestyle",
+        "timestamp": "2026-05-12",
+        "label": "lifestyle"
+      },
+      {
+        "source_id": "anam:P001:concern:1",
+        "source_type": "anamnesis_patient_concerns",
+        "timestamp": "2026-05-12",
+        "label": "concern"
+      }
+    ],
+    "confidence": 0.92
+  },
+  "brief": {
+    "brief_id": "ccb-f9a1710b12",
+    "patient_id": "P001",
+    "generated_at": "2026-06-20T20:21:54.481914Z",
+    "urgency": "Urgent",
+    "alert_summary": "Blood Pressure alert: systolic bp 172 mmHg, diastolic bp 106 mmHg, heart rate 82 bpm.",
+    "patient_snapshot": "Active conditions: Essential hypertension, Hyperlipidemia. Current treatment: Atorvastatin, Lisinopril.",
+    "contextual_analysis": [
+      {
+        "text": "The RPM alert was classified Urgent.",
+        "source_ids": [
+          "rpm:P001:alert:A001"
+        ],
+        "confidence": 0.88
+      },
+      {
+        "text": "Persistent dry cough began about three weeks ago; no chest pain or shortness of breath.",
+        "source_ids": [
+          "anam:P001:symptoms:1"
+        ],
+        "confidence": 0.92
+      },
+      {
+        "text": "Patient stopped lisinopril five days ago because the cough was disruptive.",
+        "source_ids": [
+          "anam:P001:adherence:1"
+        ],
+        "confidence": 0.92
+      },
+      {
+        "text": "No major dietary or activity change reported.",
+        "source_ids": [
+          "anam:P001:lifestyle:1"
+        ],
+        "confidence": 0.92
+      }
+    ],
+    "risk_assessment": [
+      {
+        "text": "The elevated blood pressure is temporally associated with a reported medication interruption after cough; this warrants medication review without assuming causality.",
+        "source_ids": [
+          "anam:P001:adherence:1"
+        ],
+        "confidence": 0.9
+      }
+    ],
+    "recommended_actions": [
+      {
+        "action": "Review the alert and cited context using the appropriate clinical protocol.",
+        "rationale": "The system provides context only; a clinician must determine next steps.",
+        "priority": "High",
+        "confidence": 0.95,
+        "source_ids": [
+          "rpm:P001:alert:A001"
+        ]
+      },
+      {
+        "action": "Confirm adherence, side effects, and the current antihypertensive plan.",
+        "rationale": "The patient reports stopping medication because of persistent cough.",
+        "priority": "High",
+        "confidence": 0.9,
+        "source_ids": [
+          "anam:P001:adherence:1"
+        ]
+      }
+    ],
+    "uncertainties_and_gaps": [
+      "The EHR lists lisinopril as active, while the patient reports stopping it."
+    ],
+    "confidence": 0.88,
+    "citations": [
+      {
+        "source_id": "rpm:P001:alert:A001",
+        "source_type": "rpm_alert",
+        "timestamp": "2026-05-13T08:10:00+00:00",
+        "label": "blood pressure"
+      },
+      {
+        "source_id": "ehr:P001:problem:1",
+        "source_type": "ehr_problems",
+        "timestamp": null,
+        "label": "Essential hypertension"
+      },
+      {
+        "source_id": "ehr:P001:problem:2",
+        "source_type": "ehr_problems",
+        "timestamp": null,
+        "label": "Hyperlipidemia"
+      },
+      {
+        "source_id": "ehr:P001:med:2",
+        "source_type": "ehr_medications",
+        "timestamp": null,
+        "label": "Atorvastatin"
+      },
+      {
+        "source_id": "ehr:P001:med:1",
+        "source_type": "ehr_medications",
+        "timestamp": null,
+        "label": "Lisinopril"
+      },
+      {
+        "source_id": "ehr:P001:lab:1",
+        "source_type": "ehr_labs",
+        "timestamp": "2026-03-14",
+        "label": "Creatinine"
+      },
+      {
+        "source_id": "ehr:P001:lab:2",
+        "source_type": "ehr_labs",
+        "timestamp": "2026-03-14",
+        "label": "Potassium"
+      },
+      {
+        "source_id": "ehr:P001:note:1",
+        "source_type": "ehr_visit_notes",
+        "timestamp": "2026-03-14",
+        "label": "Hypertension follow-up"
+      },
+      {
+        "source_id": "anam:P001:symptoms:1",
+        "source_type": "anamnesis_symptoms",
+        "timestamp": "2026-05-12",
+        "label": "symptoms"
+      },
+      {
+        "source_id": "anam:P001:adherence:1",
+        "source_type": "anamnesis_medication_adherence",
+        "timestamp": "2026-05-12",
+        "label": "adherence"
+      },
+      {
+        "source_id": "anam:P001:lifestyle:1",
+        "source_type": "anamnesis_lifestyle",
+        "timestamp": "2026-05-12",
+        "label": "lifestyle"
+      },
+      {
+        "source_id": "anam:P001:concern:1",
+        "source_type": "anamnesis_patient_concerns",
+        "timestamp": "2026-05-12",
+        "label": "concern"
+      }
+    ],
+    "immediate_escalation": false,
+    "human_review_required": true,
+    "disclaimer": "Educational prototype using simulated data. This output is not a diagnosis or medical advice and must be reviewed by a qualified clinician."
+  },
+  "session_id": "session-911042fc045b",
+  "elapsed_seconds": 0.007000749988947064,
+  "mode": "offline",
+  "warnings": []
+}

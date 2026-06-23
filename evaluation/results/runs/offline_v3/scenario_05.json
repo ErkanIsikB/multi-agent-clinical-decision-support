@@ -1,0 +1,304 @@
+{
+  "alert": {
+    "alert_id": "A005",
+    "patient_id": "P005",
+    "timestamp": "2026-05-13T10:15:00Z",
+    "device_type": "Medication monitoring portal",
+    "alert_category": "medication_discrepancy",
+    "measurements": {
+      "valproate_level": 34.0
+    },
+    "units": {
+      "valproate_level": "mcg/mL"
+    },
+    "baseline": {
+      "valproate_level": 68.0
+    },
+    "thresholds": {
+      "valproate_level_low": 50.0
+    },
+    "trend": [],
+    "device_metadata": {
+      "laboratory_verified": true
+    },
+    "source_id": "rpm:P005:alert:A005"
+  },
+  "triage": {
+    "patient_id": "P005",
+    "urgency": "Urgent",
+    "clinical_question": "What EHR and patient-reported factors could contextualize the medication discrepancy alert for P005?",
+    "decision_factors": [
+      "Alert category 'medication_discrepancy' can indicate gradual deterioration."
+    ],
+    "retrieval_query": {
+      "patient_id": "P005",
+      "clinical_question": "What EHR and patient-reported factors could contextualize the medication discrepancy alert for P005?",
+      "ehr_topics": [
+        "medication",
+        "drug level",
+        "adherence",
+        "pharmacy"
+      ],
+      "anamnesis_topics": [
+        "medication",
+        "drug level",
+        "adherence",
+        "pharmacy",
+        "medication adherence",
+        "recent symptoms"
+      ],
+      "lookback_days": 180
+    },
+    "immediate_escalation": false,
+    "confidence": 0.88
+  },
+  "ehr_context": {
+    "patient_id": "P005",
+    "demographics": {
+      "name": "Leyla Stone",
+      "age": 42,
+      "sex": "female",
+      "preferred_language": "English",
+      "fictional_patient": true
+    },
+    "active_conditions": [
+      {
+        "source_id": "ehr:P005:problem:1",
+        "name": "Epilepsy",
+        "icd10": "G40.909",
+        "status": "active"
+      }
+    ],
+    "active_medications": [
+      {
+        "source_id": "ehr:P005:med:1",
+        "name": "Valproate",
+        "dose": "500 mg twice daily",
+        "started": "2023-06-12",
+        "status": "active"
+      }
+    ],
+    "relevant_labs": [
+      {
+        "source_id": "ehr:P005:lab:1",
+        "test": "Valproate level",
+        "value": 34,
+        "unit": "mcg/mL",
+        "date": "2026-05-10",
+        "reference_range": "50-100",
+        "flag": "sub-therapeutic"
+      }
+    ],
+    "relevant_notes": [
+      {
+        "source_id": "ehr:P005:note:1",
+        "title": "Neurology follow-up",
+        "date": "2026-02-19",
+        "text": "No reported seizure activity. Continue current valproate dose and monitor levels."
+      }
+    ],
+    "allergies": [],
+    "contradictions": [
+      "Measured valproate level is sub-therapeutic despite reported full adherence."
+    ],
+    "missing_data": [],
+    "citations": [
+      {
+        "source_id": "ehr:P005:problem:1",
+        "source_type": "ehr_problems",
+        "timestamp": null,
+        "label": "Epilepsy"
+      },
+      {
+        "source_id": "ehr:P005:med:1",
+        "source_type": "ehr_medications",
+        "timestamp": null,
+        "label": "Valproate"
+      },
+      {
+        "source_id": "ehr:P005:lab:1",
+        "source_type": "ehr_labs",
+        "timestamp": "2026-05-10",
+        "label": "Valproate level"
+      },
+      {
+        "source_id": "ehr:P005:note:1",
+        "source_type": "ehr_visit_notes",
+        "timestamp": "2026-02-19",
+        "label": "Neurology follow-up"
+      }
+    ],
+    "retrieval_confidence": 0.9
+  },
+  "anamnesis_summary": {
+    "patient_id": "P005",
+    "symptoms_and_timeline": [
+      "No seizure symptoms or new neurologic complaints reported."
+    ],
+    "medication_adherence": [
+      "Reports taking every valproate dose and denies intentional or accidental missed doses."
+    ],
+    "lifestyle_factors": [
+      "No new supplements or major diet changes reported."
+    ],
+    "family_history": [],
+    "patient_concerns": [
+      "Surprised that the medication level was low."
+    ],
+    "sensitive_disclosures": [],
+    "missing_data": [],
+    "citations": [
+      {
+        "source_id": "anam:P005:symptoms:1",
+        "source_type": "anamnesis_symptoms",
+        "timestamp": "2026-05-12",
+        "label": "symptoms"
+      },
+      {
+        "source_id": "anam:P005:adherence:1",
+        "source_type": "anamnesis_medication_adherence",
+        "timestamp": "2026-05-12",
+        "label": "adherence"
+      },
+      {
+        "source_id": "anam:P005:lifestyle:1",
+        "source_type": "anamnesis_lifestyle",
+        "timestamp": "2026-05-12",
+        "label": "lifestyle"
+      },
+      {
+        "source_id": "anam:P005:concern:1",
+        "source_type": "anamnesis_patient_concerns",
+        "timestamp": "2026-05-12",
+        "label": "concern"
+      }
+    ],
+    "confidence": 0.92
+  },
+  "brief": {
+    "brief_id": "ccb-80a437a595",
+    "patient_id": "P005",
+    "generated_at": "2026-06-20T20:06:02.662943Z",
+    "urgency": "Urgent",
+    "alert_summary": "Medication Discrepancy alert: valproate level 34 mcg/mL.",
+    "patient_snapshot": "Active conditions: Epilepsy. Current treatment: Valproate.",
+    "contextual_analysis": [
+      {
+        "text": "The RPM alert was classified Urgent.",
+        "source_ids": [
+          "rpm:P005:alert:A005"
+        ],
+        "confidence": 0.88
+      },
+      {
+        "text": "No seizure symptoms or new neurologic complaints reported.",
+        "source_ids": [
+          "anam:P005:symptoms:1"
+        ],
+        "confidence": 0.92
+      },
+      {
+        "text": "Reports taking every valproate dose and denies intentional or accidental missed doses.",
+        "source_ids": [
+          "anam:P005:adherence:1"
+        ],
+        "confidence": 0.92
+      },
+      {
+        "text": "No new supplements or major diet changes reported.",
+        "source_ids": [
+          "anam:P005:lifestyle:1"
+        ],
+        "confidence": 0.92
+      }
+    ],
+    "risk_assessment": [
+      {
+        "text": "Patient-reported adherence and the measured drug level conflict; the discrepancy should be explored neutrally rather than interpreted as blame.",
+        "source_ids": [
+          "ehr:P005:lab:1",
+          "anam:P005:adherence:1"
+        ],
+        "confidence": 0.89
+      }
+    ],
+    "recommended_actions": [
+      {
+        "action": "Review the alert and cited context using the appropriate clinical protocol.",
+        "rationale": "The system provides context only; a clinician must determine next steps.",
+        "priority": "High",
+        "confidence": 0.95,
+        "source_ids": [
+          "rpm:P005:alert:A005"
+        ]
+      }
+    ],
+    "uncertainties_and_gaps": [
+      "Measured valproate level is sub-therapeutic despite reported full adherence."
+    ],
+    "confidence": 0.88,
+    "citations": [
+      {
+        "source_id": "rpm:P005:alert:A005",
+        "source_type": "rpm_alert",
+        "timestamp": "2026-05-13T10:15:00+00:00",
+        "label": "medication discrepancy"
+      },
+      {
+        "source_id": "ehr:P005:problem:1",
+        "source_type": "ehr_problems",
+        "timestamp": null,
+        "label": "Epilepsy"
+      },
+      {
+        "source_id": "ehr:P005:med:1",
+        "source_type": "ehr_medications",
+        "timestamp": null,
+        "label": "Valproate"
+      },
+      {
+        "source_id": "ehr:P005:lab:1",
+        "source_type": "ehr_labs",
+        "timestamp": "2026-05-10",
+        "label": "Valproate level"
+      },
+      {
+        "source_id": "ehr:P005:note:1",
+        "source_type": "ehr_visit_notes",
+        "timestamp": "2026-02-19",
+        "label": "Neurology follow-up"
+      },
+      {
+        "source_id": "anam:P005:symptoms:1",
+        "source_type": "anamnesis_symptoms",
+        "timestamp": "2026-05-12",
+        "label": "symptoms"
+      },
+      {
+        "source_id": "anam:P005:adherence:1",
+        "source_type": "anamnesis_medication_adherence",
+        "timestamp": "2026-05-12",
+        "label": "adherence"
+      },
+      {
+        "source_id": "anam:P005:lifestyle:1",
+        "source_type": "anamnesis_lifestyle",
+        "timestamp": "2026-05-12",
+        "label": "lifestyle"
+      },
+      {
+        "source_id": "anam:P005:concern:1",
+        "source_type": "anamnesis_patient_concerns",
+        "timestamp": "2026-05-12",
+        "label": "concern"
+      }
+    ],
+    "immediate_escalation": false,
+    "human_review_required": true,
+    "disclaimer": "Educational prototype using simulated data. This output is not a diagnosis or medical advice and must be reviewed by a qualified clinician."
+  },
+  "session_id": "session-1d5683ca48ab",
+  "elapsed_seconds": 0.0020414589962456375,
+  "mode": "offline",
+  "warnings": []
+}

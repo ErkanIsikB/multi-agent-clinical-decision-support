@@ -1,0 +1,415 @@
+{
+  "alert": {
+    "alert_id": "A002",
+    "patient_id": "P002",
+    "timestamp": "2026-05-13T19:30:00Z",
+    "device_type": "Continuous glucose monitor",
+    "alert_category": "high_glucose",
+    "measurements": {
+      "glucose": 238.0
+    },
+    "units": {
+      "glucose": "mg/dL"
+    },
+    "baseline": {
+      "glucose": 142.0
+    },
+    "thresholds": {
+      "glucose_high": 220.0
+    },
+    "trend": [
+      {
+        "minutes": -60,
+        "glucose": 176
+      },
+      {
+        "minutes": -30,
+        "glucose": 214
+      }
+    ],
+    "device_metadata": {
+      "sensor_age_days": 5,
+      "signal_quality": "good"
+    },
+    "source_id": "rpm:P002:alert:A002"
+  },
+  "triage": {
+    "patient_id": "P002",
+    "urgency": "Urgent",
+    "clinical_question": "What is the appropriate clinical response to a sustained high glucose alert with recent upward trend in this patient?",
+    "decision_factors": [
+      "Current glucose is 238 mg/dL, above the supplied high threshold of 220 mg/dL.",
+      "Glucose has risen over the past hour (176 to 214 to 238 mg/dL), supporting a sustained upward trend.",
+      "Baseline glucose is 142 mg/dL, indicating this is above the patient's stated baseline as well.",
+      "Device signal quality is good, making the reading more reliable.",
+      "No repeat measurement, symptom report, or critical-range threshold was supplied; this supports urgent review rather than critical escalation."
+    ],
+    "retrieval_query": {
+      "patient_id": "P002",
+      "clinical_question": "Review context for sustained hyperglycemia alert and recent glucose trend, including diabetes management plan and recent related symptoms or interventions.",
+      "ehr_topics": [
+        "diabetes history",
+        "recent glucose management",
+        "medication list",
+        "insulin or antihyperglycemic regimen",
+        "recent labs or HbA1c",
+        "recent acute illness or steroid use"
+      ],
+      "anamnesis_topics": [
+        "hyperglycemia symptoms",
+        "recent meals or carbohydrate intake",
+        "missed medications or insulin doses",
+        "exercise changes",
+        "hydration status"
+      ],
+      "lookback_days": 14
+    },
+    "immediate_escalation": false,
+    "confidence": 0.94
+  },
+  "ehr_context": {
+    "patient_id": "P002",
+    "demographics": {},
+    "active_conditions": [
+      {
+        "source_id": "ehr:P002:problem:1",
+        "name": "Type 2 diabetes mellitus",
+        "icd10": "E11.9",
+        "status": "active"
+      },
+      {
+        "source_id": "ehr:P002:problem:2",
+        "name": "Obesity",
+        "icd10": "E66.9",
+        "status": "active"
+      }
+    ],
+    "active_medications": [
+      {
+        "source_id": "ehr:P002:med:1",
+        "name": "Metformin XR",
+        "dose": "1000 mg twice daily",
+        "started": "2024-09-11",
+        "status": "active"
+      },
+      {
+        "source_id": "ehr:P002:note:1",
+        "name": "Semaglutide",
+        "status": "initiated",
+        "date": "2026-05-05",
+        "note": "Short-term glucose variability discussed during titration."
+      }
+    ],
+    "relevant_labs": [
+      {
+        "source_id": "ehr:P002:lab:1",
+        "test": "HbA1c",
+        "value": 7.8,
+        "unit": "%",
+        "date": "2026-04-28",
+        "reference_range": "4.0-5.6",
+        "flag": "high"
+      },
+      {
+        "source_id": "ehr:P002:lab:2",
+        "test": "Fasting glucose",
+        "value": 151,
+        "unit": "mg/dL",
+        "date": "2026-04-28",
+        "reference_range": "70-99",
+        "flag": "high"
+      }
+    ],
+    "relevant_notes": [
+      {
+        "source_id": "ehr:P002:note:1",
+        "title": "Diabetes medication adjustment",
+        "date": "2026-05-05",
+        "text": "Semaglutide initiated. Short-term glucose variability discussed during titration."
+      }
+    ],
+    "allergies": [],
+    "contradictions": [],
+    "missing_data": [
+      "No explicit glucose trend series or duration of sustained hyperglycemia is present in the retrieved chunks.",
+      "No allergy information is present in the retrieved chunks.",
+      "No explicit clinician assessment or response plan to the high glucose alert is present in the retrieved chunks."
+    ],
+    "citations": [
+      {
+        "source_id": "ehr:P002:note:1",
+        "source_type": "visit_notes",
+        "timestamp": "2026-05-05",
+        "label": "Diabetes medication adjustment"
+      },
+      {
+        "source_id": "ehr:P002:lab:2",
+        "source_type": "labs",
+        "timestamp": "2026-04-28",
+        "label": "Fasting glucose high"
+      },
+      {
+        "source_id": "ehr:P002:lab:1",
+        "source_type": "labs",
+        "timestamp": "2026-04-28",
+        "label": "HbA1c high"
+      },
+      {
+        "source_id": "ehr:P002:problem:1",
+        "source_type": "problems",
+        "timestamp": null,
+        "label": "Type 2 diabetes mellitus active"
+      },
+      {
+        "source_id": "ehr:P002:problem:2",
+        "source_type": "problems",
+        "timestamp": null,
+        "label": "Obesity active"
+      },
+      {
+        "source_id": "ehr:P002:med:1",
+        "source_type": "medications",
+        "timestamp": null,
+        "label": "Metformin XR active"
+      }
+    ],
+    "retrieval_confidence": 0.78
+  },
+  "anamnesis_summary": {
+    "patient_id": "P002",
+    "symptoms_and_timeline": [
+      "2026-05-12: Feels well and reports no polyuria, vomiting, or confusion. (source: anam:P002:symptoms:1)"
+    ],
+    "medication_adherence": [
+      "2026-05-12: Reports taking metformin and the new weekly injection as directed. (source: anam:P002:adherence:1)"
+    ],
+    "lifestyle_factors": [
+      "2026-05-12: Had planned a carbohydrate-heavy meal before the high reading during a family celebration. (source: anam:P002:lifestyle:1)"
+    ],
+    "family_history": [],
+    "patient_concerns": [
+      "Wants to know whether one high glucose reading is dangerous. (source: anam:P002:concern:1)"
+    ],
+    "sensitive_disclosures": [],
+    "missing_data": [
+      "No actual glucose value, duration of elevated readings, or details of any recent trend are provided.",
+      "No information on ketones, hydration status, intercurrent illness, or recent medication dose changes."
+    ],
+    "citations": [
+      {
+        "source_id": "anam:P002:symptoms:1",
+        "source_type": "symptoms",
+        "timestamp": "2026-05-12",
+        "label": "symptoms"
+      },
+      {
+        "source_id": "anam:P002:adherence:1",
+        "source_type": "adherence",
+        "timestamp": "2026-05-12",
+        "label": "adherence"
+      },
+      {
+        "source_id": "anam:P002:lifestyle:1",
+        "source_type": "lifestyle",
+        "timestamp": "2026-05-12",
+        "label": "lifestyle"
+      },
+      {
+        "source_id": "anam:P002:concern:1",
+        "source_type": "concern",
+        "timestamp": "2026-05-12",
+        "label": "concern"
+      }
+    ],
+    "confidence": 0.93
+  },
+  "brief": {
+    "brief_id": "brief:P002:A002",
+    "patient_id": "P002",
+    "generated_at": "2026-06-20T00:00:00Z",
+    "urgency": "Urgent",
+    "alert_summary": "Continuous glucose monitor alert for high glucose: current glucose 238 mg/dL exceeds the supplied high threshold of 220 mg/dL, with an upward trend over the past hour. Triage decision classified this as Urgent, not Critical.",
+    "patient_snapshot": "Patient has active type 2 diabetes and obesity, with metformin XR 1000 mg twice daily and recent semaglutide initiation. Recent labs showed HbA1c 7.8% and fasting glucose 151 mg/dL. Patient reported feeling well without polyuria, vomiting, or confusion, and reported taking metformin and the new weekly injection as directed. A carbohydrate-heavy meal preceded the high reading.",
+    "contextual_analysis": [
+      {
+        "text": "The RPM alert shows glucose 238 mg/dL, above the high threshold of 220 mg/dL, and the trend rose from 176 to 214 to 238 mg/dL over 60 minutes.",
+        "source_ids": [
+          "rpm:P002:alert:A002"
+        ],
+        "confidence": 0.99
+      },
+      {
+        "text": "The patient has active type 2 diabetes and obesity, which provide clinical context for interpreting hyperglycemia alerts.",
+        "source_ids": [
+          "ehr:P002:problem:1",
+          "ehr:P002:problem:2"
+        ],
+        "confidence": 0.92
+      },
+      {
+        "text": "Current diabetes therapy includes metformin XR 1000 mg twice daily, and semaglutide was initiated recently with short-term glucose variability discussed during titration.",
+        "source_ids": [
+          "ehr:P002:med:1",
+          "ehr:P002:note:1"
+        ],
+        "confidence": 0.9
+      },
+      {
+        "text": "Recent laboratory data showed HbA1c 7.8% and fasting glucose 151 mg/dL, indicating pre-existing suboptimal glycemic control before this alert.",
+        "source_ids": [
+          "ehr:P002:lab:1",
+          "ehr:P002:lab:2"
+        ],
+        "confidence": 0.89
+      },
+      {
+        "text": "The patient reported feeling well without polyuria, vomiting, or confusion, reported taking metformin and the new weekly injection as directed, and noted a carbohydrate-heavy meal before the high reading.",
+        "source_ids": [
+          "anam:P002:symptoms:1",
+          "anam:P002:adherence:1",
+          "anam:P002:lifestyle:1"
+        ],
+        "confidence": 0.93
+      }
+    ],
+    "risk_assessment": [
+      {
+        "text": "Sustained glucose elevation above the supplied threshold may reflect transient post-meal hyperglycemia or insufficient short-term control; the available context does not establish an acute emergency.",
+        "source_ids": [
+          "rpm:P002:alert:A002",
+          "anam:P002:lifestyle:1",
+          "ehr:P002:note:1"
+        ],
+        "confidence": 0.84
+      },
+      {
+        "text": "Absence of reported polyuria, vomiting, or confusion lowers concern for immediate symptomatic deterioration in the available history, but this does not rule out evolving hyperglycemia.",
+        "source_ids": [
+          "anam:P002:symptoms:1",
+          "rpm:P002:alert:A002"
+        ],
+        "confidence": 0.88
+      },
+      {
+        "text": "Recent semaglutide initiation may be associated with short-term glucose variability during titration, so the current rise should be interpreted in that context.",
+        "source_ids": [
+          "ehr:P002:note:1"
+        ],
+        "confidence": 0.83
+      }
+    ],
+    "recommended_actions": [
+      {
+        "action": "Clinician review of the CGM alert and recent glucose pattern is warranted to verify whether this elevation is transient or persistent.",
+        "rationale": "The reading is above threshold and rising, but the available context lacks repeat confirmation and symptom escalation.",
+        "priority": "High",
+        "confidence": 0.91,
+        "source_ids": [
+          "rpm:P002:alert:A002",
+          "ehr:P002:note:1",
+          "anam:P002:symptoms:1"
+        ]
+      },
+      {
+        "action": "Review recent diabetes management context, including timing of the carbohydrate-heavy meal, adherence report, and the recent semaglutide start, when deciding on next steps.",
+        "rationale": "These factors may explain the alert without requiring immediate escalation, but they need clinician interpretation.",
+        "priority": "High",
+        "confidence": 0.9,
+        "source_ids": [
+          "anam:P002:lifestyle:1",
+          "anam:P002:adherence:1",
+          "ehr:P002:note:1"
+        ]
+      },
+      {
+        "action": "Check for missing or unverifiable elements relevant to triage, including repeat glucose values, ketones, hydration status, intercurrent illness, and any recent medication dose changes.",
+        "rationale": "These data gaps limit certainty about persistence, cause, and severity of hyperglycemia.",
+        "priority": "High",
+        "confidence": 0.87,
+        "source_ids": [
+          "rpm:P002:alert:A002",
+          "anam:P002:symptoms:1",
+          "anam:P002:adherence:1",
+          "ehr:P002:note:1"
+        ]
+      }
+    ],
+    "uncertainties_and_gaps": [
+      "No repeat glucose confirmation beyond the CGM trend was provided in the alert source.",
+      "No ketone data, hydration status, intercurrent illness, or recent medication dose changes were provided.",
+      "No explicit clinician assessment or response plan to this alert was present in the retrieved EHR context.",
+      "The EHR retrieval notes that explicit glucose trend series were not present in the retrieved chunks, while the RPM alert itself does include a short trend.",
+      "The patient-reported context is from the prior day and may not fully reflect current status."
+    ],
+    "confidence": 0.78,
+    "citations": [
+      {
+        "source_id": "anam:P002:adherence:1",
+        "source_type": "adherence",
+        "timestamp": "2026-05-12",
+        "label": "adherence"
+      },
+      {
+        "source_id": "anam:P002:lifestyle:1",
+        "source_type": "lifestyle",
+        "timestamp": "2026-05-12",
+        "label": "lifestyle"
+      },
+      {
+        "source_id": "anam:P002:symptoms:1",
+        "source_type": "symptoms",
+        "timestamp": "2026-05-12",
+        "label": "symptoms"
+      },
+      {
+        "source_id": "ehr:P002:lab:1",
+        "source_type": "labs",
+        "timestamp": "2026-04-28",
+        "label": "HbA1c high"
+      },
+      {
+        "source_id": "ehr:P002:lab:2",
+        "source_type": "labs",
+        "timestamp": "2026-04-28",
+        "label": "Fasting glucose high"
+      },
+      {
+        "source_id": "ehr:P002:med:1",
+        "source_type": "medications",
+        "timestamp": null,
+        "label": "Metformin XR active"
+      },
+      {
+        "source_id": "ehr:P002:note:1",
+        "source_type": "visit_notes",
+        "timestamp": "2026-05-05",
+        "label": "Diabetes medication adjustment"
+      },
+      {
+        "source_id": "ehr:P002:problem:1",
+        "source_type": "problems",
+        "timestamp": null,
+        "label": "Type 2 diabetes mellitus active"
+      },
+      {
+        "source_id": "ehr:P002:problem:2",
+        "source_type": "problems",
+        "timestamp": null,
+        "label": "Obesity active"
+      },
+      {
+        "source_id": "rpm:P002:alert:A002",
+        "source_type": "rpm_alert",
+        "timestamp": "2026-05-13T19:30:00+00:00",
+        "label": "high glucose"
+      }
+    ],
+    "immediate_escalation": false,
+    "human_review_required": true,
+    "disclaimer": "Educational prototype using simulated data. This output is not a diagnosis or medical advice and must be reviewed by a qualified clinician."
+  },
+  "session_id": "session-ce5a526ec659",
+  "elapsed_seconds": 16.319345791998785,
+  "mode": "live",
+  "warnings": []
+}
