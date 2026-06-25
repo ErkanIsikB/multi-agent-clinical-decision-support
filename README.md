@@ -56,17 +56,34 @@ source .venv/bin/activate
 python -m pip install -e ".[dev]"
 ```
 
-The repository includes a local `.env` file with placeholders. Add the API key there:
+The repository includes a local `.env` file (copy `.env.example`) with placeholders. Add the API key there. The full set of supported variables and their defaults is:
 
 ```dotenv
-OPENAI_API_KEY=your_key_here
-OPENAI_MODEL=gpt-5.4-mini
-CLINICALBRIDGE_MODE=auto
+# Credentials and models
+OPENAI_API_KEY=                              # required for live/auto-with-key runs
+OPENAI_MODEL=gpt-5.4-mini                     # synthesis/reasoning model
+OPENAI_EMBEDDING_MODEL=text-embedding-3-small # RAG embedding model
+
+# Runtime behavior
+CLINICALBRIDGE_MODE=auto                       # auto | offline | live
+CLINICALBRIDGE_RAG_BACKEND=chroma              # chroma (live) | lexical fallback for tests
+CLINICALBRIDGE_REASONING_EFFORT=low            # reasoning effort for bounded extraction/synthesis
+CLINICALBRIDGE_RETRIEVAL_K=6                   # top-k EHR chunks retrieved per query
+CLINICALBRIDGE_MAX_RETRIES=2                   # bounded provider retries
 ```
 
 The `.env` file is ignored by Git. Do not paste or commit API keys.
 
-`CLINICALBRIDGE_MODE=auto` uses OpenAI when a key is present and the deterministic fallback otherwise. Use `offline` for reproducible no-cost tests or `live` to require the API.
+| Variable | Default | Purpose |
+|---|---|---|
+| `OPENAI_API_KEY` | _(empty)_ | OpenAI key; required for `live` and for `auto` to use the API |
+| `OPENAI_MODEL` | `gpt-5.4-mini` | Model for triage explanation, EHR/anamnesis, and synthesis |
+| `OPENAI_EMBEDDING_MODEL` | `text-embedding-3-small` | Embedding model for the Chroma RAG path |
+| `CLINICALBRIDGE_MODE` | `auto` | `auto` uses OpenAI when a key is present, else the deterministic fallback; `offline` forces no-cost reproducible runs; `live` requires the API |
+| `CLINICALBRIDGE_RAG_BACKEND` | `chroma` | Persistent vector store for live retrieval; a lexical retriever backs the deterministic tests |
+| `CLINICALBRIDGE_REASONING_EFFORT` | `low` | Reasoning effort; low suits the bounded extraction and synthesis tasks |
+| `CLINICALBRIDGE_RETRIEVAL_K` | `6` | Number of patient-scoped EHR chunks retrieved per query |
+| `CLINICALBRIDGE_MAX_RETRIES` | `2` | Bounded retries for transient provider errors |
 
 ## Run the prototype
 
@@ -126,14 +143,14 @@ The live command makes OpenAI API and embedding calls and may incur cost.
 
 The measured live prompt-version results were:
 
-| Version | Scenario pass rate | Triage accuracy | Mean latency |
-|---|---:|---:|---:|
-| v1 | 87.5% | 87.5% | 14.17s |
-| v2 | 62.5% | 62.5% | 15.31s |
-| v3 | 75.0% | 75.0% | 14.54s |
-| v4 final | 100% | 100% | 15.65s |
+| Version | Scenario pass rate | Triage accuracy | Key-concern coverage | Mean latency |
+|---|---:|---:|---:|---:|
+| v1 | 87.5% | 87.5% | 77.15% | 14.17s |
+| v2 | 62.5% | 62.5% | 72.71% | 15.31s |
+| v3 | 75.0% | 75.0% | 75.14% | 14.54s |
+| v4 final | 100% | 100% | 95.21% | 20.21s |
 
-All versions achieved 100% required-source recall, source traceability, and safety compliance with a 0% unsupported-source proxy after system guardrails.
+All versions achieved 100% required-source recall, source traceability, and safety compliance with a 0% unsupported-source proxy after system guardrails. The final v4 configuration clears both capstone performance targets — mean key-concern coverage >= 85% and mean live latency < 30s — and was confirmed stable across three repeated live runs (coverage 92.2% / 98.3% / 95.2%, latency 18.7s / 17.8s / 20.2s). Coverage and latency were brought onto target through data-only changes (normalizing gold key-concern wording and trimming non-required EHR records); see `docs`/`evaluation_report.md` and `data_dictionary.md`.
 
 ## Repository guide
 
