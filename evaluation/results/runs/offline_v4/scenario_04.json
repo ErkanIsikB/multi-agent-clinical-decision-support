@@ -154,9 +154,9 @@
     "confidence": 0.76
   },
   "brief": {
-    "brief_id": "ccb-56bda11c31",
+    "brief_id": "ccb-c979151c04",
     "patient_id": "P004",
-    "generated_at": "2026-06-20T20:21:54.489843Z",
+    "generated_at": "2026-06-25T18:45:05.392747Z",
     "urgency": "Urgent",
     "alert_summary": "Blood Pressure alert: systolic bp 166 mmHg, diastolic bp 101 mmHg, heart rate 78 bpm.",
     "patient_snapshot": "Active conditions: Essential hypertension. Current treatment: no active medication retrieved.",
@@ -191,6 +191,14 @@
       }
     ],
     "risk_assessment": [
+      {
+        "text": "The blood pressure alert is accompanied by morning headaches, an unknown antihypertensive name and dose, and missing external transfer records, so the medication must be verified before any contextual conclusion.",
+        "source_ids": [
+          "rpm:P004:alert:A004",
+          "ehr:P004:note:1"
+        ],
+        "confidence": 0.85
+      },
       {
         "text": "Sparse longitudinal EHR data materially limits contextual confidence.",
         "source_ids": [
@@ -265,8 +273,8 @@
     "human_review_required": true,
     "disclaimer": "Educational prototype using simulated data. This output is not a diagnosis or medical advice and must be reviewed by a qualified clinician."
   },
-  "session_id": "session-cfc4f0165deb",
-  "elapsed_seconds": 0.00191762502072379,
+  "session_id": "session-f84a9ced29da",
+  "elapsed_seconds": 0.0028273329999137786,
   "mode": "offline",
   "warnings": []
 }

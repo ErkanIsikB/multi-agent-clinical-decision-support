@@ -10,8 +10,8 @@
       "primary_concern": "Elevated blood pressure in the setting of self-discontinued lisinopril.",
       "key_concerns": [
         "Medication interruption",
-        "Persistent cough as the reported reason",
-        "EHR still lists lisinopril as active"
+        "Persistent dry cough",
+        "Lisinopril is an active medication"
       ],
       "required_source_ids": [
         "rpm:P001:alert:A001",
@@ -52,9 +52,9 @@
     "gold_standard": {
       "primary_concern": "Possible worsening fluid status requiring prompt clinical review.",
       "key_concerns": [
-        "2.8 kg weight increase over two weeks",
-        "Increasing ankle swelling",
-        "Mildly worse exertional breathlessness"
+        "Weight gain trend above dry weight",
+        "Increased ankle swelling",
+        "Worse exertional breathlessness"
       ],
       "required_source_ids": [
         "rpm:P003:alert:A003",
@@ -96,8 +96,8 @@
       "primary_concern": "Neutral investigation of discordant adherence and drug-level evidence.",
       "key_concerns": [
         "Sub-therapeutic valproate level",
-        "Patient reports no missed doses",
-        "Avoid accusatory interpretation"
+        "Reported full adherence to valproate",
+        "Discrepancy between reported adherence and verified level"
       ],
       "required_source_ids": [
         "rpm:P005:alert:A005",
@@ -137,7 +137,7 @@
       "key_concerns": [
         "Vigorous activity",
         "Poor skin contact",
-        "Rapid return toward baseline"
+        "Heart rate trend toward baseline"
       ],
       "required_source_ids": [
         "rpm:P007:alert:A007",
@@ -155,9 +155,9 @@
     "gold_standard": {
       "primary_concern": "Nocturnal blood pressure elevation with recent NSAID exposure.",
       "key_concerns": [
-        "Repeated overnight elevation",
+        "Persistent nocturnal systolic elevation",
         "Recent ibuprofen use",
-        "Previously controlled daytime readings"
+        "Lower daytime home readings on amlodipine"
       ],
       "required_source_ids": [
         "rpm:P008:alert:A008",

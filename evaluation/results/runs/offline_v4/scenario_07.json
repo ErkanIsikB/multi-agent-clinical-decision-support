@@ -168,9 +168,9 @@
     "confidence": 0.92
   },
   "brief": {
-    "brief_id": "ccb-3f0c3a8fde",
+    "brief_id": "ccb-00be5ef218",
     "patient_id": "P007",
-    "generated_at": "2026-06-20T20:21:54.495329Z",
+    "generated_at": "2026-06-25T18:45:05.401788Z",
     "urgency": "Urgent",
     "alert_summary": "Device Artifact alert: heart rate 148 bpm.",
     "patient_snapshot": "Active conditions: Generalized anxiety disorder. Current treatment: Sertraline.",
@@ -206,7 +206,7 @@
     ],
     "risk_assessment": [
       {
-        "text": "The isolated heart-rate alert may be affected by activity or device contact, so measurement verification is important before escalation.",
+        "text": "The isolated heart-rate alert may be affected by vigorous activity or poor device contact, and the reading showed a rapid return toward baseline, so measurement verification is important before escalation.",
         "source_ids": [
           "rpm:P007:alert:A007"
         ],
@@ -282,8 +282,8 @@
     "human_review_required": true,
     "disclaimer": "Educational prototype using simulated data. This output is not a diagnosis or medical advice and must be reviewed by a qualified clinician."
   },
-  "session_id": "session-3843a3503f05",
-  "elapsed_seconds": 0.0020131250203121454,
+  "session_id": "session-020980bae147",
+  "elapsed_seconds": 0.0026169590000790777,
   "mode": "offline",
   "warnings": []
 }

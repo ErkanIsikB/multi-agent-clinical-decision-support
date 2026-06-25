@@ -14,12 +14,6 @@
         "name": "Essential hypertension",
         "icd10": "I10",
         "status": "active"
-      },
-      {
-        "source_id": "ehr:P001:problem:2",
-        "name": "Hyperlipidemia",
-        "icd10": "E78.5",
-        "status": "active"
       }
     ],
     "medications": [
@@ -29,35 +23,9 @@
         "dose": "20 mg once daily",
         "started": "2025-11-02",
         "status": "active"
-      },
-      {
-        "source_id": "ehr:P001:med:2",
-        "name": "Atorvastatin",
-        "dose": "20 mg nightly",
-        "started": "2025-07-18",
-        "status": "active"
       }
     ],
-    "labs": [
-      {
-        "source_id": "ehr:P001:lab:1",
-        "test": "Creatinine",
-        "value": 0.9,
-        "unit": "mg/dL",
-        "date": "2026-03-14",
-        "reference_range": "0.6-1.2",
-        "flag": "normal"
-      },
-      {
-        "source_id": "ehr:P001:lab:2",
-        "test": "Potassium",
-        "value": 4.3,
-        "unit": "mmol/L",
-        "date": "2026-03-14",
-        "reference_range": "3.5-5.1",
-        "flag": "normal"
-      }
-    ],
+    "labs": [],
     "visit_notes": [
       {
         "source_id": "ehr:P001:note:1",
@@ -182,26 +150,7 @@
         "status": "active"
       }
     ],
-    "labs": [
-      {
-        "source_id": "ehr:P003:lab:1",
-        "test": "BNP",
-        "value": 280,
-        "unit": "pg/mL",
-        "date": "2026-04-20",
-        "reference_range": "<100",
-        "flag": "high"
-      },
-      {
-        "source_id": "ehr:P003:lab:2",
-        "test": "Creatinine",
-        "value": 1.1,
-        "unit": "mg/dL",
-        "date": "2026-04-20",
-        "reference_range": "0.6-1.2",
-        "flag": "normal"
-      }
-    ],
+    "labs": [],
     "visit_notes": [
       {
         "source_id": "ehr:P003:note:1",
@@ -417,17 +366,7 @@
         "status": "active"
       }
     ],
-    "labs": [
-      {
-        "source_id": "ehr:P008:lab:1",
-        "test": "Creatinine",
-        "value": 1.0,
-        "unit": "mg/dL",
-        "date": "2026-03-29",
-        "reference_range": "0.6-1.2",
-        "flag": "normal"
-      }
-    ],
+    "labs": [],
     "visit_notes": [
       {
         "source_id": "ehr:P008:note:1",

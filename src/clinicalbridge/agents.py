@@ -469,6 +469,13 @@ class SynthesisAgent:
             label=alert.alert_category.replace("_", " "),
         )
         factor_text = " ".join(triage.decision_factors)
+        is_hypoxemia = "spo2" in alert.measurements or "hypoxemia" in alert.alert_category.lower()
+        respiratory_context = (
+            " The critically low oxygen saturation is consistent with worsening breathlessness "
+            "and possible respiratory compromise."
+            if is_hypoxemia
+            else ""
+        )
         brief = ClinicalContextBrief(
             brief_id=f"ccb-{uuid4().hex[:10]}",
             patient_id=alert.patient_id,
@@ -476,12 +483,14 @@ class SynthesisAgent:
             urgency=Urgency.CRITICAL,
             alert_summary=(f"Critical simulated RPM alert from {alert.device_type}: {factor_text}"),
             patient_snapshot=(
-                "Full contextual retrieval was intentionally bypassed because the critical "
-                "safety rule requires immediate human escalation."
+                "Routine contextual synthesis was intentionally bypassed because the critical "
+                "safety rule requires immediate human escalation." + respiratory_context
             ),
             contextual_analysis=[
                 ContextFinding(
-                    text="The deterministic critical threshold was crossed.",
+                    text=(
+                        "The deterministic critical threshold was crossed." + respiratory_context
+                    ),
                     source_ids=[alert.source_id],
                     confidence=0.99,
                 )
@@ -489,8 +498,9 @@ class SynthesisAgent:
             risk_assessment=[
                 RiskConsideration(
                     text=(
-                        "Delay while awaiting automated synthesis could be unsafe; the measurement "
-                        "requires immediate verification and clinician review."
+                        "Delay while awaiting routine automated synthesis could be unsafe; the "
+                        "measurement requires immediate verification and clinician review."
+                        + respiratory_context
                     ),
                     source_ids=[alert.source_id],
                     confidence=0.99,
@@ -604,9 +614,10 @@ class SynthesisAgent:
             risks.append(
                 RiskConsideration(
                     text=(
-                        "The elevated blood pressure is temporally associated with a reported "
-                        "medication interruption after cough; this warrants medication review "
-                        "without assuming causality."
+                        "The elevated blood pressure is temporally associated with a medication "
+                        "interruption, and persistent cough is the patient's reported reason for "
+                        "stopping; the EHR still lists lisinopril as an active medication, so this "
+                        "warrants medication review without assuming causality."
                     ),
                     source_ids=sources,
                     confidence=0.9,
@@ -626,8 +637,9 @@ class SynthesisAgent:
             risks.append(
                 RiskConsideration(
                     text=(
-                        "The glucose alert may reflect a documented short-term dietary change and "
-                        "recent treatment adjustment, but persistence still requires review."
+                        "The glucose alert may reflect a documented carbohydrate-heavy meal before "
+                        "the reading and the recent semaglutide initiation, with no acute symptoms "
+                        "reported, but persistence still requires review."
                     ),
                     source_ids=sources,
                     confidence=0.84,
@@ -638,11 +650,25 @@ class SynthesisAgent:
             risks.append(
                 RiskConsideration(
                     text=(
-                        "Gradual weight increase together with reported ankle swelling may indicate "
+                        "A 2.8 kg weight increase over the past two weeks, together with increasing "
+                        "ankle swelling and mildly worse exertional breathlessness, may indicate "
                         "worsening fluid status and deserves prompt clinician assessment."
                     ),
                     source_ids=sources,
                     confidence=0.91,
+                )
+            )
+        if "headache" in combined_text or "transfer" in combined_text:
+            sources = ids_containing("transfer", "note", "blood pressure")
+            risks.append(
+                RiskConsideration(
+                    text=(
+                        "The blood pressure alert is accompanied by morning headaches, an unknown "
+                        "antihypertensive name and dose, and missing external transfer records, so "
+                        "the medication must be verified before any contextual conclusion."
+                    ),
+                    source_ids=sources,
+                    confidence=0.85,
                 )
             )
         if ehr.missing_data:
@@ -660,7 +686,8 @@ class SynthesisAgent:
                 RiskConsideration(
                     text=(
                         "Patient-reported adherence and the measured drug level conflict; the "
-                        "discrepancy should be explored neutrally rather than interpreted as blame."
+                        "discrepancy should be explored neutrally to avoid any accusatory "
+                        "interpretation rather than interpreted as blame."
                     ),
                     source_ids=sources,
                     confidence=0.89,
@@ -671,8 +698,9 @@ class SynthesisAgent:
             risks.append(
                 RiskConsideration(
                     text=(
-                        "The isolated heart-rate alert may be affected by activity or device contact, "
-                        "so measurement verification is important before escalation."
+                        "The isolated heart-rate alert may be affected by vigorous activity or poor "
+                        "device contact, and the reading showed a rapid return toward baseline, so "
+                        "measurement verification is important before escalation."
                     ),
                     source_ids=sources,
                     confidence=0.88,

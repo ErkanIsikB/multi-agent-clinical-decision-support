@@ -176,9 +176,9 @@
     "confidence": 0.92
   },
   "brief": {
-    "brief_id": "ccb-0ca4aa8145",
+    "brief_id": "ccb-2fd7da2677",
     "patient_id": "P005",
-    "generated_at": "2026-06-20T20:21:54.491987Z",
+    "generated_at": "2026-06-25T18:45:05.396521Z",
     "urgency": "Urgent",
     "alert_summary": "Medication Discrepancy alert: valproate level 34 mcg/mL.",
     "patient_snapshot": "Active conditions: Epilepsy. Current treatment: Valproate.",
@@ -214,7 +214,7 @@
     ],
     "risk_assessment": [
       {
-        "text": "Patient-reported adherence and the measured drug level conflict; the discrepancy should be explored neutrally rather than interpreted as blame.",
+        "text": "Patient-reported adherence and the measured drug level conflict; the discrepancy should be explored neutrally to avoid any accusatory interpretation rather than interpreted as blame.",
         "source_ids": [
           "ehr:P005:lab:1",
           "anam:P005:adherence:1"
@@ -297,8 +297,8 @@
     "human_review_required": true,
     "disclaimer": "Educational prototype using simulated data. This output is not a diagnosis or medical advice and must be reviewed by a qualified clinician."
   },
-  "session_id": "session-151cd47955a2",
-  "elapsed_seconds": 0.00207462499383837,
+  "session_id": "session-5becb2e3a8ca",
+  "elapsed_seconds": 0.0028883340000902535,
   "mode": "offline",
   "warnings": []
 }

@@ -224,9 +224,9 @@
     "confidence": 0.92
   },
   "brief": {
-    "brief_id": "ccb-f9a1710b12",
+    "brief_id": "ccb-1789d6a8a9",
     "patient_id": "P001",
-    "generated_at": "2026-06-20T20:21:54.481914Z",
+    "generated_at": "2026-06-25T18:45:05.380611Z",
     "urgency": "Urgent",
     "alert_summary": "Blood Pressure alert: systolic bp 172 mmHg, diastolic bp 106 mmHg, heart rate 82 bpm.",
     "patient_snapshot": "Active conditions: Essential hypertension, Hyperlipidemia. Current treatment: Atorvastatin, Lisinopril.",
@@ -262,7 +262,7 @@
     ],
     "risk_assessment": [
       {
-        "text": "The elevated blood pressure is temporally associated with a reported medication interruption after cough; this warrants medication review without assuming causality.",
+        "text": "The elevated blood pressure is temporally associated with a medication interruption, and persistent cough is the patient's reported reason for stopping; the EHR still lists lisinopril as an active medication, so this warrants medication review without assuming causality.",
         "source_ids": [
           "anam:P001:adherence:1"
         ],
@@ -371,8 +371,8 @@
     "human_review_required": true,
     "disclaimer": "Educational prototype using simulated data. This output is not a diagnosis or medical advice and must be reviewed by a qualified clinician."
   },
-  "session_id": "session-911042fc045b",
-  "elapsed_seconds": 0.007000749988947064,
+  "session_id": "session-67ed975c6a6c",
+  "elapsed_seconds": 0.004864999999881547,
   "mode": "offline",
   "warnings": []
 }

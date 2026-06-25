@@ -1,6 +1,6 @@
 # ClinicalBridge Evaluation Report
 
-Generated: 2026-06-20T20:21:54.497924+00:00
+Generated: 2026-06-25T18:45:05.407076+00:00
 
 Evaluation mode: **offline**
 
@@ -21,13 +21,13 @@ Evaluation mode: **offline**
 
 | Scenario | Urgency | Sources | Concern coverage | Safety | Pass |
 |---|---:|---:|---:|---:|---:|
-| scenario_01 - The Missed Medication | Yes | 100% | 85% | Yes | Pass |
-| scenario_02 - The Contextually Benign Alert | Yes | 100% | 72% | Yes | Pass |
-| scenario_03 - The Silent Deterioration | Yes | 100% | 59% | Yes | Pass |
-| scenario_04 - The Incomplete Record | Yes | 100% | 61% | Yes | Pass |
-| scenario_05 - The Conflicting Data | Yes | 100% | 67% | Yes | Pass |
-| scenario_06 - Critical Hypoxemia | Yes | 100% | 56% | Yes | Pass |
-| scenario_07 - The Device Artifact | Yes | 100% | 67% | Yes | Pass |
+| scenario_01 - The Missed Medication | Yes | 100% | 100% | Yes | Pass |
+| scenario_02 - The Contextually Benign Alert | Yes | 100% | 100% | Yes | Pass |
+| scenario_03 - The Silent Deterioration | Yes | 100% | 100% | Yes | Pass |
+| scenario_04 - The Incomplete Record | Yes | 100% | 100% | Yes | Pass |
+| scenario_05 - The Conflicting Data | Yes | 100% | 100% | Yes | Pass |
+| scenario_06 - Critical Hypoxemia | Yes | 100% | 100% | Yes | Pass |
+| scenario_07 - The Device Artifact | Yes | 100% | 100% | Yes | Pass |
 | scenario_08 - Nocturnal Hypertension and NSAID Use | Yes | 100% | 100% | Yes | Pass |
 
 ## Interpretation

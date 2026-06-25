@@ -29,38 +29,36 @@
   "triage": {
     "patient_id": "P004",
     "urgency": "Urgent",
-    "clinical_question": "What is the recent blood pressure course and current management context for this patient with an urgent elevated BP alert?",
+    "clinical_question": "How should this elevated blood pressure alert (rpm:P004:alert:A004) be reviewed in the context of the patient's recent blood pressure history and current antihypertensive management?",
     "decision_factors": [
       "Systolic blood pressure 166 mmHg is above the urgent threshold.",
       "Diastolic blood pressure 101 mmHg is above the urgent threshold.",
-      "Patient identity matches the alert: P004.",
-      "Timestamp provided: 2026-05-13T09:40:00Z.",
-      "Measurement units are present and consistent: mmHg for blood pressure, bpm for heart rate.",
-      "Validated cuff is true, supporting device quality.",
-      "Systolic blood pressure 166 mmHg is above the urgent threshold of 160 mmHg.",
-      "Diastolic blood pressure 101 mmHg is above the urgent threshold of 100 mmHg.",
-      "Heart rate is 78 bpm and does not add additional acuity in this alert.",
-      "No baseline values were provided, so change from baseline cannot be assessed.",
-      "No trend data or repeat measurements were provided.",
-      "Alert source_id preserved for traceability: rpm:P004:alert:A004."
+      "Patient ID matches alert payload (P004); timestamp is 2026-05-13T09:40:00Z.",
+      "Blood pressure units are provided as mmHg and the cuff is validated, supporting measurement reliability.",
+      "Systolic blood pressure is 166 mmHg, above the supplied high threshold of 160 mmHg.",
+      "Diastolic blood pressure is 101 mmHg, above the supplied high threshold of 100 mmHg.",
+      "Heart rate is 78 bpm and does not alter the blood pressure-based urgency.",
+      "No baseline or trend data are available in the alert, so persistence or change from usual values cannot be assessed.",
+      "No repeat measurement or device-quality problem is reported beyond validated cuff status.",
+      "Deterministic triage tool classified this alert as Urgent; urgency is copied exactly."
     ],
     "retrieval_query": {
       "patient_id": "P004",
-      "clinical_question": "What is the recent blood pressure course and current management context for this patient with an urgent elevated BP alert?",
+      "clinical_question": "What recent blood pressure readings, hypertension diagnoses, and blood pressure medication changes may help contextualize this urgent elevated BP alert?",
       "ehr_topics": [
-        "Hypertension history and diagnosis",
-        "Antihypertensive medications and recent changes",
-        "Recent office or home blood pressure readings",
-        "Kidney disease, cardiovascular disease, and diabetes history",
-        "Recent labs relevant to blood pressure management"
+        "Recent office/home blood pressure readings",
+        "Hypertension diagnosis and problem list",
+        "Antihypertensive medications and recent dose changes",
+        "Kidney disease, diabetes, or cardiovascular comorbidities",
+        "Recent labs relevant to hypertension management"
       ],
       "anamnesis_topics": [
         "Medication adherence",
-        "Recent symptoms such as headache, chest pain, shortness of breath, or neurologic symptoms",
-        "Home blood pressure monitoring technique and cuff use",
-        "Recent missed doses, illness, pain, stress, or stimulant use"
+        "Home blood pressure monitoring technique",
+        "Symptoms such as headache, chest pain, dyspnea, or neurologic complaints",
+        "Recent stress, pain, illness, caffeine, nicotine, or decongestant use"
       ],
-      "lookback_days": 30
+      "lookback_days": 180
     },
     "immediate_escalation": false,
     "confidence": 0.94
@@ -93,20 +91,22 @@
       }
     ],
     "allergies": [],
-    "contradictions": [],
+    "contradictions": [
+      "No blood pressure values, blood pressure trend, or antihypertensive medications are present in the retrieved chunks, so the elevated blood pressure alert cannot be contextualized against recent BP history or current treatment.",
+      "The transfer note indicates prior records were requested but not received, which may explain missing longitudinal blood pressure data."
+    ],
     "missing_data": [
-      "Recent blood pressure readings or trend",
+      "Recent blood pressure readings or trend surrounding alert rpm:P004:alert:A004",
       "Current antihypertensive medication list",
-      "Details of urgent elevated BP alert (value, date/time, symptoms, disposition)",
-      "Home/clinic BP monitoring context",
-      "Evidence of prior records or external BP history"
+      "Alert details including date/time, measured BP value, and setting",
+      "Any allergy data if relevant to medication review"
     ],
     "citations": [
       {
         "source_id": "ehr:P004:problem:1",
         "source_type": "problem",
         "timestamp": null,
-        "label": "Essential hypertension, active"
+        "label": "Essential hypertension active"
       },
       {
         "source_id": "ehr:P004:note:1",
@@ -121,29 +121,28 @@
         "label": "Patient demographics"
       }
     ],
-    "retrieval_confidence": 0.32
+    "retrieval_confidence": 0.35
   },
   "anamnesis_summary": {
     "patient_id": "P004",
     "symptoms_and_timeline": [
-      "Intermittent morning headaches over the past week (source_id: anam:P004:symptoms:1, 2026-05-12)."
+      "Intermittent morning headaches over the past week (source: anam:P004:symptoms:1, 2026-05-12)."
     ],
     "medication_adherence": [
-      "Reports taking a small white blood pressure tablet, but cannot recall the name or dose (source_id: anam:P004:adherence:1, 2026-05-12)."
+      "Reports taking a small white blood pressure tablet, but cannot recall the name or dose (source: anam:P004:adherence:1, 2026-05-12)."
     ],
     "lifestyle_factors": [
-      "Recently moved and has not established local primary care (source_id: anam:P004:lifestyle:1, 2026-05-12)."
+      "Recently moved and has not established local primary care (source: anam:P004:lifestyle:1, 2026-05-12)."
     ],
     "family_history": [],
     "patient_concerns": [
-      "Worries that transfer records have not arrived (source_id: anam:P004:concern:1, 2026-05-12)."
+      "Worries that transfer records have not arrived (source: anam:P004:concern:1, 2026-05-12)."
     ],
     "sensitive_disclosures": [],
     "missing_data": [
-      "No actual recent blood pressure readings or trend are provided in the record.",
-      "No confirmed diagnosis, antihypertensive name, or dose is documented.",
-      "No details on whether the medication is prescribed, how consistently it is taken, or any recent medication changes.",
-      "No documentation of associated red-flag symptoms (e.g., chest pain, dyspnea, neurologic deficits, vision changes)."
+      "Home blood pressure values and trend are not provided in the record.",
+      "The specific antihypertensive medication name and dose remain unverified.",
+      "No details are provided about whether the elevated blood pressure alert was repeated, persistent, or associated with other symptoms."
     ],
     "citations": [
       {
@@ -171,151 +170,145 @@
         "label": "concern"
       }
     ],
-    "confidence": 0.82
+    "confidence": 0.84
   },
   "brief": {
-    "brief_id": "A004",
+    "brief_id": "brief:P004:A004:2026-05-13T09:40:00Z",
     "patient_id": "P004",
-    "generated_at": "2026-06-20T00:00:00Z",
+    "generated_at": "2026-06-25T00:00:00Z",
     "urgency": "Urgent",
-    "alert_summary": "Urgent RPM blood pressure alert: validated cuff reading 166/101 mmHg with heart rate 78 bpm exceeded the alert thresholds; no baseline or trend was provided.",
-    "patient_snapshot": "58-year-old male with active essential hypertension. Recent transfer from another health system; prior records have not arrived. No active medication list is documented in the EHR, and the patient reported taking a blood pressure tablet but could not name it.",
+    "alert_summary": "Urgent elevated blood pressure alert from a validated Bluetooth cuff: 166/101 mmHg at 2026-05-13T09:40:00Z, above the supplied thresholds of 160/100 mmHg. Heart rate was 78 bpm. Deterministic triage classified the alert as Urgent.",
+    "patient_snapshot": "58-year-old man with active essential hypertension. Recent transfer note says prior records were requested but not received. He reports intermittent morning headaches over the past week and says he takes a small white blood pressure tablet but cannot recall the name or dose. He recently moved and has not established local primary care.",
     "contextual_analysis": [
       {
-        "text": "The RPM alert shows elevated blood pressure above the urgent thresholds with a validated cuff, supporting the reading as technically usable.",
+        "text": "The RPM reading is above threshold in both systolic and diastolic values: 166/101 mmHg with validated cuff status, supporting the alert as clinically relevant.",
         "source_ids": [
           "rpm:P004:alert:A004"
         ],
         "confidence": 0.98
       },
       {
-        "text": "The EHR lists active essential hypertension, but does not show a current antihypertensive medication list or relevant labs.",
+        "text": "Active essential hypertension is present in the EHR, but no current antihypertensive medication list or recent blood pressure trend is available in the retrieved record.",
         "source_ids": [
-          "ehr:P004:problem:1"
-        ],
-        "confidence": 0.86
-      },
-      {
-        "text": "Transfer intake documentation states prior records were requested but not received, which limits ability to compare with prior blood pressure course.",
-        "source_ids": [
+          "ehr:P004:problem:1",
           "ehr:P004:note:1"
         ],
-        "confidence": 0.83
+        "confidence": 0.35
       },
       {
-        "text": "The patient reported taking a blood pressure tablet but could not recall the name or dose, so current treatment context cannot be verified from the anamnesis.",
+        "text": "The patient reports intermittent morning headaches over the past week, which may be relevant in the setting of elevated blood pressure.",
+        "source_ids": [
+          "anam:P004:symptoms:1",
+          "rpm:P004:alert:A004"
+        ],
+        "confidence": 0.84
+      },
+      {
+        "text": "Medication history is incomplete and partly unverifiable: the patient reports taking a blood pressure tablet, but cannot recall the name or dose.",
         "source_ids": [
           "anam:P004:adherence:1"
         ],
-        "confidence": 0.82
+        "confidence": 0.88
       },
       {
-        "text": "The patient reported intermittent morning headaches over the past week, but no red-flag symptom documentation is available in the record provided.",
+        "text": "Longitudinal context is limited because the transfer note states prior records were requested but not received, and the patient is concerned that transfer records have not arrived.",
         "source_ids": [
+          "ehr:P004:note:1",
+          "anam:P004:concern:1",
+          "anam:P004:lifestyle:1"
+        ],
+        "confidence": 0.9
+      }
+    ],
+    "risk_assessment": [
+      {
+        "text": "Persistently elevated blood pressure may indicate increased short-term risk if repeat readings remain high, especially given the reported headaches; this should be reviewed rather than assumed to be isolated.",
+        "source_ids": [
+          "rpm:P004:alert:A004",
           "anam:P004:symptoms:1"
         ],
         "confidence": 0.8
       },
       {
-        "text": "The patient recently moved and has not established local primary care, which may affect follow-up continuity.",
+        "text": "Because the current antihypertensive regimen is unknown, there is risk of incomplete medication reconciliation or unrecognized nonadherence, but the evidence is insufficient to infer the cause.",
         "source_ids": [
-          "anam:P004:lifestyle:1"
-        ],
-        "confidence": 0.78
-      }
-    ],
-    "risk_assessment": [
-      {
-        "text": "This isolated elevated BP reading may indicate short-term uncontrolled blood pressure, but severity over time cannot be determined without repeat measurements or trend data.",
-        "source_ids": [
-          "rpm:P004:alert:A004",
-          "ehr:P004:note:1"
-        ],
-        "confidence": 0.72
-      },
-      {
-        "text": "Because the medication name, dose, adherence pattern, and recent changes are not confirmed, there is risk that current management status is incomplete or outdated.",
-        "source_ids": [
-          "ehr:P004:problem:1",
-          "anam:P004:adherence:1"
-        ],
-        "confidence": 0.77
-      },
-      {
-        "text": "Morning headaches plus elevated BP warrant careful review, but the record does not document symptoms that would confirm an emergency or a specific diagnosis.",
-        "source_ids": [
-          "anam:P004:symptoms:1",
-          "rpm:P004:alert:A004"
-        ],
-        "confidence": 0.7
-      },
-      {
-        "text": "Lack of prior records and lack of recent trend data increase uncertainty about whether this represents a new change or a persistent pattern.",
-        "source_ids": [
-          "ehr:P004:note:1",
-          "rpm:P004:alert:A004"
+          "anam:P004:adherence:1",
+          "ehr:P004:problem:1"
         ],
         "confidence": 0.76
+      },
+      {
+        "text": "Missing prior records and absent recent BP history limit assessment of whether this is a new elevation or part of a longer pattern.",
+        "source_ids": [
+          "ehr:P004:note:1",
+          "anam:P004:concern:1"
+        ],
+        "confidence": 0.92
       }
     ],
     "recommended_actions": [
       {
-        "action": "Review the elevated RPM reading in the context of current symptoms, medication reconciliation, and any available office or home BP history.",
-        "rationale": "The alert is urgent, but trend, baseline, and medication details are missing.",
+        "action": "Clinician review of the urgent BP alert with confirmation of the measured value and whether a repeat home reading is available.",
+        "rationale": "The alert exceeds the supplied thresholds and has validated device support.",
         "priority": "High",
-        "confidence": 0.84,
+        "confidence": 0.96,
         "source_ids": [
-          "rpm:P004:alert:A004",
-          "ehr:P004:problem:1",
-          "anam:P004:adherence:1"
+          "rpm:P004:alert:A004"
         ]
       },
       {
-        "action": "Verify whether the patient has any concerning symptoms documented or reported, including headache progression and any chest pain, dyspnea, or neurologic complaints if available in the chart workflow.",
-        "rationale": "The record includes headaches but does not provide a complete red-flag symptom assessment.",
+        "action": "Medication reconciliation focused on the reported blood pressure tablet name and dose, and comparison with any external records when available.",
+        "rationale": "Current antihypertensive therapy is not documented in the retrieved EHR, while the patient reports taking an unidentified tablet.",
         "priority": "High",
-        "confidence": 0.74,
+        "confidence": 0.9,
+        "source_ids": [
+          "anam:P004:adherence:1",
+          "ehr:P004:note:1",
+          "ehr:P004:problem:1"
+        ]
+      },
+      {
+        "action": "Assess for associated symptoms and recent course, including the reported morning headaches, and determine whether additional evaluation is needed based on clinician judgment.",
+        "rationale": "Headaches are present in the anamnesis and may add context to the elevated BP reading.",
+        "priority": "High",
+        "confidence": 0.82,
         "source_ids": [
           "anam:P004:symptoms:1",
           "rpm:P004:alert:A004"
         ]
       },
       {
-        "action": "Attempt to obtain missing outside records or recent BP history and confirm the current antihypertensive regimen if the patient can identify it.",
-        "rationale": "Transfer intake notes indicate prior records were not received, and the current medication list is absent.",
+        "action": "Attempt to obtain missing prior records or alternative recent BP documentation to establish trend and treatment history.",
+        "rationale": "The transfer note indicates records were requested but not received, leaving the longitudinal BP picture incomplete.",
         "priority": "Standard",
-        "confidence": 0.8,
+        "confidence": 0.9,
         "source_ids": [
           "ehr:P004:note:1",
-          "ehr:P004:problem:1",
-          "anam:P004:adherence:1"
-        ]
-      },
-      {
-        "action": "Arrange clinician review of this urgent reading and determine whether additional same-day assessment is needed based on the full clinical picture.",
-        "rationale": "The reading exceeds the alert thresholds, but escalation beyond review depends on symptoms, repeat BP, and longitudinal context.",
-        "priority": "High",
-        "confidence": 0.88,
-        "source_ids": [
-          "rpm:P004:alert:A004"
+          "anam:P004:concern:1"
         ]
       }
     ],
     "uncertainties_and_gaps": [
-      "No repeat blood pressure measurement or trend is available.",
-      "No baseline BP is available for comparison.",
-      "The current antihypertensive medication name, dose, and adherence are unverified.",
-      "No recent labs are provided.",
-      "No documentation of chest pain, shortness of breath, neurologic deficits, or vision changes is available in the supplied record.",
-      "Prior external records are missing."
+      "No recent office or home blood pressure trend is available in the retrieved EHR.",
+      "The current antihypertensive medication name and dose are unknown.",
+      "It is unclear whether the elevated reading was repeated, persistent, or associated with any symptoms beyond the reported headaches.",
+      "External transfer records have not been received.",
+      "No lab data are available in the retrieved context.",
+      "The patient has not established local primary care, which may affect follow-up continuity."
     ],
-    "confidence": 0.32,
+    "confidence": 0.53,
     "citations": [
       {
         "source_id": "anam:P004:adherence:1",
         "source_type": "adherence",
         "timestamp": "2026-05-12",
         "label": "adherence"
+      },
+      {
+        "source_id": "anam:P004:concern:1",
+        "source_type": "concern",
+        "timestamp": "2026-05-12",
+        "label": "concern"
       },
       {
         "source_id": "anam:P004:lifestyle:1",
@@ -339,7 +332,7 @@
         "source_id": "ehr:P004:problem:1",
         "source_type": "problem",
         "timestamp": null,
-        "label": "Essential hypertension, active"
+        "label": "Essential hypertension active"
       },
       {
         "source_id": "rpm:P004:alert:A004",
@@ -350,10 +343,10 @@
     ],
     "immediate_escalation": false,
     "human_review_required": true,
-    "disclaimer": "Educational prototype using simulated data. This output is not a diagnosis or medical advice and must be reviewed by a qualified clinician."
+    "disclaimer": "Educational-prototype clinical summary only; not a diagnosis, prescription, or substitute for clinician judgment."
   },
-  "session_id": "session-92bb8747424a",
-  "elapsed_seconds": 15.658986458001891,
+  "session_id": "session-1e59f2ea3655",
+  "elapsed_seconds": 18.705783457997313,
   "mode": "live",
   "warnings": []
 }

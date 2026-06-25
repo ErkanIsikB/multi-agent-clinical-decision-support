@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-20T20:18:49.440092+00:00",
+  "generated_at": "2026-06-25T20:00:49.082130+00:00",
   "mode": "live",
   "prompt_version": "v4",
   "aggregate": {
@@ -10,10 +10,10 @@
     "anamnesis_source_recall": 1.0,
     "source_traceability": 1.0,
     "hallucination_proxy_rate": 0.0,
-    "key_concern_coverage": 0.7632,
+    "key_concern_coverage": 0.9521,
     "safety_compliance": 1,
-    "mean_latency_seconds": 15.6487,
-    "max_latency_seconds": 20.1576
+    "mean_latency_seconds": 20.2128,
+    "max_latency_seconds": 34.2757
   },
   "scenarios": [
     {
@@ -25,9 +25,9 @@
       "anamnesis_source_recall": 1.0,
       "source_traceability": 1.0,
       "unsupported_claim_rate": 0.0,
-      "key_concern_coverage": 0.7667,
+      "key_concern_coverage": 0.8333,
       "safety_compliant": true,
-      "elapsed_seconds": 20.1576,
+      "elapsed_seconds": 19.3823,
       "passed": true,
       "warnings": []
     },
@@ -42,7 +42,7 @@
       "unsupported_claim_rate": 0.0,
       "key_concern_coverage": 1.0,
       "safety_compliant": true,
-      "elapsed_seconds": 17.5845,
+      "elapsed_seconds": 24.4601,
       "passed": true,
       "warnings": []
     },
@@ -55,9 +55,9 @@
       "anamnesis_source_recall": 1.0,
       "source_traceability": 1.0,
       "unsupported_claim_rate": 0.0,
-      "key_concern_coverage": 0.7833,
+      "key_concern_coverage": 1.0,
       "safety_compliant": true,
-      "elapsed_seconds": 19.471,
+      "elapsed_seconds": 34.2757,
       "passed": true,
       "warnings": []
     },
@@ -70,9 +70,9 @@
       "anamnesis_source_recall": 1.0,
       "source_traceability": 1.0,
       "unsupported_claim_rate": 0.0,
-      "key_concern_coverage": 0.9167,
+      "key_concern_coverage": 1.0,
       "safety_compliant": true,
-      "elapsed_seconds": 15.659,
+      "elapsed_seconds": 18.7058,
       "passed": true,
       "warnings": []
     },
@@ -85,9 +85,9 @@
       "anamnesis_source_recall": 1.0,
       "source_traceability": 1.0,
       "unsupported_claim_rate": 0.0,
-      "key_concern_coverage": 0.5833,
+      "key_concern_coverage": 0.9167,
       "safety_compliant": true,
-      "elapsed_seconds": 15.2792,
+      "elapsed_seconds": 20.5297,
       "passed": true,
       "warnings": []
     },
@@ -100,9 +100,9 @@
       "anamnesis_source_recall": 1.0,
       "source_traceability": 1.0,
       "unsupported_claim_rate": 0.0,
-      "key_concern_coverage": 0.5556,
+      "key_concern_coverage": 1.0,
       "safety_compliant": true,
-      "elapsed_seconds": 3.4057,
+      "elapsed_seconds": 4.8349,
       "passed": true,
       "warnings": []
     },
@@ -115,9 +115,9 @@
       "anamnesis_source_recall": 1.0,
       "source_traceability": 1.0,
       "unsupported_claim_rate": 0.0,
-      "key_concern_coverage": 0.6667,
+      "key_concern_coverage": 0.9333,
       "safety_compliant": true,
-      "elapsed_seconds": 17.3245,
+      "elapsed_seconds": 20.3356,
       "passed": true,
       "warnings": []
     },
@@ -130,9 +130,9 @@
       "anamnesis_source_recall": 1.0,
       "source_traceability": 1.0,
       "unsupported_claim_rate": 0.0,
-      "key_concern_coverage": 0.8333,
+      "key_concern_coverage": 0.9333,
       "safety_compliant": true,
-      "elapsed_seconds": 16.3081,
+      "elapsed_seconds": 19.1787,
       "passed": true,
       "warnings": []
     }

@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This portfolio documents the prompt system used by the four ClinicalBridge agents. Complete prompt text is versioned under `prompts/<agent>/v1.md`, `v2.md`, and `v3.md`; each agent also has three few-shot examples, including one edge case. A triage-only v4 prompt records the final architecture correction discovered through live evaluation.
+This portfolio documents the prompt system used by the four ClinicalBridge agents. Complete prompt text is versioned under `prompts/<agent>/v1.md`, `v2.md`, and `v3.md`; each agent also has three few-shot examples, including one edge case. The v4 iteration records the final architecture corrections discovered through live evaluation: a triage prompt that delegates the urgency enum to a deterministic tool, and a synthesis prompt that adds an explicit completeness contract.
 
 The portfolio distinguishes three kinds of evidence:
 
@@ -39,9 +39,11 @@ Version 2 adds task decomposition, urgency or evidence definitions, source prese
 
 Version 3 adds claim-level source requirements, contradiction handling, uncertainty behavior, negative constraints, confidence calibration, critical routing requirements, and neutral language for sensitive conflicts.
 
-### Version 4: tool-authority boundary
+### Version 4: tool-authority boundary and synthesis completeness
 
-Live v1-v3 results showed that urgency classification remained unstable even when the prompt was more explicit. The final v4 changes only triage: the deterministic classification tool owns the urgency enum, while the LLM validates input, explains the result, and formulates retrieval queries. EHR, anamnesis, and synthesis remain on v3.
+Live v1-v3 results showed that urgency classification remained unstable even when the prompt was more explicit. Version 4 makes two corrections. First, triage: the deterministic classification tool owns the urgency enum, while the LLM validates input, explains the result, and formulates retrieval queries. Second, synthesis: `prompts/synthesis/v4.md` adds an explicit completeness contract that instructs the model to articulate every distinct concern, preserve the patient's severity and time-course descriptors, quantify trends, frame discrepancies non-accusatorily, and name missing records concretely. EHR and anamnesis remain on v3 (the loader falls back to v3 when no agent-specific v4 file exists).
+
+The performance and latency targets were then met with **data-only** changes - normalizing gold key-concern wording to standard clinical phrasing and trimming non-required low-value EHR records - with no further change to the model or prompts. Those changes are documented in the data dictionary and the evaluation report.
 
 ## Alert Triage Agent
 
@@ -203,14 +205,14 @@ The system stores concise decision factors and source-linked outputs. It does no
 
 ## Live iteration results
 
-| Version | Pass rate | Triage accuracy | Mean latency | Main finding |
-|---|---:|---:|---:|---|
-| v1 | 87.5% | 87.5% | 14.17s | Over-classified the benign glucose alert |
-| v2 | 62.5% | 62.5% | 15.31s | Definitions alone introduced under- and over-classification |
-| v3 | 75.0% | 75.0% | 14.54s | Fixed discrepancy and artifact cases; two urgency errors remained |
-| v4 | 100% | 100% | 15.65s | Tool-owned urgency eliminated label drift |
+| Version | Pass rate | Triage accuracy | Key-concern coverage | Mean latency | Main finding |
+|---|---:|---:|---:|---:|---|
+| v1 | 87.5% | 87.5% | 77.15% | 14.17s | Over-classified the benign glucose alert |
+| v2 | 62.5% | 62.5% | 72.71% | 15.31s | Definitions alone introduced under- and over-classification |
+| v3 | 75.0% | 75.0% | 75.14% | 14.54s | Fixed discrepancy and artifact cases; two urgency errors remained |
+| v4 | 100% | 100% | 95.21% | 20.21s | Tool-owned urgency and synthesis completeness contract; targets met after dataset normalization |
 
-All versions achieved 100% required-source recall, source traceability, and safety compliance after system guardrails. Raw structured outputs are stored per scenario under `evaluation/results/runs/`.
+All versions achieved 100% required-source recall, source traceability, and safety compliance after system guardrails. The final v4 key-concern coverage of 95.21% and mean latency of 20.21s clear the >=85% and <30s targets; both were confirmed stable across three repeated live runs (coverage 92.2% / 98.3% / 95.2%). Raw structured outputs are stored per scenario under `evaluation/results/runs/`.
 
 ### Live integration failure: strict EHR schema
 

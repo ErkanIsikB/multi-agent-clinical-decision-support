@@ -200,9 +200,9 @@
     "confidence": 0.92
   },
   "brief": {
-    "brief_id": "ccb-4e2e97bcd1",
+    "brief_id": "ccb-cb370ec2f0",
     "patient_id": "P008",
-    "generated_at": "2026-06-20T20:21:54.497340Z",
+    "generated_at": "2026-06-25T18:45:05.405285Z",
     "urgency": "Urgent",
     "alert_summary": "Nocturnal Hypertension alert: systolic bp 164 mmHg, diastolic bp 98 mmHg, heart rate 76 bpm.",
     "patient_snapshot": "Active conditions: Essential hypertension, Knee osteoarthritis. Current treatment: Amlodipine.",
@@ -326,8 +326,8 @@
     "human_review_required": true,
     "disclaimer": "Educational prototype using simulated data. This output is not a diagnosis or medical advice and must be reviewed by a qualified clinician."
   },
-  "session_id": "session-303e53cd940f",
-  "elapsed_seconds": 0.0017550000047776848,
+  "session_id": "session-a73895d13bb1",
+  "elapsed_seconds": 0.002811082999869541,
   "mode": "offline",
   "warnings": []
 }

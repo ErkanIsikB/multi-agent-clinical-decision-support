@@ -1,6 +1,6 @@
 # ClinicalBridge Evaluation Report
 
-Generated: 2026-06-20T20:18:49.440092+00:00
+Generated: 2026-06-25T20:00:49.082130+00:00
 
 Evaluation mode: **live**
 
@@ -15,20 +15,20 @@ Evaluation mode: **live**
 | Source traceability | 100% | 100% desired |
 | Unsupported-claim proxy | 0% | <=5% |
 | Safety compliance | 100% | 100% desired |
-| Mean latency | 15.649s | <30s |
+| Mean latency | 20.213s | <30s |
 
 ## Scenario results
 
 | Scenario | Urgency | Sources | Concern coverage | Safety | Pass |
 |---|---:|---:|---:|---:|---:|
-| scenario_01 - The Missed Medication | Yes | 100% | 77% | Yes | Pass |
+| scenario_01 - The Missed Medication | Yes | 100% | 83% | Yes | Pass |
 | scenario_02 - The Contextually Benign Alert | Yes | 100% | 100% | Yes | Pass |
-| scenario_03 - The Silent Deterioration | Yes | 100% | 78% | Yes | Pass |
-| scenario_04 - The Incomplete Record | Yes | 100% | 92% | Yes | Pass |
-| scenario_05 - The Conflicting Data | Yes | 100% | 58% | Yes | Pass |
-| scenario_06 - Critical Hypoxemia | Yes | 100% | 56% | Yes | Pass |
-| scenario_07 - The Device Artifact | Yes | 100% | 67% | Yes | Pass |
-| scenario_08 - Nocturnal Hypertension and NSAID Use | Yes | 100% | 83% | Yes | Pass |
+| scenario_03 - The Silent Deterioration | Yes | 100% | 100% | Yes | Pass |
+| scenario_04 - The Incomplete Record | Yes | 100% | 100% | Yes | Pass |
+| scenario_05 - The Conflicting Data | Yes | 100% | 92% | Yes | Pass |
+| scenario_06 - Critical Hypoxemia | Yes | 100% | 100% | Yes | Pass |
+| scenario_07 - The Device Artifact | Yes | 100% | 93% | Yes | Pass |
+| scenario_08 - Nocturnal Hypertension and NSAID Use | Yes | 100% | 93% | Yes | Pass |
 
 ## Interpretation
 

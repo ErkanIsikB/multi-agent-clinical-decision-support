@@ -226,9 +226,9 @@
     "confidence": 0.92
   },
   "brief": {
-    "brief_id": "ccb-7d6b5f1ff8",
+    "brief_id": "ccb-91938b0d8d",
     "patient_id": "P002",
-    "generated_at": "2026-06-20T20:21:54.485017Z",
+    "generated_at": "2026-06-25T18:45:05.385177Z",
     "urgency": "Routine",
     "alert_summary": "High Glucose alert: glucose 238 mg/dL.",
     "patient_snapshot": "Active conditions: Type 2 diabetes mellitus, Obesity. Current treatment: Semaglutide, Metformin XR.",
@@ -264,7 +264,7 @@
     ],
     "risk_assessment": [
       {
-        "text": "The glucose alert may reflect a documented short-term dietary change and recent treatment adjustment, but persistence still requires review.",
+        "text": "The glucose alert may reflect a documented carbohydrate-heavy meal before the reading and the recent semaglutide initiation, with no acute symptoms reported, but persistence still requires review.",
         "source_ids": [
           "rpm:P002:alert:A002",
           "ehr:P002:lab:2",
@@ -366,8 +366,8 @@
     "human_review_required": true,
     "disclaimer": "Educational prototype using simulated data. This output is not a diagnosis or medical advice and must be reviewed by a qualified clinician."
   },
-  "session_id": "session-2ac7c415cc9a",
-  "elapsed_seconds": 0.002124791993992403,
+  "session_id": "session-91fa01d217df",
+  "elapsed_seconds": 0.0033180829996126704,
   "mode": "offline",
   "warnings": []
 }
